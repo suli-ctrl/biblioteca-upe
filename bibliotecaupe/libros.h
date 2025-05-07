@@ -41,7 +41,7 @@ public:
    void estadoLibro();
    void buscoLibroPorNombre();
    void buscoLibroPorAutor();
-   void buscoLibroPorAño();
+   void buscoLibroPorAnio();
 
 };
 

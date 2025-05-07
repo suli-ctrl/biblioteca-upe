@@ -31,5 +31,34 @@
 *.out
 *.app
 
+# Visual Studio files
 .vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.suo
+*.user
+*.cache
+*.log
+*.tlog
+
+# Build folders
+Debug/
+Release/
+x64/
+x86/
+ipch/
+*.opensdf
+*.sdf
+
+# SQLite or test DBs
 *.db
+
+# Otros temporales
+*.tmp
+*.bak
+*.swp
+*.~*
+
+# MacOS / Linux (por si abrís el proyecto en otra máquina)
+.DS_Store
+*.directory

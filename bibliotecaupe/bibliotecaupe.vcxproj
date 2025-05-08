@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="libros.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="socios.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libros.h" />
+    <ClInclude Include="socios.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "libros.h"
+#include "socios.h"
 
 int main() {
 

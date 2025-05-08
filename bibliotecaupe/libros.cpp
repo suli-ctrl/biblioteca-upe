@@ -2,15 +2,25 @@
 #include <iostream>
 #include <string>
 
+/*--------------------------------- Constructor ----------------------------------------*/
+
 libros::libros(std::string _nombre, std::string _area, std::string _subarea,
                std::string _autores, std::string _editorial, int _anioDePublicacion,
                std::string _estado, std::string _ubicacion, bool _prestado)
                : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
                 editorial(_editorial), aniodepubli(_anioDePublicacion),
-                estado(_estado), ubicacion(_ubicacion), prestado(_prestado) {}
+                estado(_estado), ubicacion(_ubicacion), prestado(_prestado){
+    // Completar
+}
 
+/*--------------------------------- Destructor ----------------------------------------*/
 
-libros::~libros() {}
+libros::~libros() 
+{
+    //Completar
+}
+
+/*---------------------------------- Metodos -----------------------------------------*/
 
 std::string libros::getNombre() const 
 { 
@@ -34,7 +44,8 @@ bool libros::getPrestado() const
 }
 
 
-void libros::prestarLibro() {
+void libros::prestarLibro() 
+{
     if (prestado) {
         std::cout << "El libro '" << nombre << "' ya esta prestado." << std::endl;
     }
@@ -56,10 +67,12 @@ void libros::devolucionLibro()
     }
 }
 
-void libros::ubicacionLibro() {
+void libros::ubicacionLibro() 
+{
     std::cout << "El libro '" << nombre << "' esta ubicado en: " << ubicacion;
 }
 
-void libros::estadoLibro() {
+void libros::estadoLibro() 
+{
     std::cout << "El libro '" << nombre << "' esta en estado: " << estado;
 }

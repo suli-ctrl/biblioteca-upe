@@ -11,9 +11,10 @@ private:
     std::string subarea;
     std::string autores;
     std::string editorial;
-    std::string estado; //bien, regular, malo, destruido
     std::string ubicacion;
-    int aniodepubli;
+    int anioDePublicacion;
+
+    std::string estado; //bien, regular, malo, destruido
     bool prestado;
 
 public:

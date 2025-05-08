@@ -2,9 +2,20 @@
 #include <string>
 #include "socios.h"
 
-socios::socios()
+socios::socios( int _dni, int _edad, std::string _apellido, 
+				std::string _genero, std::string _direccion, std::string _numTelefono, 
+				std::string _fechaNacimiento, std::string _email)
+				: dni(_dni), edad(_edad), apellido(_apellido), genero(_genero), 
+				direccion(_direccion), numTelefono(_numTelefono), fechaNacimiento(_fechaNacimiento), email(_email) // A esto se le llama "lista de inicializacion" (lo que esta despues de los : )
 {
-	// Constructor
+	dni = _dni;
+	edad = _edad;
+	apellido = _apellido;
+	genero = _genero;
+	direccion = _direccion;
+	numTelefono = _numTelefono;
+	fechaNacimiento = _fechaNacimiento;
+	email = _email;
 }
 
 socios::~socios()

@@ -8,9 +8,18 @@ libros::libros(std::string _nombre, std::string _area, std::string _subarea,
                std::string _autores, std::string _editorial, int _anioDePublicacion,
                std::string _estado, std::string _ubicacion, bool _prestado)
                : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
-                editorial(_editorial), aniodepubli(_anioDePublicacion),
-                estado(_estado), ubicacion(_ubicacion), prestado(_prestado){
-    // Completar
+                editorial(_editorial), anioDePublicacion(_anioDePublicacion),
+                estado(_estado), ubicacion(_ubicacion), prestado(_prestado)
+{
+    nombre = _nombre;
+    area = _area;
+    subarea = _subarea;
+    autores = _autores;
+    editorial = _editorial;
+    estado = _estado;
+    ubicacion = _ubicacion;
+    anioDePublicacion = _anioDePublicacion;
+    prestado = _prestado;
 }
 
 /*--------------------------------- Destructor ----------------------------------------*/
@@ -36,7 +45,7 @@ std::string libros::getUbicacion() const
 }
 int libros::getAnioDePublicacion() const 
 { 
-    return aniodepubli;
+    return anioDePublicacion;
 }
 bool libros::getPrestado() const 
 { 

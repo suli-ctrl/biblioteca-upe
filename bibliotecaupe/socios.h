@@ -17,7 +17,7 @@ private:
 
 public:
 	socios( int _dni, int _edad, std::string _apellido,
-}			std::string _genero, std::string _direccion, std::string _numTelefono, 
+			std::string _genero, std::string _direccion, std::string _numTelefono, 
 			std::string _fechaNacimiento, std::string _email); // Constructor
 
 	~socios(); // Destructor

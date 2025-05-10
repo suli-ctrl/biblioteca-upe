@@ -24,30 +24,24 @@ public:
    libros(std::string _nombre, std::string _area, std::string _subarea,
           std::string _autores, std::string _editorial, int _anioDePublicacion,
           std::string _estado, std::string _ubicacion, bool _prestado); //constructor
-   
-    // Que significa el "_"?
-
+  
    ~libros(); //destructor
 
    // Getters
 
+   std::string getLibro();
    std::string getNombre() const;
    std::string getEstado() const;
    std::string getUbicacion() const;
    int getAnioDePublicacion() const;
-   bool getPrestado() const;
+   void setEstado();
+
+   std::string codBarras();
+   bool getPrestado() const; //Considero que es un metodo de la clase "prestamos"
     
    // Metodos
-   void altaLibro();
-   void bajaLibro();
-   void modifLibro();
-   void prestarLibro();
-   void devolucionLibro();
-   void ubicacionLibro();
-   void estadoLibro();
-   void buscoLibroPorNombre();
-   void buscoLibroPorAutor();
-   void buscoLibroPorAnio();
+   void ubicacionLibro(); //Este metodo y getUbicacion() no cumplen la misma funcion?
+   void estadoLibro(); //Este metodo y getEstado() no cumplen la misma funcoin?
 
 };
 

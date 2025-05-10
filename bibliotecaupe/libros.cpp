@@ -31,7 +31,12 @@ libros::~libros()
 
 /*---------------------------------- Metodos -----------------------------------------*/
 
-std::string libros::getNombre() const 
+std::string libros::getLibro()
+{
+    return std::string();
+}
+
+std::string libros::getNombre() const
 { 
     return nombre; 
 }
@@ -47,34 +52,17 @@ int libros::getAnioDePublicacion() const
 { 
     return anioDePublicacion;
 }
-bool libros::getPrestado() const 
-{ 
-    return prestado; 
-}
-
-
-void libros::prestarLibro() 
+std::string libros::codBarras()
 {
-    if (prestado) {
-        std::cout << "El libro '" << nombre << "' ya esta prestado." << std::endl;
-    }
-    else {
-        prestado = true;
-        std::cout << "El libro '" << nombre << "' fue prestado." << std::endl;
-    }
+    return std::string();
 }
 
 
-void libros::devolucionLibro() 
+bool libros::getPrestado() const
 {
-    if (!prestado) {
-        std::cout << "El libro '" << nombre << "' no estaba prestado.";
-    }
-    else {
-        prestado = false;
-        std::cout << "El libro '" << nombre << "' fue devuelto." << '\n';
-    }
+    return prestado;
 }
+
 
 void libros::ubicacionLibro() 
 {

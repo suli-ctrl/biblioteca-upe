@@ -127,12 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="biblioteca.cpp" />
     <ClCompile Include="libros.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="prestamos.cpp" />
     <ClCompile Include="socios.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="biblioteca.h" />
     <ClInclude Include="libros.h" />
+    <ClInclude Include="prestamos.h" />
     <ClInclude Include="socios.h" />
   </ItemGroup>
   <ItemGroup>

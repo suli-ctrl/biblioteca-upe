@@ -21,9 +21,10 @@ public:
 			std::string _fechaNacimiento, std::string _email); // Constructor
 
 	~socios(); // Destructor
-	void altaSocio(); // Método para dar de alta un socio
-	void bajaSocio(); // Método para dar de baja un socio
-	void modificarSocio(); // Método para modificar un socio
+
+	std::string getSocio();
+	std::string getNombre();
+	std::string getDNI();
 };
 
 #endif

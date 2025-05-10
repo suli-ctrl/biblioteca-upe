@@ -23,7 +23,18 @@ socios::~socios()
 	// Destructor
 }
 
-void socios::altaSocio()
+std::string socios::getSocio()
 {
-	// Completar
+	return std::string();
 }
+
+std::string socios::getNombre()
+{
+	return std::string();
+}
+
+std::string socios::getDNI()
+{
+	return std::string();
+}
+

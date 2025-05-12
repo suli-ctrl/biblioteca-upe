@@ -1,7 +1,10 @@
 #include <iostream>
 #include "prestamos.h"
+#include "libros.h"
+#include "socios.h"
 
-prestamos::prestamos()
+prestamos::prestamos(libros& _libro, socios& _socio, std::string _fechaPrestamo, std::string _fechaVencimiento, bool _devuelto)
+    : refLibro(_libro), refSocio(_socio), fechaPrestamo(_fechaPrestamo), fechaVencimiento(_fechaVencimiento), devuelto(_devuelto)
 {
 
 }
@@ -11,9 +14,9 @@ prestamos::~prestamos()
 
 }
 
-std::string prestamos::getPrestamo()
+void prestamos::getPrestamo()
 {
-    return std::string();
+    std::cout << "Libro: " << refLibro.getNombre() << "prestado a " << refSocio.getNombre() << " el " << fechaPrestamo << " hasta el " << fechaVencimiento;
 }
 
 std::string prestamos::getLibroPrestado()

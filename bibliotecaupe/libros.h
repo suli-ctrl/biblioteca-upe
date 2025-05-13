@@ -37,7 +37,6 @@ public:
    std::string getEstado() const;
    std::string getUbicacion() const;
    int getAnioDePublicacion() const;
-   bool getPrestado() const; //Considero que es un metodo de la clase "prestamos"
 
    //setters
    void setEstado();
@@ -46,8 +45,6 @@ public:
    // Metodos
    std::string convFormatoUbi() const; //cambia el formato de la ubicacion
    std::string codBarras(); //genera el codigo
-   void ubicacionLibro(); //Este metodo y getUbicacion() no cumplen la misma funcion?
-   void estadoLibro(); //Este metodo y getEstado() no cumplen la misma funcoin?
 
 };
 

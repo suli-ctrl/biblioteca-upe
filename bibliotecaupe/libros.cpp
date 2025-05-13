@@ -10,19 +10,7 @@ libros::libros(std::string _nombre, std::string _area, std::string _subarea,
                : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
                 editorial(_editorial), anioDePublicacion(_anioDePublicacion),
                 estado(_estado), ubicacion(_ubicacion), prestado(_prestado)
-{
-    
-    nombre = _nombre;
-    area = _area;
-    subarea = _subarea;
-    autores = _autores;
-    editorial = _editorial;
-    estado = _estado;
-    ubicacion = _ubicacion;
-    anioDePublicacion = _anioDePublicacion;
-    prestado = _prestado;
-   
-}
+{}
 
 /*--------------------------------- Destructor ----------------------------------------*/
 
@@ -122,20 +110,4 @@ std::string libros::codBarras() //metodo que genera al codigo de barras
 
     return codigo;
 
-}
-
-
-
-
-/*---------------------------------- Otros metodos -----------------------------------------*/
-
-
-void libros::ubicacionLibro() 
-{
-    std::cout << "El libro '" << nombre << "' esta ubicado en: " << ubicacion;
-}
-
-void libros::estadoLibro() 
-{
-    std::cout << "El libro '" << nombre << "' esta en estado: " << estado;
 }

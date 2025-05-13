@@ -45,6 +45,17 @@ int main() {
     std::cout << "Edad: " << socio1.getEdad() << '\n';
     std::cout << "Resumen: " << socio1.getSocio() << '\n';
 
+    //Pruebas de metodos de prestamos
+
+    prestamos prestamo1(libro1, socio1, "12/05/2025", 7); // Libro, socio, fecha de prestamo y dias de prestamo
+    prestamo1.getPrestamo();  // Muestra los detalles del prestamo
+    prestamo1.getLibroPrestado();  // Muestra el nombre del libro
+    prestamo1.getSocioPrestatario();  // Muestra el nombre del socio
+    prestamo1.libroDevuelto();
+    prestamo1.marcarDevuelto();
+    prestamo1.libroDevuelto();
+
+
     return 0;
     
 }

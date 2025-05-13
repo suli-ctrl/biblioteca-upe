@@ -2,7 +2,7 @@
 #include "biblioteca.h"
 #include "libros.h"
 
-biblioteca::biblioteca()
+/* biblioteca::biblioteca()
 {
 
 }
@@ -52,3 +52,4 @@ void biblioteca::devolucionLibro()
         std::cout << "El libro '" << nombre << "' fue devuelto." << '\n';
     }
 }
+*/ 

@@ -18,13 +18,23 @@ private:
 public:
 	socios( int _dni, int _edad, std::string _apellido,
 			std::string _genero, std::string _direccion, std::string _numTelefono, 
-			std::string _fechaNacimiento, std::string _email); // Constructor
+			std::string _fechaNacimiento, std::string _email); // constructor
 
-	~socios(); // Destructor
+	~socios(); // destructor
 
-	std::string getSocio();
-	std::string getNombre();
-	std::string getDNI();
+	// getters
+	std::string getSocio() const;
+	std::string getNombre() const;
+	std::string getDNI() const;
+	int getEdad() const;
+	std::string getEmail() const;
+
+	//setters
+	void setEdad(int nuevaEdad);
+	void setDireccion(const std::string& nuevaDireccion);
+	void setEmail(const std::string& nuevoEmail);
+	void setTelefono(const std::string& nuevoTelefono);
+	void setGenero(const std::string& nuevoGenero);
 };
 
 #endif

@@ -34,7 +34,7 @@ public:
    std::string getEstado() const;
    std::string getUbicacion() const;
    int getAnioDePublicacion() const;
-   void setEstado();
+  
 
    std::string codBarras();
    bool getPrestado() const; //Considero que es un metodo de la clase "prestamos"

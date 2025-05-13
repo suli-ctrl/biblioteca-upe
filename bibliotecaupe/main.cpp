@@ -16,6 +16,7 @@ int main() {
     std::cout << "Estado:" << libro1.getEstado() << "\n";
     std::cout << "Ubicacion:" << libro1.getUbicacion() << "\n";
     std::cout << "Año de publicacion:" << libro1.getAnioDePublicacion() << "\n";
+    std::cout << "El codigo de barras del libro es:" << libro1.codBarras() << std::endl;
     std::cout << "\n";
 
     socios socio1(12345678, 20, "Dimaso", "Masculino", "Hola chau 123", "123456789", "11/11/2004", "tiago@mail.com");
@@ -53,6 +54,8 @@ int main() {
     prestamo1.marcarDevuelto();
     prestamo1.libroDevuelto();
     std::cout << "\n";
+
+    
 
 
 

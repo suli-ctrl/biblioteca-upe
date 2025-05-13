@@ -9,7 +9,7 @@ int main() {
 
     //probando que onda
     
-    libros libro1("Cien años de soledad", "Literatura", "Novela", "Gabriel García Márquez", "Editorial X", 1967, "Nuevo", "Estante A1", false);
+    libros libro1("Cien años de soledad", "Literatura", "Novela", "Gabriel García Márquez", "Editorial X", 1967, "bien", "Est1-F1", false);
 
     std::cout << "Nombre del libro: " << libro1.getNombre() << std::endl;
 
@@ -22,6 +22,8 @@ int main() {
     // libro1.ubicacionLibro();
     // std::cout << '\n';
     // libro1.estadoLibro();
+
+    //std::cout << "El codigo de barras del libro es:" << libro1.codBarras() << std::endl;
 
     socios socio1(40720288, 27, "Zarate", "M", "Ezeiza", "1123674154", "12/11/1997", "agusnzarate@gmail.com");
 

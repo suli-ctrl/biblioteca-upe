@@ -13,9 +13,12 @@ private:
     std::string editorial;
     std::string ubicacion;
     int anioDePublicacion;
-
     std::string estado; //bien, regular, malo, destruido
     bool prestado;
+
+    //metodos privados para el codigo de barras
+    std::string obtenerEstadoID() const;
+    std::string obtenerDisponibilidadID() const;
 
 public:
 
@@ -27,19 +30,22 @@ public:
   
    ~libros(); //destructor
 
-   // Getters
 
+   // Getters
    std::string getLibro();
    std::string getNombre() const;
    std::string getEstado() const;
    std::string getUbicacion() const;
    int getAnioDePublicacion() const;
-   void setEstado();
-
-   std::string codBarras();
    bool getPrestado() const; //Considero que es un metodo de la clase "prestamos"
+
+   //setters
+   void setEstado();
+   
     
    // Metodos
+   std::string convFormatoUbi() const; //cambia el formato de la ubicacion
+   std::string codBarras(); //genera el codigo
    void ubicacionLibro(); //Este metodo y getUbicacion() no cumplen la misma funcion?
    void estadoLibro(); //Este metodo y getEstado() no cumplen la misma funcoin?
 

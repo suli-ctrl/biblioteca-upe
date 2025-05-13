@@ -2,13 +2,14 @@
 #include "biblioteca.h"
 #include "libros.h"
 #include "socios.h"
+#include "prestamos.h"
 
 
 int main() {
 
     //probando que onda
     
-    libros libro1("Cien años de soledad", "Literatura", "Novela", "Gabriel García Márquez", "Editorial X", 1967, "Nuevo", "Estante A1", false);
+    libros libro1("Cien años de soledad", "Literatura", "Novela", "Gabriel García Márquez", "Editorial X", 1967, "bien", "Est1-F1", false);
 
     std::cout << "Nombre del libro: " << libro1.getNombre() << '\n';
 

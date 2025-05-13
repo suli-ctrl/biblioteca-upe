@@ -43,10 +43,6 @@ int libros::getAnioDePublicacion() const
     return anioDePublicacion;
 }
 
-bool libros::getPrestado() const
-{
-    return prestado;
-}
 
 
 /*---------------------------------- Metodos privados para codigo de barras -----------------------------------------*/

@@ -45,5 +45,5 @@ int main() {
     std::cout << "Resumen: " << socio1.getSocio() << '\n';
 
     return 0;
-
+    
 }

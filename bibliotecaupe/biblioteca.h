@@ -1,9 +1,14 @@
 #ifndef BIBLIOTECA_H
 #define BIBLIOTECA_H
 
+#include <vector>
+#include "socios.h"
+
+
 class biblioteca
 {
 private:
+	std::vector<socios> listaSocios; //estructura dinamica para manejar archivos de socios
 public:
 	biblioteca(); //Constructor
 	~biblioteca(); //Destructor

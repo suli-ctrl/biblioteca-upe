@@ -48,15 +48,3 @@ bool prestamos::libroDevuelto()
     return false;
 }
 
-
-bool prestamos::estaVencido()
-{
-
-    return false;
-}
-
-int prestamos::diasHastaVencimiento()
-{
-    return 0;
-}
-

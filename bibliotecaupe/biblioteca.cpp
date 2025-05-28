@@ -1,12 +1,26 @@
 #include <iostream>
 #include "biblioteca.h"
-#include "libros.h"
 
-/* biblioteca::biblioteca()
+
+
+biblioteca::biblioteca()
 {
 
 }
 
+biblioteca::~biblioteca()
+{
+
+}
+
+
+void biblioteca::altaSocio()
+{
+    
+}
+
+
+/* 
 void biblioteca::altaLibro()
 {
 }
@@ -20,15 +34,8 @@ void biblioteca::modifLibro()
 }
 
 
-biblioteca::~biblioteca()
-{
 
-}
 
-void biblioteca::altaSocio()
-{
-	// Completar
-}
 
 void biblioteca::prestarLibro()
 {

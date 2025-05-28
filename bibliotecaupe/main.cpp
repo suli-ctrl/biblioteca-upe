@@ -7,8 +7,8 @@
 void menuPrincipal(biblioteca&);
 void menuLibros(biblioteca&);
 void menuSocios(biblioteca&);
-void menuBusqueda(biblioteca&);
 void menuPrestamos(biblioteca&);
+
 
 int main() {
     biblioteca BibliotecaUPE;
@@ -78,8 +78,7 @@ void menuPrincipal(biblioteca& BibliotecaUPE)
         std::cout << "--------------------" << std::endl;
         std::cout << "1. Gestion de libros" << std::endl;
         std::cout << "2. Gestion de socios " << std::endl;
-        std::cout << "3. Busqueda y filtrado " << std::endl;
-        std::cout << "4. Prestamos " << std::endl;
+        std::cout << "3. Prestamos " << std::endl;
         std::cout << "0. Salir" << std::endl;
         std::cout << "--------------------" << std::endl;
 
@@ -100,9 +99,7 @@ void menuPrincipal(biblioteca& BibliotecaUPE)
             break;
         case 2: menuSocios(BibliotecaUPE);
             break;
-        case 3: menuBusqueda(BibliotecaUPE);
-            break;
-        case 4: menuPrestamos(BibliotecaUPE);
+        case 3: menuPrestamos(BibliotecaUPE);
             break;
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }
@@ -121,6 +118,7 @@ void menuLibros(biblioteca& BibliotecaUPE)
         std::cout << "1. Alta libro" << std::endl;
         std::cout << "2. Modificar libro " << std::endl;
         std::cout << "3. Eliminar libro " << std::endl;
+        std::cout << "4. Visualizacion y busqueda" << std::endl;
         std::cout << "0. Salir" << std::endl;
         std::cout << "--------------------" << std::endl;
 
@@ -154,6 +152,7 @@ void menuSocios(biblioteca& BibliotecaUPE)
         std::cout << "1. Alta socio" << std::endl;
         std::cout << "2. Modificar socio " << std::endl;
         std::cout << "3. Eliminar socio " << std::endl;
+        std::cout << "4. Visualizacion y busqueda" << std::endl;
         std::cout << "0. Salir" << std::endl;
         std::cout << "--------------------" << std::endl;
 
@@ -178,40 +177,6 @@ void menuSocios(biblioteca& BibliotecaUPE)
 
 }
 
-void menuBusqueda(biblioteca & BibliotecaUPE)
-{
-    int opcion;
-
-    do
-    {
-        std::cout << "MENU DE BUSQUEDA" << std::endl;
-        std::cout << "--------------------" << std::endl;
-        std::cout << "1. Buscar libro por nombre" << std::endl; //Tambien podrian crearse un submenu para busqueda de libros y otro para socios
-        std::cout << "2. Buscar por ... " << std::endl;
-        std::cout << "3. Buscar por ... " << std::endl;
-        std::cout << "0. Salir" << std::endl;
-        std::cout << "--------------------" << std::endl;
-
-        std::cout << "Seleccione una opcion:";
-        std::cin >> opcion;
-
-        #ifdef _WIN32
-                system("cls");
-        #else
-                system("clear");
-        #endif
-
-        switch (opcion)
-        {
-        case 0: break;
-        case 1: //BibliotecaUPE.buscoLibroPorNombre();
-            break;
-        default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
-        }
-    } while (opcion != 0);
-
-}
-
 void menuPrestamos(biblioteca & BibliotecaUPE)
 {
     int opcion;
@@ -220,9 +185,9 @@ void menuPrestamos(biblioteca & BibliotecaUPE)
     {
         std::cout << "MENU DE PRESTAMOS" << std::endl;
         std::cout << "--------------------" << std::endl;
-        std::cout << "1. Crear prestamo" << std::endl;
-        std::cout << "2. Marcar prestamo devuelto " << std::endl;
-        std::cout << "3. " << std::endl;
+        std::cout << "1. Registrar prestamo" << std::endl;
+        std::cout << "2. Registrar devolucion " << std::endl;
+        std::cout << "3. Ver prestamos activos " << std::endl;
         std::cout << "0. Salir" << std::endl;
         std::cout << "--------------------" << std::endl;
 

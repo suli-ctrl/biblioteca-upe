@@ -23,18 +23,25 @@ public:
 	~socios(); // destructor
 
 	// getters
-	std::string getSocio() const;
-	std::string getNombre() const;
-	std::string getDNI() const;
+	int getDNI() const;
 	int getEdad() const;
+	std::string getApellido() const;
+	std::string getGenero() const;
+	std::string getDireccion() const;
+	std::string getTelefono() const;
+	std::string getFechaNacimiento() const;
 	std::string getEmail() const;
 
 	//setters
 	void setEdad(int nuevaEdad);
-	void setDireccion(const std::string& nuevaDireccion);
-	void setEmail(const std::string& nuevoEmail);
-	void setTelefono(const std::string& nuevoTelefono);
+	void setApellido(const std::string& nuevoApellido);
 	void setGenero(const std::string& nuevoGenero);
+	void setDireccion(const std::string& nuevaDireccion);
+	void setTelefono(const std::string& nuevoTelefono);
+	void setFechaNacimiento(const std::string& nuevaFecha);
+	void setEmail(const std::string& nuevoEmail);
+	
+	
 };
 
 #endif

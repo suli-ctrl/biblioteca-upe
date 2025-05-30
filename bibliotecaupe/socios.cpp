@@ -14,24 +14,39 @@ socios::~socios()
 	// Destructor
 }
 
-std::string socios::getSocio() const
-{
-	return std::to_string(edad) + " - " + apellido + " - " + email;
-}
-
-std::string socios::getNombre() const
+std::string socios::getApellido() const
 {
 	return apellido;
 }
 
-std::string socios::getDNI() const
+std::string socios::getGenero() const
 {
-	return std::to_string(dni);
+	return genero;
+}
+
+std::string socios::getDireccion() const
+{
+	return direccion;
+}
+
+std::string socios::getTelefono() const
+{
+	return numTelefono;
+}
+
+int socios::getDNI() const
+{
+	return dni;
 }
 
 int socios::getEdad() const
 {
 	return edad;
+}
+
+std::string socios::getFechaNacimiento() const
+{
+	return fechaNacimiento;
 }
 
 std::string socios::getEmail() const
@@ -46,14 +61,20 @@ void socios::setEdad(int nuevaEdad)
 	edad = nuevaEdad;
 }
 
+void socios::setApellido(const std::string& nuevoApellido)
+{
+	apellido = nuevoApellido;
+}
+
+
+void socios::setGenero(const std::string& nuevoGenero)
+{
+	genero = nuevoGenero;
+}
+
 void socios::setDireccion(const std::string& nuevaDireccion)
 {
 	direccion = nuevaDireccion;
-}
-
-void socios::setEmail(const std::string& nuevoEmail)
-{
-	email = nuevoEmail;
 }
 
 void socios::setTelefono(const std::string& nuevoTelefono)
@@ -61,8 +82,16 @@ void socios::setTelefono(const std::string& nuevoTelefono)
 	numTelefono = nuevoTelefono;
 }
 
-void socios::setGenero(const std::string& nuevoGenero)
+void socios::setFechaNacimiento(const std::string& nuevaFecha)
 {
-	genero = nuevoGenero;
+	fechaNacimiento = nuevaFecha;
 }
+
+
+void socios::setEmail(const std::string& nuevoEmail)
+{
+	email = nuevoEmail;
+}
+
+
 

@@ -9,9 +9,15 @@ class biblioteca
 {
 private:
 	std::vector<socios> listaSocios; //estructura dinamica para manejar archivos de socios
+
 public:
+	
 	biblioteca(); //Constructor
 	~biblioteca(); //Destructor
+
+	//Manejo de archivos
+	void cargarSociosCSV();
+	void guardarSociosCSV();
 
 	//Metodos para libros
 	void altaLibro();

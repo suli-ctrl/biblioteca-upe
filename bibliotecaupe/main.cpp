@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "biblioteca.h"
 #include "libros.h"
 #include "socios.h"
@@ -167,7 +168,12 @@ void menuSocios(biblioteca& BibliotecaUPE)
 
         switch(opcion)
         {
-        case 0: BibliotecaUPE.altaSocio();
+        case 0: break;
+        case 1: BibliotecaUPE.altaSocio();
+            break;
+        case 2: 
+            BibliotecaUPE.cargarSociosCSV(); //No se si esto deberia ir dentro de modificarSocio
+            BibliotecaUPE.modificarSocio();
             break;
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 #include "socios.h"
 
 socios::socios( int _dni, int _edad, std::string _apellido, 
@@ -14,24 +15,39 @@ socios::~socios()
 	// Destructor
 }
 
-std::string socios::getSocio() const
-{
-	return std::to_string(edad) + " - " + apellido + " - " + email;
-}
-
-std::string socios::getNombre() const
+std::string socios::getApellido() const
 {
 	return apellido;
 }
 
-std::string socios::getDNI() const
+std::string socios::getGenero() const
 {
-	return std::to_string(dni);
+	return genero;
+}
+
+std::string socios::getDireccion() const
+{
+	return direccion;
+}
+
+std::string socios::getTelefono() const
+{
+	return numTelefono;
+}
+
+int socios::getDNI() const
+{
+	return dni;
 }
 
 int socios::getEdad() const
 {
 	return edad;
+}
+
+std::string socios::getFechaNacimiento() const
+{
+	return fechaNacimiento;
 }
 
 std::string socios::getEmail() const
@@ -43,7 +59,26 @@ std::string socios::getEmail() const
 
 void socios::setEdad(int nuevaEdad)
 {
-	edad = nuevaEdad;
+	if (nuevaEdad > 0)
+	{
+	  edad = nuevaEdad;
+	}
+	else
+	{
+		std::cout << "Edad invalida. \n";
+	}
+	
+}
+
+void socios::setApellido(const std::string& nuevoApellido)
+{
+	apellido = nuevoApellido;
+}
+
+
+void socios::setGenero(const std::string& nuevoGenero)
+{
+	genero = nuevoGenero;
 }
 
 void socios::setDireccion(const std::string& nuevaDireccion)
@@ -51,18 +86,43 @@ void socios::setDireccion(const std::string& nuevaDireccion)
 	direccion = nuevaDireccion;
 }
 
-void socios::setEmail(const std::string& nuevoEmail)
-{
-	email = nuevoEmail;
-}
-
 void socios::setTelefono(const std::string& nuevoTelefono)
 {
 	numTelefono = nuevoTelefono;
 }
 
-void socios::setGenero(const std::string& nuevoGenero)
+void socios::setFechaNacimiento(const std::string& nuevaFecha)
 {
-	genero = nuevoGenero;
+	fechaNacimiento = nuevaFecha;
 }
+
+
+void socios::setEmail(const std::string& nuevoEmail)
+{
+	email = nuevoEmail;
+}
+
+// una funcion para mostrar todos los datos
+
+void socios::mostrar() const {
+	std::cout << "DNI: " << dni << "\n";
+	std::cout << "Apellido: " << apellido << "\n";
+	std::cout << "Edad: " << edad << "\n";
+	std::cout << "Genero: " << genero << "\n";
+	std::cout << "Direccion: " << direccion << "\n";
+	std::cout << "Telefono: " << numTelefono << "\n";
+	std::cout << "Fecha de nacimiento: " << fechaNacimiento << "\n";
+	std::cout << "Email: " << email << "\n";
+}
+
+//funcion para solo validar numeros en numdetelefono
+bool telefonoValido(const std::string& telefono) {
+	for (char c : telefono) {
+		if (!isdigit(c)) {
+			return false; // encontramos un caracter que NO es número
+		}
+	}
+	return !telefono.empty(); // tambien valido que no este vacío
+}
+
 

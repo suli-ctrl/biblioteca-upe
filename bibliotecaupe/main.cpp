@@ -135,7 +135,12 @@ void menuLibros(biblioteca& BibliotecaUPE)
         switch (opcion)
         {
         case 0: break;
-        case 1: //BibliotecaUPE.altaLibro();
+        case 1: 
+            BibliotecaUPE.altaLibro();
+            break;
+        case 2:
+            BibliotecaUPE.cargarLibrosCSV();
+            BibliotecaUPE.modificarLibro();
             break;
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }
@@ -174,6 +179,9 @@ void menuSocios(biblioteca& BibliotecaUPE)
         case 2: 
             BibliotecaUPE.cargarSociosCSV(); //No se si esto deberia ir dentro de modificarSocio
             BibliotecaUPE.modificarSocio();
+            break;
+        case 3:
+            BibliotecaUPE.bajaSocio();
             break;
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }

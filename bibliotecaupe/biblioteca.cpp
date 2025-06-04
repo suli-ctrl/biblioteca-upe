@@ -229,6 +229,42 @@ void biblioteca::modificarSocio()
 
 void biblioteca::altaLibro()
 {
+    std::string nombre, area, subarea, autores, editorial, ubicacion, estado;
+    int anioPublicacion;
+
+    std::cin.ignore(); // Limpia el buffer 
+
+    std::cout << "Ingrese el nombre del libro: ";
+    std::getline(std::cin, nombre);
+
+    std::cout << "Ingrese el area: ";
+    std::getline(std::cin, area);
+
+    std::cout << "Ingrese la subarea: ";
+    std::getline(std::cin, subarea);
+
+    std::cout << "Ingrese los autores: ";
+    std::getline(std::cin, autores);
+
+    std::cout << "Ingrese la editorial: ";
+    std::getline(std::cin, editorial);
+
+    std::cout << "Ingrese el año de publicacion: ";
+    std::cin >> anioPublicacion;
+    std::cin.ignore(); 
+
+    std::cout << "Ingrese la ubicacion: ";
+    std::getline(std::cin, ubicacion);
+
+    std::cout << "Ingrese el estado: ";
+    std::getline(std::cin, estado);
+
+    libros nuevoLibro(nombre, area, subarea, autores, editorial, anioPublicacion, ubicacion, estado);
+    listaLibros.push_back(nuevoLibro);
+
+    guardarLibrosCSV();
+
+    std::cout << "Libro agregado exitosamente." << std::endl << std::endl;
 }
 
 void biblioteca::bajaLibro()

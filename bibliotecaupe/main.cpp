@@ -136,6 +136,7 @@ void menuLibros(biblioteca& BibliotecaUPE)
         {
         case 0: break;
         case 1: 
+            BibliotecaUPE.cargarLibrosCSV();
             BibliotecaUPE.altaLibro();
             break;
         case 2:

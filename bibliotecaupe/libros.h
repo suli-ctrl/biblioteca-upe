@@ -22,7 +22,7 @@ private:
 
 public:
 
-    //Prototipo de constructor y destructor
+    //prototipo de constructor y destructor
 
    libros(std::string _nombre, std::string _area, std::string _subarea,
           std::string _autores, std::string _editorial, int _anioDePublicacion,
@@ -31,7 +31,7 @@ public:
    ~libros(); //destructor
 
 
-   // Getters
+   // getters
    std::string getLibro();
    std::string getNombre() const;
    std::string getEstado() const;
@@ -42,7 +42,7 @@ public:
    void setEstado();
    
     
-   // Metodos
+   // metodos
    std::string convFormatoUbi() const; //cambia el formato de la ubicacion
    std::string codBarras(); //genera el codigo
 

@@ -124,7 +124,7 @@ void socios::mostrar() const {
 }
 
 //funcion para solo validar numeros en numdetelefono. uso funcion is digit que me ayuda a determinar que los caracteres sean numeros.
-bool telefonoValido(const std::string& telefono) {
+bool socios::telefonoValido(const std::string& telefono) {
 	for (char c : telefono) {
 		if (!isdigit(c)) {
 			return false; // encontramos un caracter que NO es numero
@@ -134,7 +134,7 @@ bool telefonoValido(const std::string& telefono) {
 }
 
 //funcion para que la fecha de nacimiento sea valida del tipo: DD-MM-AAAA
-/*bool fechaValida(const std::string& fechanacimiento)
+bool socios::fechaValida(const std::string& fechanacimiento)
 {
 	if (fechanacimiento.length() != 10)
 	{
@@ -162,7 +162,7 @@ bool telefonoValido(const std::string& telefono) {
 
 // funcion que aprueba que la fecha sea real. USO LA FUNCION STOI (string to int) AYUDA A LA CONVERSION!!!!
 //TAMBIEN uso funcion substr que marcando las posicion y la cantidad de caracteres extrae una parte del string asi analizo la fecha!!!
-bool fechaReal(const std::string& fecha)
+bool socios::fechaReal(const std::string& fecha)
 {
 	int dia{ 0 };
 	int mes{ 0 };
@@ -191,7 +191,7 @@ bool fechaReal(const std::string& fecha)
 
 	return true;
 
-} */  
+}   
 
 
 

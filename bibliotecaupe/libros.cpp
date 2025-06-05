@@ -6,10 +6,10 @@
 
 libros::libros(std::string _nombre, std::string _area, std::string _subarea,
                std::string _autores, std::string _editorial, int _anioDePublicacion,
-               std::string _estado, std::string _ubicacion, bool _prestado)
+               std::string _ubicacion, std::string _estado)
                : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
                 editorial(_editorial), anioDePublicacion(_anioDePublicacion),
-                estado(_estado), ubicacion(_ubicacion), prestado(_prestado)
+                ubicacion(_ubicacion), estado(_estado)
 {}
 
 /*--------------------------------- Destructor ----------------------------------------*/
@@ -21,27 +21,90 @@ libros::~libros()
 
 /*---------------------------------- Metodos getters -----------------------------------------*/
 
-std::string libros::getLibro()
-{
-    return std::string();
-}
 
 std::string libros::getNombre() const
 { 
     return nombre; 
 }
+
+std::string libros::getArea() const
+{
+    return area;
+}
+
+std::string libros::getSubArea() const
+{
+    return subarea;
+}
+
+std::string libros::getAutores() const
+{
+    return autores;
+}
+
+std::string libros::getEditorial() const
+{
+    return editorial;
+}
+
+int libros::getAnioDePublicacion() const
+{
+    return anioDePublicacion;
+}
+
+std::string libros::getUbicacion() const
+{
+    return ubicacion;
+}
+
 std::string libros::getEstado() const 
 { 
     return estado; 
 }
-std::string libros::getUbicacion() const 
-{ 
-    return ubicacion; 
+
+/*---------------------------------- Metodos Setters -----------------------------------------*/
+
+void libros::setNombre(const std::string& nuevoNombre)
+{
+    nombre = nuevoNombre;
 }
-int libros::getAnioDePublicacion() const 
-{ 
-    return anioDePublicacion;
+
+void libros::setArea(const std::string& nuevoArea)
+{
+    area = nuevoArea;
 }
+
+void libros::setSubArea(const std::string& nuevoSubArea)
+{
+    subarea = nuevoSubArea;
+}
+
+void libros::setAutores(const std::string& nuevosAutores)
+{
+    autores = nuevosAutores;
+}
+
+void libros::setEditorial(const std::string& nuevaEditorial)
+{
+    editorial = nuevaEditorial;
+}
+
+void libros::setAnioDePublicacion(int nuevoAnio)
+{
+    anioDePublicacion = nuevoAnio;
+}
+
+void libros::setUbicacion(const std::string& nuevaUbicacion)
+{
+    ubicacion = nuevaUbicacion;
+}
+
+void libros::setEstado(const std::string& nuevoEstado)
+{
+    estado = nuevoEstado;
+}
+
+
 
 
 
@@ -75,6 +138,8 @@ std::string libros::obtenerDisponibilidadID() const
         return "01"; //Libro disponible
     }
 }
+
+
 
 std::string libros::convFormatoUbi() const //cambia el formato Est1-F1 a E1F1   
 {

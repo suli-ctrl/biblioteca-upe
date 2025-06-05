@@ -4,120 +4,66 @@
 #include <ctime>
 #include "socios.h"
 
-socios::socios(int _dni, int _edad, std::string _apellido,
-	std::string _genero, std::string _direccion, std::string _numTelefono,
-	std::string _fechaNacimiento, std::string _email)
-	: dni(_dni), edad(_edad), apellido(_apellido), genero(_genero),
-	direccion(_direccion), numTelefono(_numTelefono), fechaNacimiento(_fechaNacimiento), email(_email) // A esto se le llama "lista de inicializacion" (lo que esta despues de los : )
-{
-}
-
-socios::~socios()
-{
-	// Destructor
-}
-
-std::string socios::getApellido() const
-{
-	return apellido;
-}
-
-std::string socios::getGenero() const
-{
-	return genero;
-}
-
-std::string socios::getDireccion() const
-{
-	return direccion;
-}
-
-std::string socios::getTelefono() const
-{
-	return numTelefono;
-}
-
-int socios::getDNI() const
-{
+int socios::getDNI() const {
 	return dni;
 }
 
-int socios::getEdad() const
-{
+int socios::getEdad() const {
 	return edad;
 }
 
-std::string socios::getFechaNacimiento() const
-{
+std::string socios::getApellido() const {
+	return apellido;
+}
+
+std::string socios::getGenero() const {
+	return genero;
+}
+
+std::string socios::getDireccion() const {
+	return direccion;
+}
+
+std::string socios::getTelefono() const {
+	return numTelefono;
+}
+
+std::string socios::getFechaNacimiento() const {
 	return fechaNacimiento;
 }
 
-std::string socios::getEmail() const
-{
+std::string socios::getEmail() const {
 	return email;
 }
 
+//
 
-
-void socios::setEdad(int nuevaEdad)
-{
+void socios::setEdad(int nuevaEdad) {
 	edad = nuevaEdad;
 }
 
-void socios::setApellido(const std::string& nuevoApellido)
-{
+void socios::setApellido(const std::string& nuevoApellido) {
 	apellido = nuevoApellido;
 }
 
-
-void socios::setGenero(const std::string& nuevoGenero)
-{
+void socios::setGenero(const std::string& nuevoGenero) {
 	genero = nuevoGenero;
 }
 
-void socios::setDireccion(const std::string& nuevaDireccion)
-{
+void socios::setDireccion(const std::string& nuevaDireccion) {
 	direccion = nuevaDireccion;
 }
 
-void socios::setTelefono(const std::string& nuevoTelefono)
-{
+void socios::setTelefono(const std::string& nuevoTelefono) {
 	numTelefono = nuevoTelefono;
 }
 
-void socios::setFechaNacimiento(const std::string& nuevaFecha)
-{
+void socios::setFechaNacimiento(const std::string& nuevaFecha) {
 	fechaNacimiento = nuevaFecha;
 }
 
-
-void socios::setEmail(const std::string& nuevoEmail)
-{
+void socios::setEmail(const std::string& nuevoEmail) {
 	email = nuevoEmail;
-}
-
-// una funcion para mostrar todos los datos
-
-void socios::mostrar() const {
-	std::cout << "DNI: " << dni << "\n";
-	std::cout << "Apellido: " << apellido << "\n";
-	std::cout << "Edad: " << edad << "\n";
-	std::cout << "Genero: " << genero << "\n";
-	std::cout << "Direccion: " << direccion << "\n";
-	std::cout << "Telefono: " << numTelefono << "\n";
-	std::cout << "Fecha de nacimiento: " << fechaNacimiento << "\n";
-	std::cout << "Email: " << email << "\n";
-}
-
-
-//funcion para solo validar numeros en numdetelefono. USO FUNCION isdigit de la libreria cctype, me ayuda a verificar si la cadena solo tiene digitos!!!!
-bool telefonoValido(const std::string& telefono) {
-	for (char c : telefono) {
-		if (!isdigit(c)) {
-			return false; // encontramos un caracter que NO es numero
-		}
-	}
-	return !telefono.empty(); // tambien valido que no este vacio
 }
 
 //funcion para que la fecha de nacimiento sea valida del tipo: DD-MM-AAAA

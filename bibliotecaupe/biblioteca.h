@@ -1,17 +1,31 @@
 #ifndef BIBLIOTECA_H
 #define BIBLIOTECA_H
 
+#include <vector>
+#include "socios.h"
+#include "libros.h"
+
+
 class biblioteca
 {
 private:
+	std::vector<socios> listaSocios; //estructura dinamica para manejar archivos de socios
+	std::vector<libros> listaLibros; //estructura dinamica para manejar archivos de libros
 public:
+	
 	biblioteca(); //Constructor
 	~biblioteca(); //Destructor
+
+	//Manejo de archivos
+	void cargarSociosCSV();
+	void cargarLibrosCSV();
+	void guardarSociosCSV();
+	void guardarLibrosCSV();
 
 	//Metodos para libros
 	void altaLibro();
 	void bajaLibro();
-	void modifLibro();
+	void modificarLibro();
 
 	//Metodos para socios
 	void altaSocio(); // Método para dar de alta un socio

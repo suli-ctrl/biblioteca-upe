@@ -1,13 +1,22 @@
 #include <iostream>
+#include <fstream>
 #include "biblioteca.h"
 #include "libros.h"
 #include "socios.h"
 #include "prestamos.h"
 
+void menuPrincipal(biblioteca&);
+void menuLibros(biblioteca&);
+void menuSocios(biblioteca&);
+void menuPrestamos(biblioteca&);
+
 
 int main() {
+    biblioteca BibliotecaUPE;
+    menuPrincipal(BibliotecaUPE);
     
-    //probando libros
+    /*
+    //Probando libros
     libros libro1("Cien años de soledad", "Literatura", "Novela", "Gabriel García Márquez", "Editorial X", 1967, "bien", "Est1-F1", false);
 
     std::cout << "=== Libro creado ===" << '\n';
@@ -53,12 +62,165 @@ int main() {
     prestamo1.marcarDevuelto();
     prestamo1.libroDevuelto();
     std::cout << "\n";
-
-    
-
-
-
+    */
 
     return 0;
     
+}
+
+//Este menu es temporal. Para armar la logica hasta que lo hagamos con GUI
+void menuPrincipal(biblioteca& BibliotecaUPE)
+{
+    int opcion;
+    do
+    {
+        std::cout << "MENU PRINCIPAL" << std::endl;
+        std::cout << "--------------------" << std::endl;
+        std::cout << "1. Gestion de libros" << std::endl;
+        std::cout << "2. Gestion de socios " << std::endl;
+        std::cout << "3. Prestamos " << std::endl;
+        std::cout << "0. Salir" << std::endl;
+        std::cout << "--------------------" << std::endl;
+
+        std::cout << "Seleccione una opcion:";
+        std::cin >> opcion;
+
+        #ifdef _WIN32
+                system("cls");
+        #else
+                system("clear");
+        #endif
+
+        switch (opcion)
+        {
+        case 0:
+            break;
+        case 1: menuLibros(BibliotecaUPE);
+            break;
+        case 2: menuSocios(BibliotecaUPE);
+            break;
+        case 3: menuPrestamos(BibliotecaUPE);
+            break;
+        default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
+        }
+
+    } while (opcion != 0);
+}
+
+void menuLibros(biblioteca& BibliotecaUPE)
+{
+    int opcion;
+
+    do
+    {
+        std::cout << "MENU DE LIBROS" << std::endl;
+        std::cout << "--------------------" << std::endl;
+        std::cout << "1. Alta libro" << std::endl;
+        std::cout << "2. Modificar libro " << std::endl;
+        std::cout << "3. Eliminar libro " << std::endl;
+        std::cout << "4. Visualizacion y busqueda" << std::endl;
+        std::cout << "0. Salir" << std::endl;
+        std::cout << "--------------------" << std::endl;
+
+        std::cout << "Seleccione una opcion:";
+        std::cin >> opcion;
+
+        #ifdef _WIN32
+                system("cls");
+        #else
+                system("clear");
+        #endif
+
+        switch (opcion)
+        {
+        case 0: break;
+        case 1: 
+            BibliotecaUPE.cargarLibrosCSV();
+            BibliotecaUPE.altaLibro();
+            break;
+        case 2:
+            BibliotecaUPE.cargarLibrosCSV();
+            BibliotecaUPE.modificarLibro();
+            break;
+        default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
+        }
+    } while (opcion != 0);
+}
+
+void menuSocios(biblioteca& BibliotecaUPE)
+{
+    int opcion;
+
+    do
+    {
+        std::cout << "MENU DE SOCIOS" << std::endl;
+        std::cout << "--------------------" << std::endl;
+        std::cout << "1. Alta socio" << std::endl;
+        std::cout << "2. Modificar socio " << std::endl;
+        std::cout << "3. Eliminar socio " << std::endl;
+        std::cout << "4. Visualizacion y busqueda" << std::endl;
+        std::cout << "0. Salir" << std::endl;
+        std::cout << "--------------------" << std::endl;
+
+        std::cout << "Seleccione una opcion:";
+        std::cin >> opcion;
+
+        #ifdef _WIN32
+                system("cls");
+        #else
+                system("clear");
+        #endif
+
+        switch(opcion)
+        {
+        case 0: break;
+        case 1: BibliotecaUPE.altaSocio();
+            break;
+        case 2: 
+            BibliotecaUPE.cargarSociosCSV(); //No se si esto deberia ir dentro de modificarSocio
+            BibliotecaUPE.modificarSocio();
+            break;
+        case 3:
+            BibliotecaUPE.bajaSocio();
+            break;
+        default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
+        }
+
+
+    } while (opcion != 0);
+
+}
+
+void menuPrestamos(biblioteca & BibliotecaUPE)
+{
+    int opcion;
+
+    do
+    {
+        std::cout << "MENU DE PRESTAMOS" << std::endl;
+        std::cout << "--------------------" << std::endl;
+        std::cout << "1. Registrar prestamo" << std::endl;
+        std::cout << "2. Registrar devolucion " << std::endl;
+        std::cout << "3. Ver prestamos activos " << std::endl;
+        std::cout << "0. Salir" << std::endl;
+        std::cout << "--------------------" << std::endl;
+
+        std::cout << "Seleccione una opcion:";
+        std::cin >> opcion;
+
+#ifdef _WIN32
+        system("cls");
+#else
+        system("clear");
+#endif
+
+        switch (opcion)
+        {
+        case 0: break;
+        case 1: //BibliotecaUPE.prestarLibro();
+            break;
+        default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
+        }
+    } while (opcion != 0);
+
 }

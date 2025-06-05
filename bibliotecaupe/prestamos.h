@@ -15,6 +15,7 @@ private:
 	int diasPrestamo;
 	std::string fechaVencimiento; // Preguntar si se puede usar <ctime> o <chrono>
 	bool devuelto;
+
 public:
 	prestamos(libros& _libro, socios& _socio, std::string _fechaPrestamo, int _diasPrestamo); //Constructor
 	~prestamos(); //Destructor

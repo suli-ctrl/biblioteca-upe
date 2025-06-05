@@ -16,7 +16,7 @@ prestamos::~prestamos()
 
 void prestamos::getPrestamo()
 {
-    std::cout << "El libro " << refLibro.getNombre() << " fue prestado a " << refSocio.getNombre() << " el " << fechaPrestamo << " hasta el " << fechaVencimiento << "\n";
+    std::cout << "El libro " << refLibro.getNombre() << " fue prestado a " << refSocio.getApellido() << " el " << fechaPrestamo << " hasta el " << fechaVencimiento << "\n";
 }
 
 std::string prestamos::getLibroPrestado()
@@ -27,8 +27,8 @@ std::string prestamos::getLibroPrestado()
 
 std::string prestamos::getSocioPrestatario()
 {
-    std::cout << "El socio prestatario es: " << refSocio.getNombre() << "\n";
-    return refSocio.getNombre();
+    std::cout << "El socio prestatario es: " << refSocio.getApellido() << "\n";
+    return refSocio.getApellido();
 }
 
 void prestamos::marcarDevuelto() {
@@ -46,17 +46,5 @@ bool prestamos::libroDevuelto()
     }
     
     return false;
-}
-
-
-bool prestamos::estaVencido()
-{
-
-    return false;
-}
-
-int prestamos::diasHastaVencimiento()
-{
-    return 0;
 }
 

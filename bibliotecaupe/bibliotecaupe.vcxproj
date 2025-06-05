@@ -128,13 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="biblioteca.cpp" />
+    <ClCompile Include="funciones.cpp" />
     <ClCompile Include="libros.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="prestamos.cpp" />
-    <ClCompile Include="socios.cpp" />
+    <ClCompile Include="socios.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="biblioteca.h" />
+    <ClInclude Include="funciones.h" />
     <ClInclude Include="libros.h" />
     <ClInclude Include="prestamos.h" />
     <ClInclude Include="socios.h" />

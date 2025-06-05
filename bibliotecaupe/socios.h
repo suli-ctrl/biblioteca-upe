@@ -46,7 +46,6 @@ public:
 	bool fechaValida(const std::string& fechanacimiento);
 	bool fechaReal(const std::string& fecha);
 	
-	
 };
 
 #endif

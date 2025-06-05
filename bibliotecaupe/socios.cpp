@@ -2,6 +2,7 @@
 #include <string>
 #include <cctype>
 #include "socios.h"
+#include "funciones.h"
 
 socios::socios( int _dni, int _edad, std::string _apellido, 
 				std::string _genero, std::string _direccion, std::string _numTelefono, 
@@ -37,7 +38,6 @@ std::string socios::getGenero() const
 
 std::string socios::getDireccion() const
 {
-	//return dni;
 	return direccion;
 }
 
@@ -93,8 +93,15 @@ void socios::setTelefono(const std::string& nuevoTelefono)
 
 void socios::setFechaNacimiento(const std::string& nuevaFecha)
 {
-	fechaNacimiento = nuevaFecha;
-}
+	if (fechaReal(nuevaFecha))
+	{
+		fechaNacimiento = nuevaFecha;
+	}
+	else
+	{
+		std::cerr << "Error. La fecha ingresada no es valida o real\n";
+	}
+} 
 
 
 void socios::setEmail(const std::string& nuevoEmail)
@@ -127,7 +134,7 @@ bool telefonoValido(const std::string& telefono) {
 }
 
 //funcion para que la fecha de nacimiento sea valida del tipo: DD-MM-AAAA
-bool fechaValida(const std::string& fechanacimiento)
+/*bool fechaValida(const std::string& fechanacimiento)
 {
 	if (fechanacimiento.length() != 10)
 	{
@@ -149,6 +156,8 @@ bool fechaValida(const std::string& fechanacimiento)
 			return false;
 		}
 	}
+
+	return true;
 }
 
 // funcion que aprueba que la fecha sea real. USO LA FUNCION STOI (string to int) AYUDA A LA CONVERSION!!!!
@@ -182,7 +191,7 @@ bool fechaReal(const std::string& fecha)
 
 	return true;
 
-}
+} */  
 
 
 

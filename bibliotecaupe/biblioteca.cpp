@@ -127,6 +127,31 @@ void biblioteca::guardarLibrosCSV()
     archivo.close();
 }
 
+void biblioteca::guardarLibrosCSV(const std::vector<libros>& listaLibros) {
+    // Sobrecarga, recibe un vector por referencia como parametro
+
+    std::ofstream archivo("lista de libros.csv");
+
+    if (!archivo) {
+        std::cout << "Error al abrir el archivo para guardar los libros." << std::endl;
+        return;
+    }
+
+    for (int i = 0; i < listaLibros.size(); i++)
+    {
+        archivo << listaLibros[i].getNombre() << ","
+            << listaLibros[i].getArea() << ","
+            << listaLibros[i].getSubArea() << ","
+            << listaLibros[i].getAutores() << ","
+            << listaLibros[i].getEditorial() << ","
+            << listaLibros[i].getAnioDePublicacion() << ","
+            << listaLibros[i].getUbicacion() << ","
+            << listaLibros[i].getEstado() << "\n";
+    }
+
+    archivo.close();
+}
+
 
 void biblioteca::altaSocio()
 {
@@ -281,6 +306,35 @@ void biblioteca::altaLibro()
 
 void biblioteca::bajaLibro()
 {
+    cargarLibrosCSV(); //tengo los libros en listaLibros
+
+    std::string ubicacion_eliminar;
+    bool existe = false;
+
+    std::cout << "Ingrese la ubicacion del libro a eliminar[Ej: Est1-F1]:";
+    std::cin >> ubicacion_eliminar;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    std::vector<libros> nuevaLista;
+
+    for (int i = 0; i < listaLibros.size(); i++)
+    {
+        if (listaLibros[i].getUbicacion().compare(ubicacion_eliminar) == 0)
+        {
+            existe = true;
+            continue; //Lo salta, no lo copia al nuevo vector
+        }
+        nuevaLista.push_back(listaLibros[i]); //Agrega la linea a la nueva lista
+    }
+
+    if (existe)
+    {
+        guardarLibrosCSV(nuevaLista);
+        std::cout << "Libro eliminado correctamente \n";
+    }
+    else {
+        std::cout << "No se encontro ningun libro en la ubicacion: " << ubicacion_eliminar  << std::endl;
+    }
 }
 
 void biblioteca::modificarLibro()

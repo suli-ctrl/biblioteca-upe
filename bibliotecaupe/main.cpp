@@ -142,6 +142,9 @@ void menuLibros(biblioteca& BibliotecaUPE)
             BibliotecaUPE.cargarLibrosCSV();
             BibliotecaUPE.modificarLibro();
             break;
+        case 3:
+            BibliotecaUPE.bajaLibro();
+            break;
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }
     } while (opcion != 0);

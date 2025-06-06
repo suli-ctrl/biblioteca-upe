@@ -21,6 +21,7 @@ public:
 	void cargarLibrosCSV();
 	void guardarSociosCSV();
 	void guardarLibrosCSV();
+	void guardarLibrosCSV(const std::vector<libros>&);
 
 	//Metodos para libros
 	void altaLibro();

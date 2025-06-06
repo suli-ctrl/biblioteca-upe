@@ -25,15 +25,14 @@ int main() {
     std::cout << "Estado:" << libro1.getEstado() << "\n";
     std::cout << "Ubicacion:" << libro1.getUbicacion() << "\n";
     std::cout << "Año de publicacion:" << libro1.getAnioDePublicacion() << "\n";
-    std::cout << "El codigo de barras del libro es:" << libro1.codBarras() << std::endl;
+    std::cout << "El codigo de barras del libro es:" << libro1.codBarras() << "\n";
     std::cout << "\n";
 
     socios socio1(12345678, 20, "Dimaso", "Masculino", "Hola chau 123", "123456789", "11/11/2004", "tiago@mail.com");
 
-    //Mostrar los datos del socio
+    //mostrar los datos del socio
     std::cout << "=== Socio creado ===" << '\n';
-    std::cout << "\n";
-    std::cout << "DNI: " << socio1.getDNI() << '\n';
+    std::cout << "\n";    std::cout << "DNI: " << socio1.getDNI() << '\n';
     std::cout << "Nombre: " << socio1.getNombre() << '\n';
     std::cout << "Edad: " << socio1.getEdad() << '\n';
     std::cout << "Email: " << socio1.getEmail() << '\n';
@@ -51,14 +50,14 @@ int main() {
     std::cout << "Resumen: " << socio1.getSocio() << '\n';
     std::cout << "\n";
 
-    //Pruebas de metodos de prestamos
+    //pruebas de metodos de prestamos
 
     std::cout << "=== Prestamo creado ===" << '\n';
     std::cout << "\n";
-    prestamos prestamo1(libro1, socio1, "12/05/2025", 7); // Libro, socio, fecha de prestamo y dias de prestamo
-    prestamo1.getPrestamo();  // Muestra los detalles del prestamo
-    prestamo1.getLibroPrestado();  // Muestra el nombre del libro
-    prestamo1.getSocioPrestatario();  // Muestra el nombre del socio
+    prestamos prestamo1(libro1, socio1, "12/05/2025", 7); // libro, socio, fecha de prestamo y dias de prestamo
+    prestamo1.getPrestamo();  // muestra los detalles del prestamo
+    prestamo1.getLibroPrestado();  // muestra el nombre del libro
+    prestamo1.getSocioPrestatario();  // muestra el nombre del socio
     prestamo1.libroDevuelto();
     prestamo1.marcarDevuelto();
     prestamo1.libroDevuelto();

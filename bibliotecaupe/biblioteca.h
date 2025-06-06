@@ -28,9 +28,9 @@ public:
 	void modificarLibro();
 
 	//Metodos para socios
-	void altaSocio(); // Método para dar de alta un socio
-	void bajaSocio(); // Método para dar de baja un socio
-	void modificarSocio(); // Método para modificar un socio
+	void altaSocio(); // Metodo para dar de alta un socio
+	void bajaSocio(); // Metodo para dar de baja un socio
+	void modificarSocio(); // Metodo para modificar un socio
 
 	//Metodos para prestamos
 	void prestarLibro();

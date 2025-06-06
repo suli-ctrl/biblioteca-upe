@@ -1,7 +1,9 @@
 #include <iostream>
+#include <string>
 #include <fstream>
 #include <sstream> //para usar stringstream
 #include "biblioteca.h"
+#include "funciones.h"
 
 
 
@@ -128,6 +130,16 @@ void biblioteca::guardarLibrosCSV()
 
 void biblioteca::altaSocio()
 {
+    int dni{pedirDni()};
+    int edad{pedirEdad()};
+    std::string apellido{ pedirApellido() };
+    std::string genero; 
+    std::string direccion; 
+    std::string telefono; 
+    std::string fechaNacimiento; 
+    std::string email;
+
+
 
     
 }
@@ -387,3 +399,5 @@ void biblioteca::devolucionLibro()
     }
 }
 */ 
+
+

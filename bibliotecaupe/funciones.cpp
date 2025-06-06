@@ -61,10 +61,12 @@ int pedirEdad()
 std::string pedirApellido()
 {
 	std::string apellido;
-	bool valido = true;
+	bool valido;
 
 	while (true)
 	{
+		valido = true;
+
 		std::cout << "Ingrese su apellido \n";
 		std::getline(std::cin, apellido);
 

@@ -42,9 +42,6 @@ public:
 	void setEmail(const std::string& nuevoEmail);
 
 	void mostrar() const;
-	bool telefonoValido(const std::string& telefono);
-	bool fechaValida(const std::string& fechanacimiento);
-	bool fechaReal(const std::string& fecha);
 	
 };
 

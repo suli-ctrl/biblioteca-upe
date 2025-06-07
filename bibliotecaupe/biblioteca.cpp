@@ -158,14 +158,18 @@ void biblioteca::altaSocio()
     int dni{pedirDni()};
     int edad{pedirEdad()};
     std::string apellido{ pedirApellido() };
-    std::string genero; 
-    std::string direccion; 
-    std::string telefono; 
-    std::string fechaNacimiento; 
-    std::string email;
+    std::string genero{ pedirGenero() };
+    std::string email{ pedirEmail() };
+    std::string fechaNacimiento{ pedirFechaDeNacimiento() };
+    std::string telefono{ pedirNumTelefono() };
+    std::string direccion{ pedirDireccion() };
+  
+    socios nuevoSocio(dni, edad, apellido, genero, direccion, telefono, fechaNacimiento, email);
 
+    listaSocios.push_back(nuevoSocio);
+    guardarSociosCSV();
 
-
+    std::cout << "El socio fue dado de alta correctamente! \n";
     
 }
 

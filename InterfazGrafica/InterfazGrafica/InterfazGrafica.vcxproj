@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{CD637938-FF6A-B04E-7013-9AAFFD5B0F66}</ProjectGuid>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>InterfazGrafica</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AltaLibro_Form.cpp" />
+    <ClCompile Include="AltaSocio_Form.cpp" />
+    <ClCompile Include="BajaLibro_Form.cpp" />
+    <ClCompile Include="BajaSocio_Form.cpp" />
+    <ClCompile Include="Inicio_Form.cpp" />
+    <ClCompile Include="Libros_Form.cpp" />
+    <ClCompile Include="ModificarLibro_Form.cpp" />
+    <ClCompile Include="ModificarSocio_Form.cpp" />
+    <ClCompile Include="Prestamos_Form.cpp" />
+    <ClCompile Include="RegistrarDevolucion_Form.cpp" />
+    <ClCompile Include="RegistrarPrestamo_Form.cpp" />
+    <ClCompile Include="Socios_Form.cpp" />
+    <ClCompile Include="VerPrestamo_Form.cpp" />
+    <ClCompile Include="VerYBuscarLibro_Form.cpp" />
+    <ClCompile Include="VerYBuscarSocios_Form.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AltaLibro_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AltaSocio_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BajaLibro_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BajaSocio_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Inicio_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Libros_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarLibro_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarSocio_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Prestamos_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="RegistrarDevolucion_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="RegistrarPrestamo_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Socios_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="VerPrestamo_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="VerYBuscarLibro_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="VerYBuscarSocios_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AltaLibro_Form.resx">
+      <DependentUpon>AltaLibro_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaSocio_Form.resx">
+      <DependentUpon>AltaSocio_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BajaLibro_Form.resx">
+      <DependentUpon>BajaLibro_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BajaSocio_Form.resx">
+      <DependentUpon>BajaSocio_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio_Form.resx">
+      <DependentUpon>Inicio_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libros_Form.resx">
+      <DependentUpon>Libros_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarLibro_Form.resx">
+      <DependentUpon>ModificarLibro_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarSocio_Form.resx">
+      <DependentUpon>ModificarSocio_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamos_Form.resx">
+      <DependentUpon>Prestamos_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarDevolucion_Form.resx">
+      <DependentUpon>RegistrarDevolucion_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarPrestamo_Form.resx">
+      <DependentUpon>RegistrarPrestamo_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Socios_Form.resx">
+      <DependentUpon>Socios_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerPrestamo_Form.resx">
+      <DependentUpon>VerPrestamo_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerYBuscarLibro_Form.resx">
+      <DependentUpon>VerYBuscarLibro_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerYBuscarSocios_Form.resx">
+      <DependentUpon>VerYBuscarSocios_Form.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Img para GUI\Buscar y ver.png" />
+    <Image Include="Img para GUI\flechaAlta.jpg" />
+    <Image Include="Img para GUI\FlechaBaja.jpg" />
+    <Image Include="Img para GUI\LibroLogo.jpg" />
+    <Image Include="Img para GUI\LogoBiblioteca.png" />
+    <Image Include="Img para GUI\LogoModificar.jpg" />
+    <Image Include="Img para GUI\LogoPrestamos .jpg" />
+    <Image Include="Img para GUI\LogoSalir.jpg" />
+    <Image Include="Img para GUI\LogoSocios.png" />
+    <Image Include="Img para GUI\LogoVolver.jpg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

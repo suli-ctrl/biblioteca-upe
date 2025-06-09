@@ -106,7 +106,6 @@ InterfazGrafica/InterfazGrafica/Debug/AltaSocio_Form.obj
 InterfazGrafica/InterfazGrafica/Debug/AltaLibro_Form.obj
 InterfazGrafica/InterfazGrafica/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.obj
 InterfazGrafica/InterfazGrafica/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-InterfazGrafica/InterfazGrafica/BajaLibro_Form.h
 InterfazGrafica/Debug/InterfazGrafica.pdb
 InterfazGrafica/Debug/InterfazGrafica.exe.metagen
 InterfazGrafica/Debug/InterfazGrafica.exe
@@ -126,3 +125,6 @@ InterfazGrafica/.vs/InterfazGrafica/FileContentIndex/9dcadbfa-4cac-4afa-bfe5-cdc
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 .vs/VSWorkspaceState.json
+.vs/VSWorkspaceState.json
+InterfazGrafica/.vs/InterfazGrafica/v17/Solution.VC.db
+.vs/slnx.sqlite

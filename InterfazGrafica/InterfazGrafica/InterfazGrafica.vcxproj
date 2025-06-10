@@ -127,6 +127,7 @@
     <ClCompile Include="BajaLibro_Form.cpp" />
     <ClCompile Include="BajaSocio_Form.cpp" />
     <ClCompile Include="Inicio_Form.cpp" />
+    <ClCompile Include="libros.cpp" />
     <ClCompile Include="Libros_Form.cpp" />
     <ClCompile Include="ModificarLibro_Form.cpp" />
     <ClCompile Include="ModificarSocio_Form.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Inicio_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="libros.h" />
     <ClInclude Include="Libros_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>

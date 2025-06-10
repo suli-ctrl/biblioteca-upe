@@ -1,3 +1,23 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.lib
+*.pdb
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.vcxproj.user
+*.VC.db
+*.VC.VC.opendb
+*.vsidx
+
+# Others
+ipch/
+
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 InterfazGrafica/x64/Debug/InterfazGrafica.pdb
@@ -137,3 +157,15 @@ InterfazGrafica/InterfazGrafica/x64/Debug/InterfazGrafica.tlog/link.secondary.1.
 InterfazGrafica/InterfazGrafica/x64/Debug/InterfazGrafica.vcxproj.FileListAbsolute.txt
 InterfazGrafica/x64/Debug/InterfazGrafica.exe
 InterfazGrafica/x64/Debug/InterfazGrafica.exe.metagen
+InterfazGrafica/.vs/InterfazGrafica/FileContentIndex/35e8aeea-6943-4a4b-a6a7-a04cfa72264f.vsidx
+InterfazGrafica/.vs/InterfazGrafica/FileContentIndex/53c7cc0b-e787-4c60-9a23-60f54a443b3d.vsidx
+InterfazGrafica/.vs/InterfazGrafica/FileContentIndex/5db9f2c8-be08-4a0e-890c-63895093db2c.vsidx
+InterfazGrafica/.vs/InterfazGrafica/FileContentIndex/604ca43d-1927-4e14-b17a-1e2528dfb0a4.vsidx
+InterfazGrafica/.vs/InterfazGrafica/FileContentIndex/cdb7d14e-8e8f-4255-ae9b-510668bdae0e.vsidx
+InterfazGrafica/InterfazGrafica/InterfazGrafica.vcxproj
+InterfazGrafica/InterfazGrafica/InterfazGrafica.vcxproj.filters
+InterfazGrafica/.vs/InterfazGrafica/v17/ipch/AutoPCH/d4fdfef514a3abd2/LIBROS.ipch
+InterfazGrafica/InterfazGrafica/InterfazGrafica.vcxproj
+InterfazGrafica/InterfazGrafica/InterfazGrafica.vcxproj.filters
+InterfazGrafica/InterfazGrafica/x64/Debug/libros.obj
+

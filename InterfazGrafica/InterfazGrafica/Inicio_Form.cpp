@@ -10,7 +10,7 @@ using namespace System::Windows::Forms;
 
 void main(cli::array<System::String^>^ args)   //main a ejecutar para mostrar todo el programa visual
 {
-	biblioteca BibliotecaUPE; //Instancia el objeto BibliotecaUPE 
+	//biblioteca BibliotecaUPE; //Instancia el objeto BibliotecaUPE 
 
 	Application::EnableVisualStyles(); //Activa los estilos visuales modernos de Windos
 	Application::SetCompatibleTextRenderingDefault(false); //Indica como se debe renderizar el texto en los controles

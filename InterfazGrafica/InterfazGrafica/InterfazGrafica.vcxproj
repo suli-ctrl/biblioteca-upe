@@ -126,14 +126,18 @@
     <ClCompile Include="AltaSocio_Form.cpp" />
     <ClCompile Include="BajaLibro_Form.cpp" />
     <ClCompile Include="BajaSocio_Form.cpp" />
+    <ClCompile Include="biblioteca.cpp" />
+    <ClCompile Include="funciones.cpp" />
     <ClCompile Include="Inicio_Form.cpp" />
     <ClCompile Include="libros.cpp" />
     <ClCompile Include="Libros_Form.cpp" />
     <ClCompile Include="ModificarLibro_Form.cpp" />
     <ClCompile Include="ModificarSocio_Form.cpp" />
+    <ClCompile Include="prestamos.cpp" />
     <ClCompile Include="Prestamos_Form.cpp" />
     <ClCompile Include="RegistrarDevolucion_Form.cpp" />
     <ClCompile Include="RegistrarPrestamo_Form.cpp" />
+    <ClCompile Include="socios.cpp" />
     <ClCompile Include="Socios_Form.cpp" />
     <ClCompile Include="VerPrestamo_Form.cpp" />
     <ClCompile Include="VerYBuscarLibro_Form.cpp" />
@@ -152,6 +156,8 @@
     <ClInclude Include="BajaSocio_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="biblioteca.h" />
+    <ClInclude Include="funciones.h" />
     <ClInclude Include="Inicio_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -165,6 +171,7 @@
     <ClInclude Include="ModificarSocio_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="prestamos.h" />
     <ClInclude Include="Prestamos_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -174,6 +181,7 @@
     <ClInclude Include="RegistrarPrestamo_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="socios.h" />
     <ClInclude Include="Socios_Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -245,6 +253,10 @@
     <Image Include="Img para GUI\LogoSalir.jpg" />
     <Image Include="Img para GUI\LogoSocios.png" />
     <Image Include="Img para GUI\LogoVolver.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lista de libros.csv" />
+    <None Include="lista de socios.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

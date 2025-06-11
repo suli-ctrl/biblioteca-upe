@@ -175,8 +175,56 @@ void biblioteca::altaSocio()
 
 void biblioteca::bajaSocio()
 {
+    cargarSociosCSV();
+    std::string dniSocio;
+    bool existe = false;
+    std::vector<socios> nuevaLista;
 
+    std::cout << "Ingrese el DNI del socio que desea eliminar: \n";
+    std::cin >> dniSocio;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    bool esNumerico = true;
+    for (char c : dniSocio)
+    {
+        if (!isdigit(c))
+        {
+            esNumerico = false;
+            break;
+        }
+    }
+
+    if (!esNumerico || dniSocio.length() != 8)
+    {
+        std::cout << "Error: El DNI debe contener solo 8 digitos numericos. \n";
+        return; 
+    }
+
+    for (int i = 0; i < listaSocios.size(); i++)
+    {
+        std::string dniActual = std::to_string(listaSocios[i].getDNI());
+
+        if (dniActual == dniSocio)
+        {
+            existe = true;
+            continue; 
+        }
+
+        nuevaLista.push_back(listaSocios[i]);
+    }
+
+    if (existe)
+    {
+        listaSocios = nuevaLista; 
+        guardarSociosCSV();      
+        std::cout << "Socio eliminado correctamente. \n";
+    }
+    else
+    {
+        std::cout << "No se encontro ningun socio con el DNI: " << dniSocio << '\n';
+    }
 }
+
 
 
 void biblioteca::modificarSocio()
@@ -430,6 +478,11 @@ void biblioteca::modificarLibro()
     }
 }
 
+void biblioteca::menuBusquedaSocios()
+{
+
+}
+
 /*
 
 
@@ -457,5 +510,8 @@ void biblioteca::devolucionLibro()
     }
 }
 */ 
+
+// METODOS DE VISUALIZACION Y BUSQUEDA PARA SOCIOS
+
 
 

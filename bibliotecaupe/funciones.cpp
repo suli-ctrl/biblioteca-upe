@@ -68,6 +68,7 @@ std::string pedirApellido()
 		valido = true;
 
 		std::cout << "Ingrese su apellido \n";
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::getline(std::cin, apellido);
 
 		if (apellido.length() < 2 || apellido.length() > 20 || apellido.empty())// si el apellido se pasa de largo o esta vacio..
@@ -263,6 +264,7 @@ std::string pedirFechaDeNacimiento()
 	while (true) 
 	{
 		std::cout << "Ingrese su fecha de nacimiento (dd-mm-aaaa)\n";
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::getline(std::cin, fecha);
 
 		if (fechaValida(fecha))
@@ -300,6 +302,7 @@ std::string pedirNumTelefono()
 	while (true)
 	{
 		std::cout << "Ingrese su numero de telefono sin puntos ni guiones. Ejemplo: 1127569021\n";
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::getline(std::cin, telefono);
 
 		if (telefonoValido(telefono))
@@ -338,6 +341,7 @@ std::string pedirDireccion()
 	while (true)
 	{
 		std::cout << "Ingrese su direccion (calle y numero): \n";
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::getline(std::cin, direccion);
 
 		if (direccionValida(direccion))

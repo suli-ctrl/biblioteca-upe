@@ -37,10 +37,16 @@ public:
 	void prestarLibro();
 	void devolucionLibro();
 
-	//Metodos de busqueda y filtro
+	//Metodos de busqueda y filtro para libros
 	void buscoLibroPorNombre();
 	void buscoLibroPorAutor();
 	void buscoLibroPorAnio();
+
+	//Metodos de busqueda y filtro para libros
+	void buscoSocioporDni();
+	void buscoSocioPorApellido();
+	void buscoSocioPorTelefono();
+	void menuBusquedaSocios();
 };
 
 #endif

@@ -478,11 +478,6 @@ void biblioteca::modificarLibro()
     }
 }
 
-void biblioteca::menuBusquedaSocios()
-{
-
-}
-
 /*
 
 
@@ -512,6 +507,113 @@ void biblioteca::devolucionLibro()
 */ 
 
 // METODOS DE VISUALIZACION Y BUSQUEDA PARA SOCIOS
+
+void biblioteca::menuBusquedaSocios()
+{
+    cargarSociosCSV();
+    int opcion{ 0 };
+
+    do {
+        std::cout << "\n------ BUSQUEDA DE SOCIOS ------\n";
+        std::cout << "1. Buscar por DNI\n";
+        std::cout << "2. Buscar por Apellido\n";
+        std::cout << "3. Buscar por Telefono\n";
+        std::cout << "4. Salir\n";
+        std::cout << "Seleccione una opcion: ";
+        std::cin >> opcion;
+
+        switch (opcion) {
+        case 1: buscoSocioporDni(); break;
+        case 2: buscoSocioPorApellido(); break;
+        case 3: buscoSocioPorTelefono(); break;
+        case 4: std::cout << "Saliendo del menu de busqueda.\n"; break;
+        default: std::cout << "Opcion no valida. Intente de nuevo.\n";
+        }
+
+    } while (opcion != 4);
+
+}
+
+void biblioteca::buscoSocioporDni()
+{
+    int dniBuscado { 0 };
+    std::cout << "Ingrese el DNI buscado: \n";
+    std::cin >> dniBuscado;
+
+    bool encontrado = false;
+
+    for (const socios& s : listaSocios)
+    {
+        if (s.getDNI() == dniBuscado)
+        {
+            std::cout << "\n Socio encontrado!: \n";
+            s.mostrar();
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (!encontrado)
+    {
+        std::cout << "No se encontro ningun socio con ese DNI\n";
+
+    }
+}
+
+void biblioteca::buscoSocioPorApellido()
+{
+    std::string socioBuscado;
+    std::cout << "Ingrese el apellido buscado: \n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, socioBuscado);
+
+    bool encontrado = false;
+
+    for (const socios& s : listaSocios)
+    {
+        if (s.getApellido() == socioBuscado)
+        {
+            std::cout << "\n Socio encontrado!: \n";
+            s.mostrar();
+            std::cout << "\n --------------------------\n";
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado)
+    {
+        std::cout << "No se encontro ningun socio con ese apellido \n";
+
+    }
+}
+
+void biblioteca::buscoSocioPorTelefono()
+{
+    std::string telBuscado;
+    std::cout << "Ingrese el telefono buscado: \n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, telBuscado);
+
+    bool encontrado = false;
+
+    for (const socios& s : listaSocios)
+    {
+        if (s.getApellido() == telBuscado)
+        {
+            std::cout << "\n Socio encontrado!: \n";
+            s.mostrar();
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (!encontrado)
+    {
+        std::cout << "No se encontro ningun socio con ese numero de telefono \n";
+
+    }
+}
+
 
 
 

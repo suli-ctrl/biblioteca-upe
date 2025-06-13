@@ -302,7 +302,6 @@ std::string pedirNumTelefono()
 	while (true)
 	{
 		std::cout << "Ingrese su numero de telefono sin puntos ni guiones. Ejemplo: 1127569021\n";
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::getline(std::cin, telefono);
 
 		if (telefonoValido(telefono))
@@ -341,7 +340,6 @@ std::string pedirDireccion()
 	while (true)
 	{
 		std::cout << "Ingrese su direccion (calle y numero): \n";
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::getline(std::cin, direccion);
 
 		if (direccionValida(direccion))

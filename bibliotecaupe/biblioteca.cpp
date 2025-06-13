@@ -23,7 +23,7 @@ void biblioteca::cargarSociosCSV()
 {
     listaSocios.clear(); //Limpia la lista cada vez que entra a cargarSociosCSV para que no se duplique el contenido en el CSV
 
-    std::ifstream archivo("lista de socios.csv");
+    std::ifstream archivo("C:\\Users\\tiago\\Desktop\\UPE\\EDA2\\TP2025\\lista de socios.csv");
     std::string registro; //variable donde queda guardada la linea
     std::string dni_str, edad_str, apellido, genero, direccion, numTelefono, fechaNacimiento, email;
 
@@ -48,6 +48,8 @@ void biblioteca::cargarSociosCSV()
         socios s(dni, edad, apellido, genero, direccion, numTelefono, fechaNacimiento, email);
         listaSocios.push_back(s);
     }
+
+    std::cout << "Cantidad de socios cargados: " << listaSocios.size() << "\n";
 }
 
 void biblioteca::cargarLibrosCSV()
@@ -83,7 +85,7 @@ void biblioteca::cargarLibrosCSV()
 
 void biblioteca::guardarSociosCSV()
 {
-    std::ofstream archivo("lista de socios.csv"); 
+    std::ofstream archivo("C:\\Users\\tiago\\Desktop\\UPE\\EDA2\\TP2025\\lista de socios.csv" ,std::ios::app);
 
     if (!archivo) {
         std::cout << "Error al abrir el archivo para guardar los socios." << std::endl;

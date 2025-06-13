@@ -187,7 +187,7 @@ void menuSocios(biblioteca& BibliotecaUPE)
             BibliotecaUPE.bajaSocio();
             break;
         case 4:
-            BibliotecaUPE.menuBusquedaSocios();
+                BibliotecaUPE.menuBusquedaSocios();
 
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }

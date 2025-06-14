@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include "biblioteca.h"
 #include "libros.h"
 #include "socios.h"
@@ -83,7 +84,15 @@ void menuPrincipal(biblioteca& BibliotecaUPE)
         std::cout << "--------------------" << std::endl;
 
         std::cout << "Seleccione una opcion:";
-        std::cin >> opcion;
+        std::string entrada;
+        std::getline(std::cin, entrada);
+        std::stringstream ss(entrada);
+
+        if (!(ss >> opcion)) 
+        {
+            std::cout << "Entrada invalida, por favor ingrese un numero.\n";
+            continue;
+        }
 
         #ifdef _WIN32
                 system("cls");
@@ -166,7 +175,20 @@ void menuSocios(biblioteca& BibliotecaUPE)
         std::cout << "--------------------" << std::endl;
 
         std::cout << "Seleccione una opcion:";
-        std::cin >> opcion;
+        
+        std::string entrada;
+        std::getline(std::cin, entrada);
+
+        entrada.erase(0, entrada.find_first_not_of(" \t\r\n"));
+        entrada.erase(entrada.find_last_not_of(" \t\r\n") + 1);
+
+        std::stringstream ss(entrada);
+
+        if (!(ss >> opcion) || !(ss.eof())) 
+        {
+            std::cout << "Entrada invalida, por favor ingrese un numero valido.\n";
+            continue;
+        }
 
         #ifdef _WIN32
                 system("cls");
@@ -188,8 +210,10 @@ void menuSocios(biblioteca& BibliotecaUPE)
             break;
         case 4:
                 BibliotecaUPE.menuBusquedaSocios();
+            break;
 
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
+            break;
         }
 
 

@@ -59,6 +59,8 @@ public:
    std::string convFormatoUbi() const; //cambia el formato de la ubicacion
    std::string codBarras(); //genera el codigo
 
+   void mostrar() const;
+
 };
 
 #endif

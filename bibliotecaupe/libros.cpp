@@ -172,3 +172,14 @@ std::string libros::codBarras() //metodo que genera al codigo de barras
     return codigo;
 
 }
+
+void libros::mostrar() const
+{
+    std::cout << "Nombre: " << getNombre() << "\n";
+    std::cout << "Autor/es: " << getAutores() << "\n";
+    std::cout << "Area: " << getArea() << "\n";
+    std::cout << "Editorial: " << getEditorial() << "\n";
+    std::cout << "Ubicacion: " << getUbicacion() << "\n";
+    std::cout << "Estado: " << getEstado() << "\n";
+    std::cout << "--------------------------\n";
+}

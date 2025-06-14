@@ -630,6 +630,115 @@ void biblioteca::buscoSocioPorTelefono()
     }
 }
 
+// METODOS DE VISUALIZACION Y BUSQUEDA PARA LIBROS
 
+void biblioteca::menuBusquedaLibros()
+{
+    cargarLibrosCSV();
+    int opcion = 0;
+
+    do {
+        std::cout << "\n------ BUSQUEDA DE LIBROS ------\n";
+        std::cout << "1. Buscar por Nombre\n";
+        std::cout << "2. Buscar por Autor\n";
+        std::cout << "3. Buscar por Año\n";
+        std::cout << "4. Salir\n";
+        std::cout << "Seleccione una opcion: ";
+
+        std::string entrada;
+        std::getline(std::cin, entrada);
+        std::stringstream ss(entrada);
+
+        if (!(ss >> opcion)) 
+        {
+            std::cout << "Entrada inválida, por favor ingrese un número.\n";
+            continue;
+        }
+
+        switch (opcion) {
+        case 1: buscoLibroPorNombre(); break;
+        case 2: buscoLibroPorAutor(); break;
+        case 3: buscoLibroPorAnio(); break;
+        case 4: std::cout << "Saliendo del menu de busqueda.\n"; break;
+        default: std::cout << "Opcion no valida, intente de nuevo.\n";
+        }
+
+    } while (opcion != 4);
+}
+
+void biblioteca::buscoLibroPorNombre() 
+{
+    std::string nombreBuscado;
+    std::cout << "Ingrese el nombre del libro: ";
+    std::getline(std::cin, nombreBuscado);
+
+    bool encontrado = false;
+
+    for (const libros& l : listaLibros) {
+        if (l.getNombre() == nombreBuscado) {
+            std::cout << "\n Libro encontrado:\n";
+            l.mostrar();
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado) {
+        std::cout << "No se encontró ningún libro con ese nombre.\n";
+    }
+}
+
+void biblioteca::buscoLibroPorAutor() 
+{
+    std::string autorBuscado;
+    std::cout << "Ingrese el nombre del autor: ";
+    std::getline(std::cin, autorBuscado);
+
+    bool encontrado = false;
+
+    for (const libros& l : listaLibros) {
+        if (l.getAutores().find(autorBuscado) != std::string::npos) {
+            std::cout << "\n Libro encontrado:\n";
+            l.mostrar();
+            std::cout << "\n--------------------------\n";
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado) {
+        std::cout << "No se encontro ningun libro con ese autor.\n";
+    }
+}
+
+void biblioteca::buscoLibroPorAnio()
+{
+    std::string entrada;
+    int anioBuscado{ 0 };
+    std::cout << "Ingrese el año buscado: \n";
+    std::getline(std::cin, entrada);
+    std::stringstream ss(entrada);
+    if (!(ss >> anioBuscado))
+    {
+        std::cout << "Entrada inválida para año.\n";
+        return;
+    }
+
+    bool encontrado = false;
+
+    for (const libros& l : listaLibros)
+    {
+        if (l.getAnioDePublicacion() == anioBuscado)
+        {
+            std::cout << "\n Libro encontrado!: \n";
+            l.mostrar();
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado)
+    {
+        std::cout << "No se encontro ningun Libro con ese año\n";
+
+    }
+}
 
 

@@ -41,8 +41,9 @@ public:
 	void buscoLibroPorNombre();
 	void buscoLibroPorAutor();
 	void buscoLibroPorAnio();
+	void menuBusquedaLibros();
 
-	//Metodos de busqueda y filtro para libros
+	//Metodos de busqueda y filtro para socios
 	void buscoSocioporDni();
 	void buscoSocioPorApellido();
 	void buscoSocioPorTelefono();

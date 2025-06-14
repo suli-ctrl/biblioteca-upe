@@ -132,7 +132,16 @@ void menuLibros(biblioteca& BibliotecaUPE)
         std::cout << "--------------------" << std::endl;
 
         std::cout << "Seleccione una opcion:";
-        std::cin >> opcion;
+        std::cout << "Seleccione una opcion:";
+        std::string entrada;
+        std::getline(std::cin, entrada);
+        std::stringstream ss(entrada);
+
+        if (!(ss >> opcion))
+        {
+            std::cout << "Entrada invalida, por favor ingrese un numero.\n";
+            continue;
+        }
 
         #ifdef _WIN32
                 system("cls");
@@ -153,6 +162,9 @@ void menuLibros(biblioteca& BibliotecaUPE)
             break;
         case 3:
             BibliotecaUPE.bajaLibro();
+            break;
+        case 4:
+            BibliotecaUPE.menuBusquedaLibros();
             break;
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }

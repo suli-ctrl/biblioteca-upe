@@ -1,9 +1,10 @@
-object Form10: TForm10
+object RegistrarPrestamoForm: TRegistrarPrestamoForm
   Left = 0
   Top = 0
-  Caption = 'Form10'
-  ClientHeight = 441
-  ClientWidth = 624
+  BorderStyle = bsNone
+  Caption = 'RegistrarPrestamoForm'
+  ClientHeight = 508
+  ClientWidth = 772
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,4 +12,17 @@ object Form10: TForm10
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
+  object Label1: TLabel
+    Left = 622
+    Top = 0
+    Width = 126
+    Height = 16
+    Caption = 'Regitrar Prestamo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
 end

@@ -7,9 +7,9 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm6 *Form6;
+TAltaSocioForm *AltaSocioForm;
 //---------------------------------------------------------------------------
-__fastcall TForm6::TForm6(TComponent* Owner)
+__fastcall TAltaSocioForm::TAltaSocioForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }

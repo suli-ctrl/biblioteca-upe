@@ -1,8 +1,8 @@
-object AltaLibroForm: TAltaLibroForm
+object ModificarLibroForm: TModificarLibroForm
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  Caption = 'AltaLibroForm'
+  Caption = 'ModificarLibroForm'
   ClientHeight = 469
   ClientWidth = 756
   Color = clBtnFace
@@ -11,23 +11,9 @@ object AltaLibroForm: TAltaLibroForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poDesigned
   TextHeight = 15
-  object Label1: TLabel
-    Left = 682
-    Top = 0
-    Width = 66
-    Height = 16
-    Caption = 'Alta Libro'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object Label2: TLabel
-    Left = 240
+    Left = 216
     Top = 32
     Width = 299
     Height = 25
@@ -39,90 +25,12 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label3: TLabel
-    Left = 128
-    Top = 96
-    Width = 55
+  object Label1: TLabel
+    Left = 649
+    Top = 0
+    Width = 99
     Height = 16
-    Caption = 'Nombre'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label4: TLabel
-    Left = 128
-    Top = 160
-    Width = 33
-    Height = 16
-    Caption = 'Area'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label5: TLabel
-    Left = 128
-    Top = 224
-    Width = 60
-    Height = 16
-    Caption = 'SubArea'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label6: TLabel
-    Left = 472
-    Top = 96
-    Width = 58
-    Height = 16
-    Caption = 'Editorial'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label7: TLabel
-    Left = 472
-    Top = 160
-    Width = 53
-    Height = 16
-    Caption = 'Autores'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label8: TLabel
-    Left = 472
-    Top = 224
-    Width = 70
-    Height = 16
-    Caption = 'Ubicaci'#243'n'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label9: TLabel
-    Left = 472
-    Top = 288
-    Width = 133
-    Height = 16
-    Caption = 'A'#241'o de publicaci'#243'n'
+    Caption = 'Modificar libro'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -131,8 +39,8 @@ object AltaLibroForm: TAltaLibroForm
     ParentFont = False
   end
   object Label10: TLabel
-    Left = 128
-    Top = 288
+    Left = 112
+    Top = 328
     Width = 49
     Height = 16
     Caption = 'Estado'
@@ -143,58 +51,142 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
+  object Label9: TLabel
+    Left = 456
+    Top = 328
+    Width = 133
+    Height = 16
+    Caption = 'A'#241'o de publicaci'#243'n'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 456
+    Top = 264
+    Width = 70
+    Height = 16
+    Caption = 'Ubicaci'#243'n'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 456
+    Top = 200
+    Width = 53
+    Height = 16
+    Caption = 'Autores'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 456
+    Top = 136
+    Width = 58
+    Height = 16
+    Caption = 'Editorial'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 112
+    Top = 264
+    Width = 60
+    Height = 16
+    Caption = 'SubArea'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 112
+    Top = 200
+    Width = 33
+    Height = 16
+    Caption = 'Area'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 112
+    Top = 136
+    Width = 55
+    Height = 16
+    Caption = 'Nombre'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object Edit1: TEdit
-    Left = 128
-    Top = 118
-    Width = 161
+    Left = 272
+    Top = 63
+    Width = 185
     Height = 23
     TabOrder = 0
   end
-  object Edit2: TEdit
-    Left = 128
-    Top = 182
-    Width = 161
-    Height = 23
+  object Button1: TButton
+    Left = 320
+    Top = 92
+    Width = 97
+    Height = 25
+    Caption = 'Buscar'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 1
   end
-  object Edit3: TEdit
-    Left = 128
-    Top = 246
+  object Edit5: TEdit
+    Left = 456
+    Top = 222
     Width = 161
     Height = 23
     TabOrder = 2
   end
-  object Edit4: TEdit
-    Left = 472
-    Top = 118
-    Width = 161
-    Height = 23
+  object Button2: TButton
+    Left = 296
+    Top = 416
+    Width = 129
+    Height = 33
+    Caption = 'Modificar'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 3
   end
-  object Edit5: TEdit
-    Left = 472
-    Top = 182
-    Width = 161
-    Height = 23
-    TabOrder = 4
-  end
-  object Edit6: TEdit
-    Left = 472
-    Top = 246
-    Width = 161
-    Height = 23
-    TabOrder = 5
-  end
-  object Edit7: TEdit
-    Left = 472
-    Top = 310
-    Width = 161
-    Height = 23
-    TabOrder = 6
-  end
   object ListBox1: TListBox
-    Left = 128
-    Top = 310
+    Left = 112
+    Top = 350
     Width = 161
     Height = 35
     ItemHeight = 15
@@ -203,20 +195,48 @@ object AltaLibroForm: TAltaLibroForm
       'Regular'
       'Malo'
       'Destruido')
+    TabOrder = 4
+  end
+  object Edit7: TEdit
+    Left = 456
+    Top = 350
+    Width = 161
+    Height = 23
+    TabOrder = 5
+  end
+  object Edit6: TEdit
+    Left = 456
+    Top = 286
+    Width = 161
+    Height = 23
+    TabOrder = 6
+  end
+  object Edit4: TEdit
+    Left = 456
+    Top = 158
+    Width = 161
+    Height = 23
     TabOrder = 7
   end
-  object Button1: TButton
-    Left = 312
-    Top = 376
-    Width = 129
-    Height = 33
-    Caption = 'Dar alta'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
+  object Edit3: TEdit
+    Left = 112
+    Top = 286
+    Width = 161
+    Height = 23
     TabOrder = 8
+  end
+  object Edit2: TEdit
+    Left = 112
+    Top = 222
+    Width = 161
+    Height = 23
+    TabOrder = 9
+  end
+  object Edit8: TEdit
+    Left = 112
+    Top = 158
+    Width = 161
+    Height = 23
+    TabOrder = 10
   end
 end

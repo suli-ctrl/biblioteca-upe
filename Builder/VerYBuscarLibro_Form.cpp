@@ -7,9 +7,9 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm12 *Form12;
+TVerYBuscarLibroForm *VerYBuscarLibroForm;
 //---------------------------------------------------------------------------
-__fastcall TForm12::TForm12(TComponent* Owner)
+__fastcall TVerYBuscarLibroForm::TVerYBuscarLibroForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }

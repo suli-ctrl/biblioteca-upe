@@ -10,23 +10,29 @@
 #include <Vcl.ComCtrls.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.ToolWin.hpp>
+#include <Vcl.Buttons.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
 //---------------------------------------------------------------------------
 class TPrestamosForm : public TForm
 {
 __published:	// IDE-managed Components
-	TToolBar *ToolBar1;
-	TStatusBar *StatusBar1;
 	TPanel *Panel1;
-	TSplitter *Splitter1;
+	TImage *Image1;
+	TLabel *Label1;
 	TPanel *Panel2;
+	TLabel *Label2;
 	TPanel *Panel3;
-	TButton *BtnVolverPrestamos;
-	TButton *BtnVerPrestamos;
-	TButton *BtnDevolucion;
-	TButton *BtnPrestamo;
-	TPanel *Panel4;
-	void __fastcall BtnVolverPrestamosClick(TObject *Sender);
+	TBitBtn *BtnVerPrestamos;
+	TButton *BtnVolver;
+	TBitBtn *BtnRegistrarPrestamo;
+	TBitBtn *BtnRegistrarDevolucion;
+	TPanel *PanelContenedor;
+	void __fastcall BtnRegistrarPrestamoClick(TObject *Sender);
+	void __fastcall BtnRegistrarDevolucionClick(TObject *Sender);
+	void __fastcall BtnVerPrestamosClick(TObject *Sender);
+	void __fastcall BtnVolverClick(TObject *Sender);
 private:	// User declarations
+	void MostrarFormEnPanel(TForm *form);
 public:		// User declarations
 	__fastcall TPrestamosForm(TComponent* Owner);
 };

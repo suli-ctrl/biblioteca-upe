@@ -7,9 +7,9 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm10 *Form10;
+TRegistrarPrestamoForm *RegistrarPrestamoForm;
 //---------------------------------------------------------------------------
-__fastcall TForm10::TForm10(TComponent* Owner)
+__fastcall TRegistrarPrestamoForm::TRegistrarPrestamoForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }

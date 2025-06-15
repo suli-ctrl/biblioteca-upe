@@ -9,14 +9,15 @@ USEFORM("RegistrarDevolucion_Form.cpp", Form9);
 USEFORM("Prestamos_Form.cpp", PrestamosForm);
 USEFORM("Socios_Form.cpp", SociosForm);
 USEFORM("VerYBuscarSocio_Form.cpp", Form13);
-USEFORM("VerYBuscarLibro_Form.cpp", Form12);
+USEFORM("VerYBuscarLibro_Form.cpp", VerYBuscarLibroForm);
 USEFORM("VerPrestamo_Form.cpp", Form11);
 USEFORM("Libros_Form.cpp", LibrosForm);
-USEFORM("BajaLibro_Form.cpp", Form7);
+USEFORM("BajaLibro_Form.cpp", BajaLibroForm);
 USEFORM("AltaSocio_Form.cpp", Form6);
 USEFORM("AltaLibro_Form.cpp", AltaLibroForm);
 USEFORM("BajaSocio_Form.cpp", Form8);
 USEFORM("Inicio_Form.cpp", InicioForm);
+USEFORM("ModificarLibro_Form.cpp", ModificarLibroForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -30,13 +31,14 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TPrestamosForm), &PrestamosForm);
 		Application->CreateForm(__classid(TAltaLibroForm), &AltaLibroForm);
 		Application->CreateForm(__classid(TForm6), &Form6);
-		Application->CreateForm(__classid(TForm7), &Form7);
+		Application->CreateForm(__classid(TBajaLibroForm), &BajaLibroForm);
 		Application->CreateForm(__classid(TForm8), &Form8);
 		Application->CreateForm(__classid(TForm9), &Form9);
 		Application->CreateForm(__classid(TForm10), &Form10);
 		Application->CreateForm(__classid(TForm11), &Form11);
-		Application->CreateForm(__classid(TForm12), &Form12);
+		Application->CreateForm(__classid(TVerYBuscarLibroForm), &VerYBuscarLibroForm);
 		Application->CreateForm(__classid(TForm13), &Form13);
+		Application->CreateForm(__classid(TModificarLibroForm), &ModificarLibroForm);
 		Application->Run();
 	}
 	catch (Exception &exception)

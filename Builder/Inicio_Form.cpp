@@ -17,17 +17,13 @@ __fastcall TInicioForm::TInicioForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+
+
 void __fastcall TInicioForm::BtnLibrosClick(TObject *Sender)
 {
-	this->Hide(); //Oculta el form actual
-	LibrosForm->Show();  //Cambia al form de Libros
-
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TInicioForm::BtnSalirClick(TObject *Sender)
-{
-	Application->Terminate();
+   this->Hide(); //Oculta el form actual
+   LibrosForm->Show(); //Cambio al form de libros
 }
 //---------------------------------------------------------------------------
 
@@ -42,6 +38,12 @@ void __fastcall TInicioForm::BtnSociosClick(TObject *Sender)
 {
 	this->Hide();
 	SociosForm->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TInicioForm::BtnSalirClick(TObject *Sender)
+{
+   Application->Terminate();
 }
 //---------------------------------------------------------------------------
 

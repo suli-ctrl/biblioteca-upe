@@ -87,7 +87,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;vclimg.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -159,7 +159,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <LinkPackageImports>rtl.bpi;vcl.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;vclimg.bpi</LinkPackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64x)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -192,7 +192,7 @@
             <BuildOrder>7</BuildOrder>
         </CppCompile>
         <CppCompile Include="BajaLibro_Form.cpp">
-            <Form>Form7</Form>
+            <Form>BajaLibroForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>BajaLibro_Form.h</DependentOn>
             <BuildOrder>8</BuildOrder>
@@ -221,6 +221,12 @@
             <FormType>dfm</FormType>
             <DependentOn>Libros_Form.h</DependentOn>
             <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ModificarLibro_Form.cpp">
+            <Form>ModificarLibroForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ModificarLibro_Form.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
         </CppCompile>
         <CppCompile Include="Prestamos_Form.cpp">
             <Form>PrestamosForm</Form>
@@ -253,7 +259,7 @@
             <BuildOrder>12</BuildOrder>
         </CppCompile>
         <CppCompile Include="VerYBuscarLibro_Form.cpp">
-            <Form>Form12</Form>
+            <Form>VerYBuscarLibroForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>VerYBuscarLibro_Form.h</DependentOn>
             <BuildOrder>13</BuildOrder>
@@ -277,6 +283,7 @@
         <FormResources Include="AltaLibro_Form.dfm"/>
         <FormResources Include="BajaSocio_Form.dfm"/>
         <FormResources Include="Inicio_Form.dfm"/>
+        <FormResources Include="ModificarLibro_Form.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -358,12 +365,6 @@
                 <DeployFile LocalName=".\Win32\Debug\BibliotecaUPE.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>BibliotecaUPE.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\BibliotecaUPE.tds" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win32">
-                        <RemoteName>BibliotecaUPE.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

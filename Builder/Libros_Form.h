@@ -10,24 +10,36 @@
 #include <Vcl.ComCtrls.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.ToolWin.hpp>
+#include <Vcl.Buttons.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
+
+
 //---------------------------------------------------------------------------
 class TLibrosForm : public TForm
 {
 __published:	// IDE-managed Components
-	TToolBar *ToolBar1;
-	TStatusBar *StatusBar1;
 	TPanel *Panel1;
-	TSplitter *Splitter1;
-	TPanel *PanelMostrador;
+	TImage *Image1;
+	TLabel *Label1;
+	TPanel *Panel2;
+	TLabel *Label2;
 	TPanel *Panel3;
-	TButton *BtnLibroVolver;
-	TButton *BtnLibroBusqueda;
-	TButton *BtnBajaLibro;
-	TButton *BtnAltaLibro;
-	TPanel *Panel4;
-	void __fastcall BtnLibroVolverClick(TObject *Sender);
+	TBitBtn *BtnModificarLibro;
+	TButton *BtnVolver;
+	TBitBtn *BtnAltaLibro;
+	TBitBtn *BtnBajaLibro;
+	TPanel *PanelContenedor;
+	TBitBtn *BtnVerYBuscarLibro;
 	void __fastcall BtnAltaLibroClick(TObject *Sender);
-private:	// User declarations
+	void __fastcall BtnBajaLibroClick(TObject *Sender);
+	void __fastcall BtnModificarLibroClick(TObject *Sender);
+	void __fastcall BtnVerYBuscarLibroClick(TObject *Sender);
+	void __fastcall BtnVolverClick(TObject *Sender);
+
+private:        // User declarations
+
+  void MostrarFormEnPanel(TForm *form);
+
 public:		// User declarations
 	__fastcall TLibrosForm(TComponent* Owner);
 };

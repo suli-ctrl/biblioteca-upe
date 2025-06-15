@@ -1,9 +1,10 @@
-object Form8: TForm8
+object BajaSocioForm: TBajaSocioForm
   Left = 0
   Top = 0
-  Caption = 'Form8'
-  ClientHeight = 441
-  ClientWidth = 624
+  BorderStyle = bsNone
+  Caption = 'BajaSocioForm'
+  ClientHeight = 469
+  ClientWidth = 756
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,36 +12,58 @@ object Form8: TForm8
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
-    Left = 240
-    Top = 144
-    Width = 121
-    Height = 25
-    AutoSize = False
-    Caption = 'DNI'
-  end
   object Label2: TLabel
-    Left = 216
-    Top = 64
-    Width = 169
+    Left = 232
+    Top = 40
+    Width = 309
     Height = 25
-    AutoSize = False
-    Caption = 'Ingrese informacion del socio'
+    Caption = 'Ingrese informaci'#243'n del socio'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 681
+    Top = 0
+    Width = 74
+    Height = 16
+    Caption = 'Baja socio'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 360
+    Top = 104
+    Width = 28
+    Height = 18
+    Caption = 'DNI'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Edit1: TEdit
-    Left = 240
-    Top = 192
-    Width = 121
+    Left = 280
+    Top = 128
+    Width = 185
     Height = 23
     TabOrder = 0
-    Text = 'Edit1'
   end
   object Button1: TButton
-    Left = 264
-    Top = 232
-    Width = 75
+    Left = 328
+    Top = 160
+    Width = 97
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Dar de baja'
     TabOrder = 1
   end
 end

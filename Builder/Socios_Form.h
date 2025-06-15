@@ -10,23 +10,31 @@
 #include <Vcl.ComCtrls.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.ToolWin.hpp>
+#include <Vcl.Buttons.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
 //---------------------------------------------------------------------------
 class TSociosForm : public TForm
 {
 __published:	// IDE-managed Components
-	TToolBar *ToolBar1;
-	TStatusBar *StatusBar1;
 	TPanel *Panel1;
-	TSplitter *Splitter1;
+	TImage *Image1;
+	TLabel *Label1;
 	TPanel *Panel2;
+	TLabel *Label2;
 	TPanel *Panel3;
-	TButton *BtnVolverSocios;
-	TButton *BtnVerSocios;
-	TButton *BtnBajaSocio;
-	TButton *BtnAltaSocio;
-	TPanel *Panel4;
-	void __fastcall BtnVolverSociosClick(TObject *Sender);
+	TBitBtn *BtnModificarSocio;
+	TButton *BtnVolver;
+	TBitBtn *BtnAltaSocio;
+	TBitBtn *BtnBajaSocio;
+	TBitBtn *BtnVerYBuscarSocio;
+	TPanel *PanelContenedor;
+	void __fastcall BtnVolverClick(TObject *Sender);
+	void __fastcall BtnAltaSocioClick(TObject *Sender);
+	void __fastcall BtnBajaSocioClick(TObject *Sender);
+	void __fastcall BtnModificarSocioClick(TObject *Sender);
+	void __fastcall BtnVerYBuscarSocioClick(TObject *Sender);
 private:	// User declarations
+    void MostrarFormEnPanel(TForm *form);
 public:		// User declarations
 	__fastcall TSociosForm(TComponent* Owner);
 };

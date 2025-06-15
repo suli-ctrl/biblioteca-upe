@@ -8,18 +8,19 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 //---------------------------------------------------------------------------
-class TForm7 : public TForm
+class TBajaLibroForm : public TForm
 {
 __published:	// IDE-managed Components
+	TLabel *Label2;
 	TLabel *Label1;
+	TLabel *Label3;
 	TEdit *Edit1;
 	TButton *Button1;
-	TLabel *Label2;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm7(TComponent* Owner);
+	__fastcall TBajaLibroForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm7 *Form7;
+extern PACKAGE TBajaLibroForm *BajaLibroForm;
 //---------------------------------------------------------------------------
 #endif

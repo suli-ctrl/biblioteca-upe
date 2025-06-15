@@ -3,13 +3,13 @@
 #include <vcl.h>
 #pragma hdrstop
 
-#include "VerYBuscarSocio_Form.h"
+#include "ModificarLibro_Form.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TVerYBuscarSocioForm *VerYBuscarSocioForm;
+TModificarLibroForm *ModificarLibroForm;
 //---------------------------------------------------------------------------
-__fastcall TVerYBuscarSocioForm::TVerYBuscarSocioForm(TComponent* Owner)
+__fastcall TModificarLibroForm::TModificarLibroForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }

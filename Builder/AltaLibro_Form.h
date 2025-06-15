@@ -12,19 +12,24 @@ class TAltaLibroForm : public TForm
 {
 __published:	// IDE-managed Components
 	TLabel *Label1;
-	TLabel *Label3;
-	TLabel *Label7;
 	TLabel *Label2;
-	TLabel *Label4;
-	TLabel *Label5;
+	TLabel *Label3;
 	TEdit *Edit1;
 	TEdit *Edit2;
+	TLabel *Label4;
 	TEdit *Edit3;
+	TLabel *Label5;
 	TEdit *Edit4;
-	TEdit *Edit5;
-	TEdit *Edit6;
-	TButton *Button1;
 	TLabel *Label6;
+	TEdit *Edit5;
+	TLabel *Label7;
+	TEdit *Edit6;
+	TLabel *Label8;
+	TEdit *Edit7;
+	TLabel *Label9;
+	TLabel *Label10;
+	TListBox *ListBox1;
+	TButton *Button1;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TAltaLibroForm(TComponent* Owner);

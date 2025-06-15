@@ -8,14 +8,15 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 //---------------------------------------------------------------------------
-class TForm10 : public TForm
+class TRegistrarPrestamoForm : public TForm
 {
 __published:	// IDE-managed Components
+	TLabel *Label1;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm10(TComponent* Owner);
+	__fastcall TRegistrarPrestamoForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm10 *Form10;
+extern PACKAGE TRegistrarPrestamoForm *RegistrarPrestamoForm;
 //---------------------------------------------------------------------------
 #endif

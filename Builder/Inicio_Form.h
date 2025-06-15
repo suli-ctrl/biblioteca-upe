@@ -10,25 +10,28 @@
 #include <Vcl.ComCtrls.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.ToolWin.hpp>
+#include <Vcl.Buttons.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
 //---------------------------------------------------------------------------
 class TInicioForm : public TForm
 {
 __published:	// IDE-managed Components
-	TToolBar *ToolBar1;
-	TStatusBar *StatusBar1;
 	TPanel *Panel1;
-	TSplitter *Splitter1;
 	TPanel *Panel2;
 	TPanel *Panel3;
-	TButton *BtnSalir;
-	TButton *BtnSocios;
-	TButton *BtnPrestamos;
-	TButton *BtnLibros;
 	TPanel *Panel4;
+	TImage *Image1;
+	TLabel *Label1;
+	TLabel *Label2;
+	TLabel *Label3;
+	TButton *BtnSalir;
+	TBitBtn *BtnLibros;
+	TBitBtn *BtnPrestamos;
+	TBitBtn *BtnSocios;
 	void __fastcall BtnLibrosClick(TObject *Sender);
-	void __fastcall BtnSalirClick(TObject *Sender);
 	void __fastcall BtnPrestamosClick(TObject *Sender);
 	void __fastcall BtnSociosClick(TObject *Sender);
+	void __fastcall BtnSalirClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TInicioForm(TComponent* Owner);

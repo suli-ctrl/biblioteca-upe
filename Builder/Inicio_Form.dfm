@@ -1,6 +1,8 @@
-object Form1: TForm1
+object InicioForm: TInicioForm
   Left = 0
   Top = 0
+  BorderIcons = []
+  BorderStyle = bsSingle
   Caption = 'Biblioteca UPE'
   ClientHeight = 441
   ClientWidth = 624
@@ -10,6 +12,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object Splitter1: TSplitter
     Left = 185
@@ -24,9 +27,6 @@ object Form1: TForm1
     Height = 29
     Caption = 'ToolBar1'
     TabOrder = 0
-    ExplicitLeft = 248
-    ExplicitTop = 224
-    ExplicitWidth = 150
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -34,8 +34,6 @@ object Form1: TForm1
     Width = 624
     Height = 22
     Panels = <>
-    ExplicitTop = 0
-    ExplicitWidth = 8
   end
   object Panel1: TPanel
     Left = 0
@@ -45,51 +43,52 @@ object Form1: TForm1
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitLeft = 232
-    ExplicitTop = 224
-    ExplicitHeight = 41
     object Panel3: TPanel
       Left = 0
       Top = 8
       Width = 185
-      Height = 89
+      Height = 81
       BevelOuter = bvNone
       Caption = 'Biblioteca UPE'
       Color = clActiveCaption
       ParentBackground = False
       TabOrder = 0
     end
-    object Button1: TButton
+    object BtnSalir: TButton
       Left = 0
       Top = 344
       Width = 179
       Height = 43
       Caption = 'Salir'
       TabOrder = 1
+      OnClick = BtnSalirClick
     end
-    object Button4: TButton
+    object BtnSocios: TButton
       Left = 0
       Top = 263
       Width = 182
       Height = 50
       Caption = 'Socios'
       TabOrder = 2
+      OnClick = BtnSociosClick
     end
-    object Button3: TButton
+    object BtnPrestamos: TButton
       Left = 0
       Top = 204
       Width = 182
       Height = 53
       Caption = 'Prestamos'
       TabOrder = 3
+      OnClick = BtnPrestamosClick
     end
-    object Button2: TButton
+    object BtnLibros: TButton
       Left = 0
       Top = 144
       Width = 182
       Height = 54
       Caption = 'Libros'
       TabOrder = 4
+      OnClick = BtnLibrosClick
     end
     object Panel4: TPanel
       Left = 0
@@ -111,9 +110,5 @@ object Form1: TForm1
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitLeft = 232
-    ExplicitTop = 224
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
 end

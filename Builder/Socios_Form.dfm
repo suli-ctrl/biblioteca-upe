@@ -1,7 +1,9 @@
-object Form3: TForm3
+object SociosForm: TSociosForm
   Left = 0
   Top = 0
-  Caption = 'Form3'
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'SociosForm'
   ClientHeight = 441
   ClientWidth = 624
   Color = clBtnFace
@@ -10,6 +12,7 @@ object Form3: TForm3
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object Splitter1: TSplitter
     Left = 185
@@ -24,9 +27,6 @@ object Form3: TForm3
     Height = 29
     Caption = 'ToolBar1'
     TabOrder = 0
-    ExplicitLeft = 248
-    ExplicitTop = 224
-    ExplicitWidth = 150
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -34,8 +34,6 @@ object Form3: TForm3
     Width = 624
     Height = 22
     Panels = <>
-    ExplicitTop = 0
-    ExplicitWidth = 8
   end
   object Panel1: TPanel
     Left = 0
@@ -45,9 +43,6 @@ object Form3: TForm3
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitLeft = 232
-    ExplicitTop = 224
-    ExplicitHeight = 41
     object Panel3: TPanel
       Left = 0
       Top = 8
@@ -59,15 +54,16 @@ object Form3: TForm3
       ParentBackground = False
       TabOrder = 0
     end
-    object Button1: TButton
+    object BtnVolverSocios: TButton
       Left = 0
       Top = 344
       Width = 179
       Height = 43
       Caption = 'Volver'
       TabOrder = 1
+      OnClick = BtnVolverSociosClick
     end
-    object Button4: TButton
+    object BtnVerSocios: TButton
       Left = 0
       Top = 263
       Width = 182
@@ -75,7 +71,7 @@ object Form3: TForm3
       Caption = 'Visualizaci'#243'n'#13#10'y Busqueda'
       TabOrder = 2
     end
-    object Button3: TButton
+    object BtnBajaSocio: TButton
       Left = 0
       Top = 204
       Width = 182
@@ -83,7 +79,7 @@ object Form3: TForm3
       Caption = 'Dar baja '#13#10'Socio'
       TabOrder = 3
     end
-    object Button2: TButton
+    object BtnAltaSocio: TButton
       Left = 0
       Top = 144
       Width = 182
@@ -111,9 +107,5 @@ object Form3: TForm3
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitLeft = 232
-    ExplicitTop = 224
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
 end

@@ -11,25 +11,27 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.ToolWin.hpp>
 //---------------------------------------------------------------------------
-class TForm2 : public TForm
+class TLibrosForm : public TForm
 {
 __published:	// IDE-managed Components
 	TToolBar *ToolBar1;
 	TStatusBar *StatusBar1;
 	TPanel *Panel1;
 	TSplitter *Splitter1;
-	TPanel *Panel2;
+	TPanel *PanelMostrador;
 	TPanel *Panel3;
-	TButton *Button1;
-	TButton *Button4;
-	TButton *Button3;
-	TButton *Button2;
+	TButton *BtnLibroVolver;
+	TButton *BtnLibroBusqueda;
+	TButton *BtnBajaLibro;
+	TButton *BtnAltaLibro;
 	TPanel *Panel4;
+	void __fastcall BtnLibroVolverClick(TObject *Sender);
+	void __fastcall BtnAltaLibroClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm2(TComponent* Owner);
+	__fastcall TLibrosForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm2 *Form2;
+extern PACKAGE TLibrosForm *LibrosForm;
 //---------------------------------------------------------------------------
 #endif

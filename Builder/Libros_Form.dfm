@@ -1,7 +1,9 @@
-object Form2: TForm2
+object LibrosForm: TLibrosForm
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'LibrosForm'
   ClientHeight = 441
   ClientWidth = 624
   Color = clBtnFace
@@ -10,6 +12,7 @@ object Form2: TForm2
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object Splitter1: TSplitter
     Left = 185
@@ -24,9 +27,6 @@ object Form2: TForm2
     Height = 29
     Caption = 'ToolBar1'
     TabOrder = 0
-    ExplicitLeft = 248
-    ExplicitTop = 224
-    ExplicitWidth = 150
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -34,8 +34,6 @@ object Form2: TForm2
     Width = 624
     Height = 22
     Panels = <>
-    ExplicitTop = 0
-    ExplicitWidth = 8
   end
   object Panel1: TPanel
     Left = 0
@@ -45,7 +43,6 @@ object Form2: TForm2
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitHeight = 404
     object Panel3: TPanel
       Left = 0
       Top = 8
@@ -57,15 +54,16 @@ object Form2: TForm2
       ParentBackground = False
       TabOrder = 0
     end
-    object Button1: TButton
+    object BtnLibroVolver: TButton
       Left = 0
       Top = 344
       Width = 179
       Height = 43
       Caption = 'Volver'
       TabOrder = 1
+      OnClick = BtnLibroVolverClick
     end
-    object Button4: TButton
+    object BtnLibroBusqueda: TButton
       Left = 0
       Top = 263
       Width = 182
@@ -73,7 +71,7 @@ object Form2: TForm2
       Caption = 'Visualizaci'#243'n'#13#10'y Busqueda'
       TabOrder = 2
     end
-    object Button3: TButton
+    object BtnBajaLibro: TButton
       Left = 0
       Top = 204
       Width = 182
@@ -81,13 +79,14 @@ object Form2: TForm2
       Caption = 'Dar baja'#13#10'Libro'
       TabOrder = 3
     end
-    object Button2: TButton
+    object BtnAltaLibro: TButton
       Left = 0
       Top = 144
       Width = 182
       Height = 54
       Caption = 'Dar alta'#13#10'Libro'
       TabOrder = 4
+      OnClick = BtnAltaLibroClick
     end
     object Panel4: TPanel
       Left = 0
@@ -101,7 +100,7 @@ object Form2: TForm2
       TabOrder = 5
     end
   end
-  object Panel2: TPanel
+  object PanelMostrador: TPanel
     Left = 188
     Top = 29
     Width = 436
@@ -109,9 +108,5 @@ object Form2: TForm2
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitLeft = 232
-    ExplicitTop = 224
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
 end

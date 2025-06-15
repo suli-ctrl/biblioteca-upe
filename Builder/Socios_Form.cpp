@@ -4,13 +4,21 @@
 #pragma hdrstop
 
 #include "Socios_Form.h"
+#include "Inicio_Form.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm3 *Form3;
+TSociosForm *SociosForm;
 //---------------------------------------------------------------------------
-__fastcall TForm3::TForm3(TComponent* Owner)
+__fastcall TSociosForm::TSociosForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
+void __fastcall TSociosForm::BtnVolverSociosClick(TObject *Sender)
+{
+	InicioForm->Show();
+	this->Hide();
+}
+//---------------------------------------------------------------------------
+

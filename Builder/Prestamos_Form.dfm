@@ -1,7 +1,9 @@
-object Form4: TForm4
+object PrestamosForm: TPrestamosForm
   Left = 0
   Top = 0
-  Caption = 'Form4'
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'PrestamosForm'
   ClientHeight = 441
   ClientWidth = 624
   Color = clBtnFace
@@ -10,6 +12,7 @@ object Form4: TForm4
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object Splitter1: TSplitter
     Left = 185
@@ -24,9 +27,6 @@ object Form4: TForm4
     Height = 29
     Caption = 'ToolBar1'
     TabOrder = 0
-    ExplicitLeft = 248
-    ExplicitTop = 224
-    ExplicitWidth = 150
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -34,8 +34,6 @@ object Form4: TForm4
     Width = 624
     Height = 22
     Panels = <>
-    ExplicitTop = 0
-    ExplicitWidth = 8
   end
   object Panel1: TPanel
     Left = 0
@@ -45,9 +43,6 @@ object Form4: TForm4
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitLeft = 232
-    ExplicitTop = 224
-    ExplicitHeight = 41
     object Panel3: TPanel
       Left = 0
       Top = 8
@@ -59,15 +54,16 @@ object Form4: TForm4
       ParentBackground = False
       TabOrder = 0
     end
-    object Button1: TButton
+    object BtnVolverPrestamos: TButton
       Left = 0
       Top = 344
       Width = 179
       Height = 43
       Caption = 'Volver'
       TabOrder = 1
+      OnClick = BtnVolverPrestamosClick
     end
-    object Button4: TButton
+    object BtnVerPrestamos: TButton
       Left = 0
       Top = 263
       Width = 182
@@ -75,7 +71,7 @@ object Form4: TForm4
       Caption = 'Ver prestamos'#13#10'activos'
       TabOrder = 2
     end
-    object Button3: TButton
+    object BtnDevolucion: TButton
       Left = 0
       Top = 204
       Width = 182
@@ -83,7 +79,7 @@ object Form4: TForm4
       Caption = 'Registrar '#13#10'Devolucion'
       TabOrder = 3
     end
-    object Button2: TButton
+    object BtnPrestamo: TButton
       Left = 0
       Top = 144
       Width = 182
@@ -111,9 +107,5 @@ object Form4: TForm4
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitLeft = 232
-    ExplicitTop = 224
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
 end

@@ -8,7 +8,7 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 //---------------------------------------------------------------------------
-class TForm5 : public TForm
+class TAltaLibroForm : public TForm
 {
 __published:	// IDE-managed Components
 	TLabel *Label1;
@@ -27,9 +27,9 @@ __published:	// IDE-managed Components
 	TLabel *Label6;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm5(TComponent* Owner);
+	__fastcall TAltaLibroForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm5 *Form5;
+extern PACKAGE TAltaLibroForm *AltaLibroForm;
 //---------------------------------------------------------------------------
 #endif

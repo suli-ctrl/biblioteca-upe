@@ -4,19 +4,19 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
-USEFORM("Inicio_Form.cpp", Form1);
-USEFORM("Libros_Form.cpp", Form2);
-USEFORM("Socios_Form.cpp", Form3);
-USEFORM("Prestamos_Form.cpp", Form4);
-USEFORM("AltaLibro_Form.cpp", Form5);
-USEFORM("AltaSocio_Form.cpp", Form6);
-USEFORM("BajaLibro_Form.cpp", Form7);
-USEFORM("BajaSocio_Form.cpp", Form8);
-USEFORM("RegistrarDevolucion_Form.cpp", Form9);
 USEFORM("RegistrarPrestamo_Form.cpp", Form10);
-USEFORM("VerPrestamo_Form.cpp", Form11);
-USEFORM("VerYBuscarLibro_Form.cpp", Form12);
+USEFORM("RegistrarDevolucion_Form.cpp", Form9);
+USEFORM("Prestamos_Form.cpp", PrestamosForm);
+USEFORM("Socios_Form.cpp", SociosForm);
 USEFORM("VerYBuscarSocio_Form.cpp", Form13);
+USEFORM("VerYBuscarLibro_Form.cpp", Form12);
+USEFORM("VerPrestamo_Form.cpp", Form11);
+USEFORM("Libros_Form.cpp", LibrosForm);
+USEFORM("BajaLibro_Form.cpp", Form7);
+USEFORM("AltaSocio_Form.cpp", Form6);
+USEFORM("AltaLibro_Form.cpp", AltaLibroForm);
+USEFORM("BajaSocio_Form.cpp", Form8);
+USEFORM("Inicio_Form.cpp", InicioForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -24,11 +24,11 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	{
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
-		Application->CreateForm(__classid(TForm1), &Form1);
-		Application->CreateForm(__classid(TForm2), &Form2);
-		Application->CreateForm(__classid(TForm3), &Form3);
-		Application->CreateForm(__classid(TForm4), &Form4);
-		Application->CreateForm(__classid(TForm5), &Form5);
+		Application->CreateForm(__classid(TInicioForm), &InicioForm);
+		Application->CreateForm(__classid(TLibrosForm), &LibrosForm);
+		Application->CreateForm(__classid(TSociosForm), &SociosForm);
+		Application->CreateForm(__classid(TPrestamosForm), &PrestamosForm);
+		Application->CreateForm(__classid(TAltaLibroForm), &AltaLibroForm);
 		Application->CreateForm(__classid(TForm6), &Form6);
 		Application->CreateForm(__classid(TForm7), &Form7);
 		Application->CreateForm(__classid(TForm8), &Form8);

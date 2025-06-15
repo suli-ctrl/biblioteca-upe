@@ -180,7 +180,7 @@
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="AltaLibro_Form.cpp">
-            <Form>Form5</Form>
+            <Form>AltaLibroForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>AltaLibro_Form.h</DependentOn>
             <BuildOrder>6</BuildOrder>
@@ -211,19 +211,19 @@
             <PCH>true</PCH>
         </PCHCompile>
         <CppCompile Include="Inicio_Form.cpp">
-            <Form>Form1</Form>
+            <Form>InicioForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>Inicio_Form.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
         <CppCompile Include="Libros_Form.cpp">
-            <Form>Form2</Form>
+            <Form>LibrosForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>Libros_Form.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
         <CppCompile Include="Prestamos_Form.cpp">
-            <Form>Form4</Form>
+            <Form>PrestamosForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>Prestamos_Form.h</DependentOn>
             <BuildOrder>5</BuildOrder>
@@ -241,7 +241,7 @@
             <BuildOrder>11</BuildOrder>
         </CppCompile>
         <CppCompile Include="Socios_Form.cpp">
-            <Form>Form3</Form>
+            <Form>SociosForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>Socios_Form.h</DependentOn>
             <BuildOrder>4</BuildOrder>
@@ -264,19 +264,19 @@
             <DependentOn>VerYBuscarSocio_Form.h</DependentOn>
             <BuildOrder>14</BuildOrder>
         </CppCompile>
-        <FormResources Include="Inicio_Form.dfm"/>
-        <FormResources Include="Libros_Form.dfm"/>
-        <FormResources Include="Socios_Form.dfm"/>
-        <FormResources Include="Prestamos_Form.dfm"/>
-        <FormResources Include="AltaLibro_Form.dfm"/>
-        <FormResources Include="AltaSocio_Form.dfm"/>
-        <FormResources Include="BajaLibro_Form.dfm"/>
-        <FormResources Include="BajaSocio_Form.dfm"/>
-        <FormResources Include="RegistrarDevolucion_Form.dfm"/>
         <FormResources Include="RegistrarPrestamo_Form.dfm"/>
-        <FormResources Include="VerPrestamo_Form.dfm"/>
-        <FormResources Include="VerYBuscarLibro_Form.dfm"/>
+        <FormResources Include="RegistrarDevolucion_Form.dfm"/>
+        <FormResources Include="Prestamos_Form.dfm"/>
+        <FormResources Include="Socios_Form.dfm"/>
         <FormResources Include="VerYBuscarSocio_Form.dfm"/>
+        <FormResources Include="VerYBuscarLibro_Form.dfm"/>
+        <FormResources Include="VerPrestamo_Form.dfm"/>
+        <FormResources Include="Libros_Form.dfm"/>
+        <FormResources Include="BajaLibro_Form.dfm"/>
+        <FormResources Include="AltaSocio_Form.dfm"/>
+        <FormResources Include="AltaLibro_Form.dfm"/>
+        <FormResources Include="BajaSocio_Form.dfm"/>
+        <FormResources Include="Inicio_Form.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -11,7 +11,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.ToolWin.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TInicioForm : public TForm
 {
 __published:	// IDE-managed Components
 	TToolBar *ToolBar1;
@@ -20,16 +20,20 @@ __published:	// IDE-managed Components
 	TSplitter *Splitter1;
 	TPanel *Panel2;
 	TPanel *Panel3;
-	TButton *Button1;
-	TButton *Button4;
-	TButton *Button3;
-	TButton *Button2;
+	TButton *BtnSalir;
+	TButton *BtnSocios;
+	TButton *BtnPrestamos;
+	TButton *BtnLibros;
 	TPanel *Panel4;
+	void __fastcall BtnLibrosClick(TObject *Sender);
+	void __fastcall BtnSalirClick(TObject *Sender);
+	void __fastcall BtnPrestamosClick(TObject *Sender);
+	void __fastcall BtnSociosClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
+	__fastcall TInicioForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TInicioForm *InicioForm;
 //---------------------------------------------------------------------------
 #endif

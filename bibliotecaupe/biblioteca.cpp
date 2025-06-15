@@ -154,8 +154,72 @@ void biblioteca::guardarLibrosCSV(const std::vector<libros>& listaLibros) {
     archivo.close();
 }
 
+
+
 void biblioteca::cargarPrestamosCSV()
 {
+    std::ifstream archivo("lista de prestamos.csv");
+
+    std::string tituloLibro, dniSocio, fechaPrestamo, diasPrestamo, fechaVencimiento, devuelto;
+   
+    std::string registro; //variable donde queda guardada la linea
+
+    while (getline(archivo, registro))
+    {
+        if (registro.empty()) continue;
+
+        std::stringstream token(registro);
+
+        getline(token, tituloLibro, ',');
+        getline(token, dniSocio, ',');
+        getline(token, fechaPrestamo, ',');
+        getline(token, diasPrestamo, ',');
+        getline(token, fechaVencimiento, ',');
+        getline(token, devuelto, ',');
+
+        int dni_socio = std::stoi(dniSocio); //convierte el string a int
+
+  
+        //Busco el libro prestado en listaLibros
+        libros* buscoLibro = nullptr; //puntero nulo llamado buscoLibro
+        for (int i = 0;i < listaLibros.size(); i++) //recorro la lista buscando el libro a prestar
+        {
+            if (listaLibros[i].getNombre() == tituloLibro) 
+            {
+                buscoLibro = &listaLibros[i];
+                break; //termino el ciclo for
+            }
+        }
+
+        //Busco el socio prestatario en listaSocios
+        socios* buscoSocio = nullptr;
+        for (int i = 0; i < listaSocios.size(); i++)
+        {
+            if (listaSocios[i].getDNI() == dni_socio)
+            {
+                buscoSocio = &listaSocios[i];
+                break; //salgo del for
+            }
+        }
+
+        if (buscoLibro && buscoSocio)
+        {
+            int dias = std::stoi(diasPrestamo); //convierte string a int
+            prestamos nuevoPrestamo(*buscoLibro, *buscoSocio, fechaPrestamo, dias);
+            nuevoPrestamo.setFechaVencimiento(fechaVencimiento);
+            nuevoPrestamo.setDevuelto(devuelto == "true"); //Lo marca como devuelto
+            listaPrestamos.push_back(nuevoPrestamo);
+        }
+        else
+        {
+            //Libro o socio no encontrado
+        }
+
+        
+    }
+    archivo.close();
+
+
 }
 
 void biblioteca::guardarPrestamosCSV()

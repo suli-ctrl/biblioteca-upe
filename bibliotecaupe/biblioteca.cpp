@@ -17,7 +17,7 @@ biblioteca::~biblioteca()
 
 }
 
-// Manejo de Archivos
+// ----------------------------------------- Manejo de Archivos ------------------------------------------------------
 
 void biblioteca::cargarSociosCSV()
 {
@@ -85,7 +85,7 @@ void biblioteca::cargarLibrosCSV()
 
 void biblioteca::guardarSociosCSV()
 {
-    std::ofstream archivo("lista de socios.csv" ,std::ios::app);
+    std::ofstream archivo("lista de socios.csv" ,std::ios::out); //cambio ios::app por out porque duplicaba el contenido en el csv
 
     if (!archivo) {
         std::cout << "Error al abrir el archivo para guardar los socios." << std::endl;
@@ -154,6 +154,34 @@ void biblioteca::guardarLibrosCSV(const std::vector<libros>& listaLibros) {
     archivo.close();
 }
 
+void biblioteca::cargarPrestamosCSV()
+{
+}
+
+void biblioteca::guardarPrestamosCSV()
+{
+    std::ofstream archivo("lista de prestamos.csv");
+
+    if (!archivo) {
+        std::cout << "Error al abrir el archivo para guardar los prestamos." << std::endl;
+        return;
+    }
+
+    for (int i = 0; i < listaPrestamos.size(); i++)
+    {
+        archivo << listaPrestamos[i].getLibroPrestado() << ","
+            << listaPrestamos[i].getSocioPrestatario() << ","
+            << listaPrestamos[i].getFechaPrestamo() << ","
+            << listaPrestamos[i].getDiasPrestamo() << ","
+            << listaPrestamos[i].getFechaVencimiento() << ","
+            << (listaPrestamos[i].libroDevuelto() ? "true" : "false") << "\n"; // operador ternario para convertir un bool true o flase en texto explicito
+    }
+
+    archivo.close();
+
+}
+
+// ---------------------------------------------- Metodos de socios -------------------------------------------------
 
 void biblioteca::altaSocio()
 {
@@ -226,8 +254,6 @@ void biblioteca::bajaSocio()
         std::cout << "No se encontro ningun socio con el DNI: " << dniSocio << '\n';
     }
 }
-
-
 
 void biblioteca::modificarSocio()
 {
@@ -317,13 +343,15 @@ void biblioteca::modificarSocio()
 
 }
 
+// --------------------------------------------- Metodos de libros ---------------------------------------------------
 
 void biblioteca::altaLibro()
 {
     std::string nombre, area, subarea, autores, editorial, ubicacion, estado;
     int anioPublicacion;
 
-    std::cin.ignore(); // Limpia el buffer 
+    //std::cin.ignore(); // Limpia el buffer 
+    //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cout << "Ingrese el nombre del libro: ";
     std::getline(std::cin, nombre);
@@ -480,6 +508,8 @@ void biblioteca::modificarLibro()
     }
 }
 
+
+// --------------------------------------------- Metodos de prestamos -----------------------------------------------
 /*
 
 
@@ -508,7 +538,7 @@ void biblioteca::devolucionLibro()
 }
 */ 
 
-// METODOS DE VISUALIZACION Y BUSQUEDA PARA SOCIOS
+// ---------------------------- METODOS DE VISUALIZACION Y BUSQUEDA PARA SOCIOS -------------------------------------
 
 void biblioteca::menuBusquedaSocios()
 {
@@ -630,7 +660,7 @@ void biblioteca::buscoSocioPorTelefono()
     }
 }
 
-// METODOS DE VISUALIZACION Y BUSQUEDA PARA LIBROS
+// --------------------------------- METODOS DE VISUALIZACION Y BUSQUEDA PARA LIBROS --------------------------------
 
 void biblioteca::menuBusquedaLibros()
 {

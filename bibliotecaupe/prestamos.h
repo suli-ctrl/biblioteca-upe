@@ -20,12 +20,16 @@ public:
 	prestamos(libros& _libro, socios& _socio, std::string _fechaPrestamo, int _diasPrestamo); //Constructor
 	~prestamos(); //Destructor
 	
+	//Getters
 	void getPrestamo(); //Muestra detalles del prestamo
-	std::string getLibroPrestado(); //Muestra el libro que esta siendo prestado
-	std::string getSocioPrestatario(); //Muestra el socio a quien se le prestó el libro
-	void marcarDevuelto(); //Cambia el valor de devuelto 
-	bool estaVencido(); //Bool que nos indica si el prestamo esta vencido
-	int diasHastaVencimiento(); //Dias que faltan para que venza el prestamo
+
+	std::string getLibroPrestado(); //Muestra el titulo del libro que esta siendo prestado
+	int getSocioPrestatario(); //Muestra el DNI del socio a quien se le prestó el libro
+
+	std::string getFechaPrestamo();
+	int getDiasPrestamo();
+	std::string getFechaVencimiento();
+
 	bool libroDevuelto(); //Bool que indica si el libro fue devuelto o no
 
 };

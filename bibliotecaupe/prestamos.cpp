@@ -27,8 +27,8 @@ std::string prestamos::getLibroPrestado()
 
 std::string prestamos::getSocioPrestatario()
 {
-    std::cout << "El socio prestatario es: " << refSocio.getApellido() << "\n";
-    return refSocio.getApellido();
+    std::cout << "El socio prestatario es: " << refSocio.getDNI() << "\n";
+    return refSocio.getDNI();
 }
 
 void prestamos::marcarDevuelto() {

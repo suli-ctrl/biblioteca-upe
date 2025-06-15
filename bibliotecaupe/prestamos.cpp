@@ -25,26 +25,40 @@ std::string prestamos::getLibroPrestado()
     return refLibro.getNombre();
 }
 
-std::string prestamos::getSocioPrestatario()
+int prestamos::getSocioPrestatario()
 {
     std::cout << "El socio prestatario es: " << refSocio.getDNI() << "\n";
     return refSocio.getDNI();
 }
 
-void prestamos::marcarDevuelto() {
-    devuelto = true;
-}
-
-bool prestamos::libroDevuelto()
+std::string prestamos::getFechaPrestamo()
 {
-    if (devuelto == true) {
-        std::cout << "El libro ha sido devuelto." << std::endl;
-        return true;
-    }
-    else {
-        std::cout << "El libro no ha sido devuelto" << std::endl;
-    }
-    
-    return false;
+    return std::string();
 }
 
+//-----------------COMPLETAR---------------------//
+int prestamos::getDiasPrestamo()
+{
+    return 0;
+}
+
+std::string prestamos::getFechaVencimiento()
+{
+    return std::string();
+}
+
+void prestamos::setFechaVencimiento(const std::string fecha)
+{
+    fechaVencimiento = fecha;
+}
+
+void prestamos::setDevuelto(bool valor)
+{
+    devuelto = valor;
+}
+
+//-----------------COMPLETAR---------------------//
+
+bool prestamos::libroDevuelto() const {
+    return devuelto;
+}

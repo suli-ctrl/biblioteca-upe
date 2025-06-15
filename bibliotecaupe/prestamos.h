@@ -1,4 +1,4 @@
-#ifndef PRESTAMOS_h
+#ifndef PRESTAMOS_H
 #define PRESTAMOS_H
 
 #include <string>
@@ -25,12 +25,15 @@ public:
 
 	std::string getLibroPrestado(); //Muestra el titulo del libro que esta siendo prestado
 	int getSocioPrestatario(); //Muestra el DNI del socio a quien se le prestó el libro
+	bool libroDevuelto() const;
 
 	std::string getFechaPrestamo();
 	int getDiasPrestamo();
 	std::string getFechaVencimiento();
 
-	bool libroDevuelto(); //Bool que indica si el libro fue devuelto o no
+	//Setter
+	void setFechaVencimiento(const std::string);
+	void setDevuelto(bool); //Bool que indica si el libro fue devuelto o no
 
 };
 

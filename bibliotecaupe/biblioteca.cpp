@@ -154,6 +154,33 @@ void biblioteca::guardarLibrosCSV(const std::vector<libros>& listaLibros) {
     archivo.close();
 }
 
+void biblioteca::cargarPrestamosCSV()
+{
+}
+
+void biblioteca::guardarPrestamosCSV()
+{
+    std::ofstream archivo("lista de prestamos.csv");
+
+    if (!archivo) {
+        std::cout << "Error al abrir el archivo para guardar los prestamos." << std::endl;
+        return;
+    }
+
+    for (int i = 0; i < listaPrestamos.size(); i++)
+    {
+        archivo << listaPrestamos[i].getLibroPrestado() << ","
+            << listaPrestamos[i].getSocioPrestatario() << ","
+            << listaPrestamos[i].getFechaPrestamo() << ","
+            << listaPrestamos[i].getDiasPrestamo() << ","
+            << listaPrestamos[i].getFechaVencimiento() << ","
+            << (listaPrestamos[i].libroDevuelto() ? "true" : "false") << "\n"; // operador ternario para convertir un bool true o flase en texto explicito
+    }
+
+    archivo.close();
+
+}
+
 // ---------------------------------------------- Metodos de socios -------------------------------------------------
 
 void biblioteca::altaSocio()

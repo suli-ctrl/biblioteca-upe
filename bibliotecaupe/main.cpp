@@ -83,7 +83,6 @@ void menuLibros(biblioteca& BibliotecaUPE)
         std::cout << "--------------------" << std::endl;
 
         std::cout << "Seleccione una opcion:";
-        std::cout << "Seleccione una opcion:";
         std::string entrada;
         std::getline(std::cin, entrada);
         std::stringstream ss(entrada);

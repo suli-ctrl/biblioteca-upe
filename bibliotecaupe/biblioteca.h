@@ -4,6 +4,7 @@
 #include <vector>
 #include "socios.h"
 #include "libros.h"
+#include "prestamos.h"
 
 
 class biblioteca
@@ -11,6 +12,7 @@ class biblioteca
 private:
 	std::vector<socios> listaSocios; //estructura dinamica para manejar archivos de socios
 	std::vector<libros> listaLibros; //estructura dinamica para manejar archivos de libros
+	std::vector<prestamos> listaPrestamos; //estructura dinamica para manejar archivos de prestamos
 public:
 	
 	biblioteca(); //Constructor
@@ -18,10 +20,16 @@ public:
 
 	//Manejo de archivos
 	void cargarSociosCSV();
-	void cargarLibrosCSV();
 	void guardarSociosCSV();
+
+	void cargarLibrosCSV();
 	void guardarLibrosCSV();
 	void guardarLibrosCSV(const std::vector<libros>&);
+
+	void cargarPrestamosCSV();
+	void guardarPrestamosCSV();
+	
+
 
 	//Metodos para libros
 	void altaLibro();

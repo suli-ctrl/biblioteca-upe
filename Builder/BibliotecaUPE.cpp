@@ -7,18 +7,18 @@
 USEFORM("RegistrarPrestamo_Form.cpp", RegistrarPrestamoForm);
 USEFORM("RegistrarDevolucion_Form.cpp", RegistarDevoluciónForm);
 USEFORM("Prestamos_Form.cpp", PrestamosForm);
-USEFORM("ModificarLibro_Form.cpp", ModificarLibroForm);
+USEFORM("ModificarSocio_Form.cpp", ModificarSocioForm);
 USEFORM("VerYBuscarSocio_Form.cpp", VerYBuscarSocioForm);
 USEFORM("VerYBuscarLibro_Form.cpp", VerYBuscarLibroForm);
 USEFORM("VerPrestamo_Form.cpp", VerPrestamoActivoForm);
 USEFORM("Socios_Form.cpp", SociosForm);
+USEFORM("ModificarLibro_Form.cpp", ModificarLibroForm);
 USEFORM("BajaSocio_Form.cpp", BajaSocioForm);
 USEFORM("BajaLibro_Form.cpp", BajaLibroForm);
 USEFORM("AltaSocio_Form.cpp", AltaSocioForm);
 USEFORM("AltaLibro_Form.cpp", AltaLibroForm);
 USEFORM("Libros_Form.cpp", LibrosForm);
 USEFORM("Inicio_Form.cpp", InicioForm);
-USEFORM("ModificarSocio_Form.cpp", ModificarSocioForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {

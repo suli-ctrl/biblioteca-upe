@@ -22,10 +22,6 @@ Coordinates=211,10,53,58
 [Edit7]
 Coordinates=118,144,44,58
 
-[StringGrid1]
-Coordinates=121,10,80,58
-Visible=True
-
 [Edit6]
 Coordinates=172,144,44,58
 
@@ -37,4 +33,8 @@ Coordinates=334,144,44,58
 
 []
 Coordinates=202,240,91,36
+
+[StringGridLibros]
+Coordinates=121,10,80,58
+Visible=True
 

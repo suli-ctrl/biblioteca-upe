@@ -94,8 +94,8 @@
         <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
         <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
         <SanitizedProjectName>BibliotecaUPE</SanitizedProjectName>
-        <IncludePath>..\Github\biblioteca-upe\Builder\;$(IncludePath)</IncludePath>
-        <ILINK_LibraryPath>..\Github\biblioteca-upe\Builder\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>Logica en C++\;..\Github\biblioteca-upe\Builder\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>Logica en C++\;..\Github\biblioteca-upe\Builder\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;DBXSqliteDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACIBDriver;FireDACMSAccDriver;FireDACMySQLDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;RESTBackendComponents;RESTComponents;rtl;Skia;soapmidas;soaprtl;soapserver;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -222,6 +222,36 @@
             <DependentOn>Libros_Form.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Logica en C++\biblioteca.cpp">
+            <BuildOrder>18</BuildOrder>
+        </CppCompile>
+        <None Include="Logica en C++\biblioteca.h">
+            <BuildOrder>17</BuildOrder>
+        </None>
+        <CppCompile Include="Logica en C++\funciones.cpp">
+            <BuildOrder>19</BuildOrder>
+        </CppCompile>
+        <None Include="Logica en C++\funciones.h">
+            <BuildOrder>20</BuildOrder>
+        </None>
+        <CppCompile Include="Logica en C++\libros.cpp">
+            <BuildOrder>21</BuildOrder>
+        </CppCompile>
+        <None Include="Logica en C++\libros.h">
+            <BuildOrder>22</BuildOrder>
+        </None>
+        <CppCompile Include="Logica en C++\prestamos.cpp">
+            <BuildOrder>25</BuildOrder>
+        </CppCompile>
+        <None Include="Logica en C++\prestamos.h">
+            <BuildOrder>26</BuildOrder>
+        </None>
+        <CppCompile Include="Logica en C++\socios.cpp">
+            <BuildOrder>27</BuildOrder>
+        </CppCompile>
+        <None Include="Logica en C++\socios.h">
+            <BuildOrder>28</BuildOrder>
+        </None>
         <CppCompile Include="ModificarLibro_Form.cpp">
             <Form>ModificarLibroForm</Form>
             <FormType>dfm</FormType>
@@ -279,18 +309,18 @@
         <FormResources Include="RegistrarPrestamo_Form.dfm"/>
         <FormResources Include="RegistrarDevolucion_Form.dfm"/>
         <FormResources Include="Prestamos_Form.dfm"/>
-        <FormResources Include="ModificarLibro_Form.dfm"/>
+        <FormResources Include="ModificarSocio_Form.dfm"/>
         <FormResources Include="VerYBuscarSocio_Form.dfm"/>
         <FormResources Include="VerYBuscarLibro_Form.dfm"/>
         <FormResources Include="VerPrestamo_Form.dfm"/>
         <FormResources Include="Socios_Form.dfm"/>
+        <FormResources Include="ModificarLibro_Form.dfm"/>
         <FormResources Include="BajaSocio_Form.dfm"/>
         <FormResources Include="BajaLibro_Form.dfm"/>
         <FormResources Include="AltaSocio_Form.dfm"/>
         <FormResources Include="AltaLibro_Form.dfm"/>
         <FormResources Include="Libros_Form.dfm"/>
         <FormResources Include="Inicio_Form.dfm"/>
-        <FormResources Include="ModificarSocio_Form.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -317,6 +347,9 @@
                 <Source>
                     <Source Name="MainSource">BibliotecaUPE.cpp</Source>
                 </Source>
+                <Folders>
+                    <Folder Path="Logica en C++" Masks="*.*" ShowSubdirectories="false"/>
+                </Folders>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="4">
                 <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">

@@ -108,7 +108,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     ParentFont = False
     TabOrder = 8
   end
-  object StringGrid1: TStringGrid
+  object StringGridSocios: TStringGrid
     Left = 8
     Top = 184
     Width = 740

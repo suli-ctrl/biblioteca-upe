@@ -11,6 +11,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
     Left = 649
@@ -116,7 +117,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     ParentFont = False
     TabOrder = 9
   end
-  object StringGrid1: TStringGrid
+  object StringGridLibros: TStringGrid
     Left = 8
     Top = 184
     Width = 740

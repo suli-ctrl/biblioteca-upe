@@ -8,6 +8,7 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 #include <Vcl.Grids.hpp>
+#include "biblioteca.h"
 //---------------------------------------------------------------------------
 class TVerYBuscarLibroForm : public TForm
 {
@@ -23,9 +24,11 @@ __published:	// IDE-managed Components
 	TListBox *ListBox1;
 	TEdit *Edit8;
 	TCheckBox *CheckBox1;
-	TStringGrid *StringGrid1;
+	TStringGrid *StringGridLibros;
 	TButton *Button1;
+	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
+	biblioteca bibliotecaUPE; //instancio la clase
 public:		// User declarations
 	__fastcall TVerYBuscarLibroForm(TComponent* Owner);
 };

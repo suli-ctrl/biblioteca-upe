@@ -14,6 +14,8 @@ prestamos::~prestamos()
     //Destructor
 }
 
+//----------------------------------------------------------------------------GETTERS------------------------------------------------------------------------------------------
+
 void prestamos::getPrestamo()
 {
     std::cout << "El libro " << refLibro.getNombre() << " fue prestado a " << refSocio.getApellido() << " el " << fechaPrestamo << " hasta el " << fechaVencimiento << "\n";
@@ -33,19 +35,27 @@ int prestamos::getSocioPrestatario()
 
 std::string prestamos::getFechaPrestamo()
 {
-    return std::string();
+    return fechaPrestamo;
 }
 
-//-----------------COMPLETAR---------------------//
 int prestamos::getDiasPrestamo()
 {
-    return 0;
+    return diasPrestamo;
 }
 
 std::string prestamos::getFechaVencimiento()
 {
-    return std::string();
+    return fechaVencimiento;
 }
+
+
+bool prestamos::libroDevuelto() const
+{
+    return devuelto;
+}
+
+//--------------------------------------------------------------------------SETTERS-------------------------------------------------------------------------------------------//
+
 
 void prestamos::setFechaVencimiento(const std::string fecha)
 {
@@ -57,8 +67,14 @@ void prestamos::setDevuelto(bool valor)
     devuelto = valor;
 }
 
-//-----------------COMPLETAR---------------------//
+//-------------------------------------------------------------------------FUNCIONALIDAD PRESTAMOS---------------------------------------------------------------------------//
+bool prestamos::estaVencido()
+{
 
-bool prestamos::libroDevuelto() const {
-    return devuelto;
+    return true ; //provisional
+}
+
+int prestamos::diasHastaVencimiento()
+{
+    return 0;
 }

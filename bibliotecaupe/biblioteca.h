@@ -24,12 +24,10 @@ public:
 
 	void cargarLibrosCSV();
 	void guardarLibrosCSV();
-	void guardarLibrosCSV(const std::vector<libros>&);
+	//void guardarLibrosCSV(const std::vector<libros>&);
 
 	void cargarPrestamosCSV();
 	void guardarPrestamosCSV();
-	
-
 
 	//Metodos para libros
 	void altaLibro();

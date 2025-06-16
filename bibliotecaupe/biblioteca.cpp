@@ -129,7 +129,7 @@ void biblioteca::guardarLibrosCSV()
     archivo.close();
 }
 
-void biblioteca::guardarLibrosCSV(const std::vector<libros>& listaLibros) {
+/*void biblioteca::guardarLibrosCSV(const std::vector<libros>& listaLibros) {
     // Sobrecarga, recibe un vector por referencia como parametro
 
     std::ofstream archivo("lista de libros.csv");
@@ -152,7 +152,7 @@ void biblioteca::guardarLibrosCSV(const std::vector<libros>& listaLibros) {
     }
 
     archivo.close();
-}
+}*/
 
 
 
@@ -475,7 +475,9 @@ void biblioteca::bajaLibro()
 
     if (existe)
     {
-        guardarLibrosCSV(nuevaLista);
+        listaLibros = nuevaLista;
+        guardarLibrosCSV();
+        //guardarLibrosCSV(nuevaLista);
         std::cout << "Libro eliminado correctamente \n";
     }
     else {

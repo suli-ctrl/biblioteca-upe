@@ -19,5 +19,7 @@ bool emailValido(const std::string& email);
 bool telefonoValido(const std::string& telefono);
 bool direccionValida(const std::string& direccion);
 
+std::string ConvertirStdString(const String& s);
+
 #endif
 

@@ -2,6 +2,7 @@
 #include "funciones.h"
 #include <string>
 #include <cctype>
+#include <vcl.h> // para convertir strings
 
 int pedirDni()
 {
@@ -352,4 +353,10 @@ std::string pedirDireccion()
 		}
 
 	}
+}
+
+//Convierte strings de builder a standard
+std::string ConvertirStdString(const String& s)
+{
+	return std::string(AnsiString(s).c_str());  // UnicodeString -> AnsiString -> std::string
 }

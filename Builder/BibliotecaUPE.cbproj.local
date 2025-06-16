@@ -79,9 +79,9 @@
     <Transaction>2025/06/14 17:43:55.000.517,C:\Users\zagus\Desktop\EDA2_practicas\AltaLibro_Form.cpp=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\AltaLibro_Form.cpp</Transaction>
     <Transaction>2025/06/14 17:43:55.000.801,C:\Users\zagus\Desktop\EDA2_practicas\BajaLibro_Form.cpp=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\BajaLibro_Form.cpp</Transaction>
     <Transaction>2025/06/14 17:43:55.000.277,C:\Users\zagus\Desktop\EDA2_practicas\Socios_Form.cpp=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Socios_Form.cpp</Transaction>
-    <Transaction>2025/06/14 17:43:55.000.380,C:\Users\zagus\Desktop\EDA2_practicas\Prestamos_Form.h=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Prestamos_Form.h</Transaction>
-    <Transaction>2025/06/14 17:43:55.000.927,C:\Users\zagus\Desktop\EDA2_practicas\BajaSocio_Form.h=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\BajaSocio_Form.h</Transaction>
     <Transaction>2025/06/14 17:43:55.000.927,C:\Users\zagus\Desktop\EDA2_practicas\BajaSocio_Form.cpp=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\BajaSocio_Form.cpp</Transaction>
+    <Transaction>2025/06/14 17:43:55.000.927,C:\Users\zagus\Desktop\EDA2_practicas\BajaSocio_Form.h=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\BajaSocio_Form.h</Transaction>
+    <Transaction>2025/06/14 17:43:55.000.380,C:\Users\zagus\Desktop\EDA2_practicas\Prestamos_Form.h=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Prestamos_Form.h</Transaction>
     <Transaction>2025/06/14 17:43:55.000.927,C:\Users\zagus\Desktop\EDA2_practicas\BajaSocio_Form.dfm=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\BajaSocio_Form.dfm</Transaction>
     <Transaction>2025/06/14 17:43:55.000.660,C:\Users\zagus\Desktop\EDA2_practicas\AltaSocio_Form.h=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\AltaSocio_Form.h</Transaction>
     <Transaction>2025/06/14 17:43:55.000.277,C:\Users\zagus\Desktop\EDA2_practicas\Socios_Form.h=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Socios_Form.h</Transaction>
@@ -106,17 +106,17 @@
     <Transaction>2025/06/15 16:48:21.000.084,E:\programas\C++ Builder CE\ProyectoUpe\biblioteca-upe\Builder\Unit1.dfm=E:\programas\C++ Builder CE\ProyectoUpe\biblioteca-upe\Builder\ModificarLibro_Form.dfm</Transaction>
     <Transaction>2025/06/15 16:48:21.000.084,E:\programas\C++ Builder CE\ProyectoUpe\biblioteca-upe\Builder\Unit1.cpp=E:\programas\C++ Builder CE\ProyectoUpe\biblioteca-upe\Builder\ModificarLibro_Form.cpp</Transaction>
     <Transaction>2025/06/15 16:48:21.000.084,E:\programas\C++ Builder CE\ProyectoUpe\biblioteca-upe\Builder\Unit1.h=E:\programas\C++ Builder CE\ProyectoUpe\biblioteca-upe\Builder\ModificarLibro_Form.h</Transaction>
-    <Transaction>2025/06/16 00:51:31.148,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\biblioteca.h</Transaction>
-    <Transaction>2025/06/16 00:51:49.650,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\biblioteca.cpp</Transaction>
-    <Transaction>2025/06/16 00:51:51.806,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\funciones.cpp</Transaction>
-    <Transaction>2025/06/16 00:51:53.558,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\funciones.h</Transaction>
-    <Transaction>2025/06/16 00:51:55.631,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\libros.cpp</Transaction>
-    <Transaction>2025/06/16 00:51:57.173,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\libros.h</Transaction>
-    <Transaction>2025/06/16 00:51:58.826,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\lista de libros.csv</Transaction>
-    <Transaction>2025/06/16 00:52:00.202,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\lista de socios.csv</Transaction>
-    <Transaction>2025/06/16 00:52:01.773,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\prestamos.cpp</Transaction>
-    <Transaction>2025/06/16 00:52:03.369,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\prestamos.h</Transaction>
-    <Transaction>2025/06/16 00:52:05.405,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\socios.cpp</Transaction>
-    <Transaction>2025/06/16 00:52:07.422,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\socios.h</Transaction>
+    <Transaction>2025/06/16 00:51:31.000.148,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\biblioteca.h</Transaction>
+    <Transaction>2025/06/16 00:51:49.000.650,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\biblioteca.cpp</Transaction>
+    <Transaction>2025/06/16 00:51:51.000.806,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\funciones.cpp</Transaction>
+    <Transaction>2025/06/16 00:51:53.000.558,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\funciones.h</Transaction>
+    <Transaction>2025/06/16 00:51:55.000.631,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\libros.cpp</Transaction>
+    <Transaction>2025/06/16 00:51:57.000.173,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\libros.h</Transaction>
+    <Transaction>2025/06/16 00:51:58.000.826,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\lista de libros.csv</Transaction>
+    <Transaction>2025/06/16 00:52:00.000.202,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\lista de socios.csv</Transaction>
+    <Transaction>2025/06/16 00:52:01.000.773,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\prestamos.cpp</Transaction>
+    <Transaction>2025/06/16 00:52:03.000.369,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\prestamos.h</Transaction>
+    <Transaction>2025/06/16 00:52:05.000.405,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\socios.cpp</Transaction>
+    <Transaction>2025/06/16 00:52:07.000.422,=C:\Users\zagus\Desktop\Github\biblioteca-upe\Builder\Logica en C++\socios.h</Transaction>
   </Transactions>
 </BorlandProject>

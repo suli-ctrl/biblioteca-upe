@@ -306,21 +306,21 @@
             <DependentOn>VerYBuscarSocio_Form.h</DependentOn>
             <BuildOrder>14</BuildOrder>
         </CppCompile>
-        <FormResources Include="RegistrarPrestamo_Form.dfm"/>
-        <FormResources Include="RegistrarDevolucion_Form.dfm"/>
-        <FormResources Include="Prestamos_Form.dfm"/>
-        <FormResources Include="ModificarSocio_Form.dfm"/>
-        <FormResources Include="VerYBuscarSocio_Form.dfm"/>
-        <FormResources Include="VerYBuscarLibro_Form.dfm"/>
-        <FormResources Include="VerPrestamo_Form.dfm"/>
-        <FormResources Include="Socios_Form.dfm"/>
         <FormResources Include="ModificarLibro_Form.dfm"/>
+        <FormResources Include="ModificarSocio_Form.dfm"/>
+        <FormResources Include="Prestamos_Form.dfm"/>
+        <FormResources Include="VerPrestamo_Form.dfm"/>
+        <FormResources Include="VerYBuscarLibro_Form.dfm"/>
+        <FormResources Include="VerYBuscarSocio_Form.dfm"/>
+        <FormResources Include="RegistrarDevolucion_Form.dfm"/>
+        <FormResources Include="RegistrarPrestamo_Form.dfm"/>
+        <FormResources Include="Socios_Form.dfm"/>
         <FormResources Include="BajaSocio_Form.dfm"/>
-        <FormResources Include="BajaLibro_Form.dfm"/>
-        <FormResources Include="AltaSocio_Form.dfm"/>
         <FormResources Include="AltaLibro_Form.dfm"/>
-        <FormResources Include="Libros_Form.dfm"/>
+        <FormResources Include="AltaSocio_Form.dfm"/>
+        <FormResources Include="BajaLibro_Form.dfm"/>
         <FormResources Include="Inicio_Form.dfm"/>
+        <FormResources Include="Libros_Form.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

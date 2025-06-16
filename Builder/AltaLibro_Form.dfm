@@ -1,4 +1,4 @@
-object AltaLibroForm: TAltaLibroForm
+﻿object AltaLibroForm: TAltaLibroForm
   Left = 0
   Top = 0
   BorderStyle = bsNone
@@ -143,56 +143,88 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
+<<<<<<< Updated upstream
   object txtNombreAlta: TEdit
+=======
+  object EditNombreLibro: TEdit
+>>>>>>> Stashed changes
     Left = 128
     Top = 118
     Width = 161
     Height = 23
     TabOrder = 0
   end
+<<<<<<< Updated upstream
   object txtAreaAlta: TEdit
+=======
+  object EditAreaLibro: TEdit
+>>>>>>> Stashed changes
     Left = 128
     Top = 182
     Width = 161
     Height = 23
     TabOrder = 1
   end
+<<<<<<< Updated upstream
   object txtSubAreaAlta: TEdit
+=======
+  object EditSubAreaLibro: TEdit
+>>>>>>> Stashed changes
     Left = 128
     Top = 246
     Width = 161
     Height = 23
     TabOrder = 2
   end
+<<<<<<< Updated upstream
   object txtEditorialAlta: TEdit
+=======
+  object EditEditorialLibro: TEdit
+>>>>>>> Stashed changes
     Left = 472
     Top = 118
     Width = 161
     Height = 23
     TabOrder = 3
   end
+<<<<<<< Updated upstream
   object txtAutoresAlta: TEdit
+=======
+  object EditAutorLibro: TEdit
+>>>>>>> Stashed changes
     Left = 472
     Top = 182
     Width = 161
     Height = 23
     TabOrder = 4
   end
+<<<<<<< Updated upstream
   object txtUbicacionAlta: TEdit
+=======
+  object EditUbiLibro: TEdit
+>>>>>>> Stashed changes
     Left = 472
     Top = 246
     Width = 161
     Height = 23
     TabOrder = 5
   end
+<<<<<<< Updated upstream
   object txtAnioPublicacionAlta: TEdit
+=======
+  object EditAñoLibro: TEdit
+>>>>>>> Stashed changes
     Left = 472
     Top = 310
     Width = 161
     Height = 23
     TabOrder = 6
   end
+<<<<<<< Updated upstream
   object lstEstadoAlta: TListBox
+=======
+  object ListBoxEstado: TListBox
+>>>>>>> Stashed changes
     Left = 128
     Top = 310
     Width = 161
@@ -205,7 +237,11 @@ object AltaLibroForm: TAltaLibroForm
       'Destruido')
     TabOrder = 7
   end
+<<<<<<< Updated upstream
   object btnDarAlta: TButton
+=======
+  object BtnAltaLibro: TButton
+>>>>>>> Stashed changes
     Left = 312
     Top = 376
     Width = 129
@@ -218,5 +254,6 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 8
+    OnClick = BtnAltaLibroClick
   end
 end

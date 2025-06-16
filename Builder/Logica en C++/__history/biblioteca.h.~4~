@@ -34,7 +34,7 @@ public:
 	void guardarPrestamosCSV();
 
 	//Metodos para libros
-	void altaLibro(String nombre, String area, String subarea, String autores, String editorial, int anioPublicacion, String ubicacion, String estado);
+	void altaLibro();
 	void bajaLibro();
 	void modificarLibro();
 

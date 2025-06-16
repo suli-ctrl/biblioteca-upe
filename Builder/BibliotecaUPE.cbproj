@@ -186,7 +186,7 @@
             <BuildOrder>6</BuildOrder>
         </CppCompile>
         <CppCompile Include="AltaSocio_Form.cpp">
-            <Form>Form6</Form>
+            <Form>AltaSocioForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>AltaSocio_Form.h</DependentOn>
             <BuildOrder>7</BuildOrder>
@@ -198,7 +198,7 @@
             <BuildOrder>8</BuildOrder>
         </CppCompile>
         <CppCompile Include="BajaSocio_Form.cpp">
-            <Form>Form8</Form>
+            <Form>BajaSocioForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>BajaSocio_Form.h</DependentOn>
             <BuildOrder>9</BuildOrder>
@@ -228,6 +228,12 @@
             <DependentOn>ModificarLibro_Form.h</DependentOn>
             <BuildOrder>15</BuildOrder>
         </CppCompile>
+        <CppCompile Include="ModificarSocio_Form.cpp">
+            <Form>ModificarSocioForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ModificarSocio_Form.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Prestamos_Form.cpp">
             <Form>PrestamosForm</Form>
             <FormType>dfm</FormType>
@@ -235,13 +241,13 @@
             <BuildOrder>5</BuildOrder>
         </CppCompile>
         <CppCompile Include="RegistrarDevolucion_Form.cpp">
-            <Form>Form9</Form>
+            <Form>RegistarDevoluciónForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>RegistrarDevolucion_Form.h</DependentOn>
             <BuildOrder>10</BuildOrder>
         </CppCompile>
         <CppCompile Include="RegistrarPrestamo_Form.cpp">
-            <Form>Form10</Form>
+            <Form>RegistrarPrestamoForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>RegistrarPrestamo_Form.h</DependentOn>
             <BuildOrder>11</BuildOrder>
@@ -253,7 +259,7 @@
             <BuildOrder>4</BuildOrder>
         </CppCompile>
         <CppCompile Include="VerPrestamo_Form.cpp">
-            <Form>Form11</Form>
+            <Form>VerPrestamoActivoForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>VerPrestamo_Form.h</DependentOn>
             <BuildOrder>12</BuildOrder>
@@ -265,7 +271,7 @@
             <BuildOrder>13</BuildOrder>
         </CppCompile>
         <CppCompile Include="VerYBuscarSocio_Form.cpp">
-            <Form>Form13</Form>
+            <Form>VerYBuscarSocioForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>VerYBuscarSocio_Form.h</DependentOn>
             <BuildOrder>14</BuildOrder>
@@ -273,17 +279,18 @@
         <FormResources Include="RegistrarPrestamo_Form.dfm"/>
         <FormResources Include="RegistrarDevolucion_Form.dfm"/>
         <FormResources Include="Prestamos_Form.dfm"/>
-        <FormResources Include="Socios_Form.dfm"/>
+        <FormResources Include="ModificarLibro_Form.dfm"/>
         <FormResources Include="VerYBuscarSocio_Form.dfm"/>
         <FormResources Include="VerYBuscarLibro_Form.dfm"/>
         <FormResources Include="VerPrestamo_Form.dfm"/>
-        <FormResources Include="Libros_Form.dfm"/>
+        <FormResources Include="Socios_Form.dfm"/>
+        <FormResources Include="BajaSocio_Form.dfm"/>
         <FormResources Include="BajaLibro_Form.dfm"/>
         <FormResources Include="AltaSocio_Form.dfm"/>
         <FormResources Include="AltaLibro_Form.dfm"/>
-        <FormResources Include="BajaSocio_Form.dfm"/>
+        <FormResources Include="Libros_Form.dfm"/>
         <FormResources Include="Inicio_Form.dfm"/>
-        <FormResources Include="ModificarLibro_Form.dfm"/>
+        <FormResources Include="ModificarSocio_Form.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -13,7 +13,7 @@
   Font.Style = []
   Position = poDesigned
   TextHeight = 15
-  object lblAltaLibro: TLabel
+  object Label1: TLabel
     Left = 682
     Top = 0
     Width = 66
@@ -26,7 +26,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblIngreseInfoLibroAlta: TLabel
+  object Label2: TLabel
     Left = 240
     Top = 32
     Width = 299
@@ -39,7 +39,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblNombreAlta: TLabel
+  object Label3: TLabel
     Left = 128
     Top = 96
     Width = 55
@@ -52,7 +52,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblAreaAlta: TLabel
+  object Label4: TLabel
     Left = 128
     Top = 160
     Width = 33
@@ -65,7 +65,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblSubAreaAlta: TLabel
+  object Label5: TLabel
     Left = 128
     Top = 224
     Width = 60
@@ -78,7 +78,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblEditorialAlta: TLabel
+  object Label6: TLabel
     Left = 472
     Top = 96
     Width = 58
@@ -91,7 +91,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblAutoresAlta: TLabel
+  object Label7: TLabel
     Left = 472
     Top = 160
     Width = 53
@@ -104,7 +104,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblUbicacionAlta: TLabel
+  object Label8: TLabel
     Left = 472
     Top = 224
     Width = 70
@@ -117,7 +117,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblAnioPublicacionAlta: TLabel
+  object Label9: TLabel
     Left = 472
     Top = 288
     Width = 133
@@ -130,7 +130,7 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lblEstadoAlta: TLabel
+  object Label10: TLabel
     Left = 128
     Top = 288
     Width = 49
@@ -143,88 +143,56 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-<<<<<<< Updated upstream
-  object txtNombreAlta: TEdit
-=======
   object EditNombreLibro: TEdit
->>>>>>> Stashed changes
     Left = 128
     Top = 118
     Width = 161
     Height = 23
     TabOrder = 0
   end
-<<<<<<< Updated upstream
-  object txtAreaAlta: TEdit
-=======
   object EditAreaLibro: TEdit
->>>>>>> Stashed changes
     Left = 128
     Top = 182
     Width = 161
     Height = 23
     TabOrder = 1
   end
-<<<<<<< Updated upstream
-  object txtSubAreaAlta: TEdit
-=======
   object EditSubAreaLibro: TEdit
->>>>>>> Stashed changes
     Left = 128
     Top = 246
     Width = 161
     Height = 23
     TabOrder = 2
   end
-<<<<<<< Updated upstream
-  object txtEditorialAlta: TEdit
-=======
   object EditEditorialLibro: TEdit
->>>>>>> Stashed changes
     Left = 472
     Top = 118
     Width = 161
     Height = 23
     TabOrder = 3
   end
-<<<<<<< Updated upstream
-  object txtAutoresAlta: TEdit
-=======
   object EditAutorLibro: TEdit
->>>>>>> Stashed changes
     Left = 472
     Top = 182
     Width = 161
     Height = 23
     TabOrder = 4
   end
-<<<<<<< Updated upstream
-  object txtUbicacionAlta: TEdit
-=======
   object EditUbiLibro: TEdit
->>>>>>> Stashed changes
     Left = 472
     Top = 246
     Width = 161
     Height = 23
     TabOrder = 5
   end
-<<<<<<< Updated upstream
-  object txtAnioPublicacionAlta: TEdit
-=======
   object EditAñoLibro: TEdit
->>>>>>> Stashed changes
     Left = 472
     Top = 310
     Width = 161
     Height = 23
     TabOrder = 6
   end
-<<<<<<< Updated upstream
-  object lstEstadoAlta: TListBox
-=======
   object ListBoxEstado: TListBox
->>>>>>> Stashed changes
     Left = 128
     Top = 310
     Width = 161
@@ -237,11 +205,7 @@
       'Destruido')
     TabOrder = 7
   end
-<<<<<<< Updated upstream
-  object btnDarAlta: TButton
-=======
   object BtnAltaLibro: TButton
->>>>>>> Stashed changes
     Left = 312
     Top = 376
     Width = 129

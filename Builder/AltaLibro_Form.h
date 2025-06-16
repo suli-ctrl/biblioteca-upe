@@ -12,27 +12,6 @@
 class TAltaLibroForm : public TForm
 {
 __published:	// IDE-managed Components
-<<<<<<< Updated upstream
-	TLabel *lblAltaLibro;
-	TLabel *lblIngreseInfoLibroAlta;
-	TLabel *lblNombreAlta;
-	TEdit *txtNombreAlta;
-	TEdit *txtAreaAlta;
-	TLabel *lblAreaAlta;
-	TEdit *txtSubAreaAlta;
-	TLabel *lblSubAreaAlta;
-	TEdit *txtEditorialAlta;
-	TLabel *lblEditorialAlta;
-	TEdit *txtAutoresAlta;
-	TLabel *lblAutoresAlta;
-	TEdit *txtUbicacionAlta;
-	TLabel *lblUbicacionAlta;
-	TEdit *txtAnioPublicacionAlta;
-	TLabel *lblAnioPublicacionAlta;
-	TLabel *lblEstadoAlta;
-	TListBox *lstEstadoAlta;
-	TButton *btnDarAlta;
-=======
 	TLabel *Label1;
 	TLabel *Label2;
 	TLabel *Label3;
@@ -53,7 +32,6 @@ __published:	// IDE-managed Components
 	TListBox *ListBoxEstado;
 	TButton *BtnAltaLibro;
 	void __fastcall BtnAltaLibroClick(TObject *Sender);
->>>>>>> Stashed changes
 private:	// User declarations
     biblioteca bibliotecaUPE;
 public:		// User declarations

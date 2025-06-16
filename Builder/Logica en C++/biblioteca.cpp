@@ -414,10 +414,10 @@ void biblioteca::modificarSocio()
         }
     }
 
-    if (!existe)
-    {
-        std::cout << "El cliente con DNI: " << DNI_modificar << " no existe en el archivo." << std::endl;
-    }
+	if (!existe)
+	{
+		std::cout << "El cliente con DNI: " << DNI_modificar << " no existe en el archivo." << std::endl;
+	}
 
 }
 
@@ -427,7 +427,6 @@ void biblioteca::altaLibro(String nombre, String area, String subarea, String au
 {
 	cargarLibrosCSV();
 
-
 	libros nuevoLibro(ConvertirStdString(nombre), ConvertirStdString(area), ConvertirStdString(subarea), ConvertirStdString(autores), ConvertirStdString(editorial), anioPublicacion, ConvertirStdString(ubicacion), ConvertirStdString(estado));
 	listaLibros.push_back(nuevoLibro);
 
@@ -436,39 +435,35 @@ void biblioteca::altaLibro(String nombre, String area, String subarea, String au
 }
 
 
-void biblioteca::bajaLibro()
+void biblioteca::bajaLibro(String libroBaja)
 {
-    cargarLibrosCSV(); //tengo los libros en listaLibros
+	cargarLibrosCSV(); //tengo los libros en listaLibros
 
-    std::string ubicacion_eliminar;
-    bool existe = false;
+    std::string libro_eliminar = ConvertirStdString(libroBaja);
+	bool existe = false;
 
-    std::cout << "Ingrese la ubicacion del libro a eliminar[Ej: Est1-F1]:";
-    std::cin >> ubicacion_eliminar;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::vector<libros> nuevaLista;
 
-    std::vector<libros> nuevaLista;
+	for (int i = 0; i < listaLibros.size(); i++)
+	{
+		if (listaLibros[i].getNombre().compare(libro_eliminar) == 0)
+		{
+			existe = true;
+			continue; //Lo salta, no lo copia al nuevo vector
+		}
+		nuevaLista.push_back(listaLibros[i]); //Agrega la linea a la nueva lista
+	}
 
-    for (int i = 0; i < listaLibros.size(); i++)
-    {
-        if (listaLibros[i].getUbicacion().compare(ubicacion_eliminar) == 0)
-        {
-            existe = true;
-            continue; //Lo salta, no lo copia al nuevo vector
-        }
-        nuevaLista.push_back(listaLibros[i]); //Agrega la linea a la nueva lista
-    }
-
-    if (existe)
-    {
-        listaLibros = nuevaLista;
-        guardarLibrosCSV();
-        //guardarLibrosCSV(nuevaLista);
-        std::cout << "Libro eliminado correctamente \n";
-    }
-    else {
-        std::cout << "No se encontro ningun libro en la ubicacion: " << ubicacion_eliminar  << std::endl;
-    }
+	if (existe)
+	{
+		listaLibros = nuevaLista;
+		guardarLibrosCSV();
+		//guardarLibrosCSV(nuevaLista);
+		ShowMessage("Libro eliminado exitosamente");
+	}
+	else {
+		ShowMessage("El libro no se ha encontrado");
+	}
 }
 
 void biblioteca::modificarLibro()

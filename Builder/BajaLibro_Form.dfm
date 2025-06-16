@@ -11,6 +11,7 @@ object BajaLibroForm: TBajaLibroForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object lblIngreseInfoLibroBaja: TLabel
     Left = 232
@@ -51,13 +52,6 @@ object BajaLibroForm: TBajaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object txtNombreBaja: TEdit
-    Left = 280
-    Top = 128
-    Width = 185
-    Height = 23
-    TabOrder = 0
-  end
   object btnDarBaja: TButton
     Left = 328
     Top = 160
@@ -70,6 +64,15 @@ object BajaLibroForm: TBajaLibroForm
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
+    TabOrder = 0
+    OnClick = btnDarBajaClick
+  end
+  object ComboBoxBaja: TComboBox
+    Left = 280
+    Top = 128
+    Width = 185
+    Height = 23
     TabOrder = 1
+    Text = 'Ingresar nombre'
   end
 end

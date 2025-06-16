@@ -35,7 +35,7 @@ public:
 
 	//Metodos para libros
 	void altaLibro(String nombre, String area, String subarea, String autores, String editorial, int anioPublicacion, String ubicacion, String estado);
-	void bajaLibro();
+	void bajaLibro(String );
 	void modificarLibro();
 
 	//Metodos para socios

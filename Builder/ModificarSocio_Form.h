@@ -11,27 +11,27 @@
 class TModificarSocioForm : public TForm
 {
 __published:	// IDE-managed Components
-	TEdit *Edit1;
-	TButton *Button1;
-	TLabel *Label2;
-	TLabel *Label1;
-	TLabel *Label4;
-	TLabel *Label5;
-	TLabel *Label6;
-	TLabel *Label7;
-	TLabel *Label8;
-	TLabel *Label9;
-	TLabel *Label10;
-	TEdit *Edit2;
-	TEdit *Edit3;
-	TEdit *Edit4;
-	TEdit *Edit5;
-	TEdit *Edit6;
-	TEdit *Edit7;
-	TListBox *ListBox1;
-	TButton *Button2;
-	TEdit *Edit8;
-	TLabel *Label11;
+	TEdit *txtDNIABuscar;
+	TButton *btnBuscarSocioModi;
+	TLabel *lblIngreseInfoSocioAModi;
+	TLabel *lblModificarSocio;
+	TLabel *lblApellidoAModi;
+	TLabel *lblDNIAModi;
+	TLabel *lblNumTelAModi;
+	TLabel *lblEdadAModi;
+	TLabel *lblFechaNacimientoAModi;
+	TLabel *lblDireccionCalleAModi;
+	TLabel *lblGeneroAModi;
+	TEdit *txtApellidoAModi;
+	TEdit *txtDNIAModi;
+	TEdit *txtNumTelAModi;
+	TEdit *txtEdadAModi;
+	TEdit *txtFechaNacimientoAModi;
+	TEdit *txtDireccionCalleAModi;
+	TListBox *lstGeneroAModi;
+	TButton *btnModificar;
+	TEdit *txtEmailAModi;
+	TLabel *lblEmailAModi;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TModificarSocioForm(TComponent* Owner);

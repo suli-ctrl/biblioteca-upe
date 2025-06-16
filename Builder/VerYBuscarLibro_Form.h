@@ -13,19 +13,19 @@
 class TVerYBuscarLibroForm : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label1;
-	TEdit *Edit1;
-	TEdit *Edit2;
-	TEdit *Edit3;
-	TEdit *Edit4;
-	TEdit *Edit5;
-	TEdit *Edit6;
-	TEdit *Edit7;
-	TListBox *ListBox1;
-	TEdit *Edit8;
-	TCheckBox *CheckBox1;
+	TLabel *lblModificarLibro;
+	TEdit *txtNombreBuscar;
+	TEdit *txtAreaBuscar;
+	TEdit *txtSubAreaBuscar;
+	TEdit *txtAutoresBuscar;
+	TEdit *txtAnioPublicacionBuscar;
+	TEdit *txtEditorialBuscar;
+	TEdit *txtUbicacionBuscar;
+	TListBox *lstEstadoBuscar;
+	TEdit *txtCodBarrasBuscar;
+	TCheckBox *chkMostrarTodos;
 	TStringGrid *StringGridLibros;
-	TButton *Button1;
+	TButton *btnBuscarLibro;
 	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 	biblioteca bibliotecaUPE; //instancio la clase

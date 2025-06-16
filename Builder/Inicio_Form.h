@@ -20,10 +20,10 @@ __published:	// IDE-managed Components
 	TPanel *Panel2;
 	TPanel *Panel3;
 	TPanel *Panel4;
-	TImage *Image1;
-	TLabel *Label1;
-	TLabel *Label2;
-	TLabel *Label3;
+	TImage *imgLogoBiblioteca;
+	TLabel *lblNomBiblioteca;
+	TLabel *lblOpcionesGestion;
+	TLabel *lblBienvenida;
 	TButton *BtnSalir;
 	TBitBtn *BtnLibros;
 	TBitBtn *BtnPrestamos;

@@ -12,7 +12,7 @@
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object lblRegistrarDevolucion: TLabel
     Left = 610
     Top = 0
     Width = 146

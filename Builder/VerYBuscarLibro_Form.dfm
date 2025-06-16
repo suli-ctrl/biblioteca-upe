@@ -13,7 +13,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
   Font.Style = []
   OnShow = FormShow
   TextHeight = 15
-  object Label1: TLabel
+  object lblModificarLibro: TLabel
     Left = 649
     Top = 0
     Width = 99
@@ -26,7 +26,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Edit1: TEdit
+  object txtNombreBuscar: TEdit
     Left = 8
     Top = 8
     Width = 169
@@ -34,7 +34,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 0
     Text = 'Nombre'
   end
-  object Edit2: TEdit
+  object txtAreaBuscar: TEdit
     Left = 8
     Top = 37
     Width = 169
@@ -42,7 +42,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 1
     Text = 'Area'
   end
-  object Edit3: TEdit
+  object txtSubAreaBuscar: TEdit
     Left = 8
     Top = 66
     Width = 169
@@ -50,7 +50,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 2
     Text = 'SubArea'
   end
-  object Edit4: TEdit
+  object txtAutoresBuscar: TEdit
     Left = 8
     Top = 95
     Width = 169
@@ -58,7 +58,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 3
     Text = 'Autores'
   end
-  object Edit5: TEdit
+  object txtAnioPublicacionBuscar: TEdit
     Left = 216
     Top = 8
     Width = 169
@@ -66,7 +66,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 4
     Text = 'A'#241'o de publicaci'#243'n'
   end
-  object Edit6: TEdit
+  object txtEditorialBuscar: TEdit
     Left = 8
     Top = 124
     Width = 169
@@ -74,7 +74,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 5
     Text = 'Editorial'
   end
-  object Edit7: TEdit
+  object txtUbicacionBuscar: TEdit
     Left = 216
     Top = 37
     Width = 169
@@ -82,7 +82,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 6
     Text = 'Ubicaci'#243'n (EstN'#176'-FN'#176')'
   end
-  object ListBox1: TListBox
+  object lstEstadoBuscar: TListBox
     Left = 216
     Top = 66
     Width = 169
@@ -95,7 +95,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
       'Destruido')
     TabOrder = 7
   end
-  object Edit8: TEdit
+  object txtCodBarrasBuscar: TEdit
     Left = 216
     Top = 107
     Width = 169
@@ -103,7 +103,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 8
     Text = 'C'#243'digo de barras'
   end
-  object CheckBox1: TCheckBox
+  object chkMostrarTodos: TCheckBox
     Left = 216
     Top = 136
     Width = 145
@@ -125,7 +125,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     ColCount = 9
     TabOrder = 10
   end
-  object Button1: TButton
+  object btnBuscarLibro: TButton
     Left = 440
     Top = 57
     Width = 121

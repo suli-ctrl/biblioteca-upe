@@ -11,11 +11,11 @@
 class TBajaSocioForm : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label2;
-	TLabel *Label1;
-	TLabel *Label3;
-	TEdit *Edit1;
-	TButton *Button1;
+	TLabel *lblIngreseInfoSocioBaja;
+	TLabel *lblBajaSocio;
+	TLabel *lblDNIBaja;
+	TEdit *txtDNIBaja;
+	TButton *btnDarBaja;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TBajaSocioForm(TComponent* Owner);

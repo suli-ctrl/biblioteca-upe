@@ -12,7 +12,7 @@ object ModificarSocioForm: TModificarSocioForm
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label2: TLabel
+  object lblIngreseInfoSocioAModi: TLabel
     Left = 200
     Top = 24
     Width = 348
@@ -25,7 +25,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label1: TLabel
+  object lblModificarSocio: TLabel
     Left = 642
     Top = 0
     Width = 106
@@ -38,7 +38,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label4: TLabel
+  object lblApellidoAModi: TLabel
     Left = 120
     Top = 124
     Width = 58
@@ -51,7 +51,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label5: TLabel
+  object lblDNIAModi: TLabel
     Left = 120
     Top = 180
     Width = 26
@@ -64,7 +64,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label6: TLabel
+  object lblNumTelAModi: TLabel
     Left = 120
     Top = 284
     Width = 136
@@ -77,7 +77,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label7: TLabel
+  object lblEdadAModi: TLabel
     Left = 464
     Top = 124
     Width = 37
@@ -90,7 +90,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label8: TLabel
+  object lblFechaNacimientoAModi: TLabel
     Left = 464
     Top = 180
     Width = 144
@@ -103,7 +103,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label9: TLabel
+  object lblDireccionCalleAModi: TLabel
     Left = 120
     Top = 230
     Width = 126
@@ -116,7 +116,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label10: TLabel
+  object lblGeneroAModi: TLabel
     Left = 464
     Top = 284
     Width = 51
@@ -129,7 +129,7 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label11: TLabel
+  object lblEmailAModi: TLabel
     Left = 464
     Top = 230
     Width = 44
@@ -142,14 +142,14 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Edit1: TEdit
+  object txtDNIABuscar: TEdit
     Left = 280
     Top = 55
     Width = 185
     Height = 23
     TabOrder = 0
   end
-  object Button1: TButton
+  object btnBuscarSocioModi: TButton
     Left = 328
     Top = 84
     Width = 97
@@ -163,49 +163,49 @@ object ModificarSocioForm: TModificarSocioForm
     ParentFont = False
     TabOrder = 1
   end
-  object Edit2: TEdit
+  object txtApellidoAModi: TEdit
     Left = 120
     Top = 146
     Width = 161
     Height = 23
     TabOrder = 2
   end
-  object Edit3: TEdit
+  object txtDNIAModi: TEdit
     Left = 120
     Top = 202
     Width = 161
     Height = 23
     TabOrder = 3
   end
-  object Edit4: TEdit
+  object txtNumTelAModi: TEdit
     Left = 120
     Top = 306
     Width = 161
     Height = 23
     TabOrder = 4
   end
-  object Edit5: TEdit
+  object txtEdadAModi: TEdit
     Left = 464
     Top = 146
     Width = 161
     Height = 23
     TabOrder = 5
   end
-  object Edit6: TEdit
+  object txtFechaNacimientoAModi: TEdit
     Left = 464
     Top = 202
     Width = 161
     Height = 23
     TabOrder = 6
   end
-  object Edit7: TEdit
+  object txtDireccionCalleAModi: TEdit
     Left = 120
     Top = 252
     Width = 161
     Height = 23
     TabOrder = 7
   end
-  object ListBox1: TListBox
+  object lstGeneroAModi: TListBox
     Left = 464
     Top = 306
     Width = 161
@@ -217,7 +217,7 @@ object ModificarSocioForm: TModificarSocioForm
       'No especificado')
     TabOrder = 8
   end
-  object Button2: TButton
+  object btnModificar: TButton
     Left = 312
     Top = 380
     Width = 129
@@ -231,7 +231,7 @@ object ModificarSocioForm: TModificarSocioForm
     ParentFont = False
     TabOrder = 9
   end
-  object Edit8: TEdit
+  object txtEmailAModi: TEdit
     Left = 464
     Top = 252
     Width = 161

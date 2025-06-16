@@ -21,7 +21,7 @@ object InicioForm: TInicioForm
     Height = 57
     BorderStyle = bsSingle
     TabOrder = 0
-    object Image1: TImage
+    object imgLogoBiblioteca: TImage
       Left = 8
       Top = 4
       Width = 45
@@ -67,7 +67,7 @@ object InicioForm: TInicioForm
         8420CB4FFFC39B8C1D1138706893F93FFEC3C442B3D0CB4E2C340BCD422F03FD
         068B6FBCBCB08190750000000049454E44AE426082}
     end
-    object Label1: TLabel
+    object lblNomBiblioteca: TLabel
       Left = 59
       Top = 4
       Width = 70
@@ -88,7 +88,7 @@ object InicioForm: TInicioForm
     Height = 53
     BorderStyle = bsSingle
     TabOrder = 1
-    object Label2: TLabel
+    object lblOpcionesGestion: TLabel
       Left = 8
       Top = 4
       Width = 88
@@ -184,7 +184,7 @@ object InicioForm: TInicioForm
     Height = 469
     BorderStyle = bsSingle
     TabOrder = 3
-    object Label3: TLabel
+    object lblBienvenida: TLabel
       Left = 56
       Top = 176
       Width = 649

@@ -12,7 +12,7 @@ object AltaSocioForm: TAltaSocioForm
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object lblAltaSocio: TLabel
     Left = 682
     Top = 0
     Width = 71
@@ -25,7 +25,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
+  object lblIngreseInfoSocioAlta: TLabel
     Left = 233
     Top = 32
     Width = 309
@@ -38,7 +38,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label3: TLabel
+  object lblApellidoAlta: TLabel
     Left = 128
     Top = 96
     Width = 58
@@ -51,7 +51,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label4: TLabel
+  object lblDniAlta: TLabel
     Left = 128
     Top = 152
     Width = 26
@@ -64,7 +64,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label6: TLabel
+  object lblNumTelAlta: TLabel
     Left = 128
     Top = 256
     Width = 136
@@ -77,7 +77,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label7: TLabel
+  object lblEdadAlta: TLabel
     Left = 472
     Top = 96
     Width = 37
@@ -90,7 +90,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label8: TLabel
+  object lblFechaNacimientoAlta: TLabel
     Left = 472
     Top = 152
     Width = 144
@@ -103,7 +103,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label9: TLabel
+  object lblDireccionCalleAlta: TLabel
     Left = 128
     Top = 202
     Width = 126
@@ -116,7 +116,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label10: TLabel
+  object lblGenero: TLabel
     Left = 472
     Top = 256
     Width = 51
@@ -129,7 +129,7 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label5: TLabel
+  object lblEmailAlta: TLabel
     Left = 472
     Top = 202
     Width = 44
@@ -142,49 +142,49 @@ object AltaSocioForm: TAltaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Edit1: TEdit
+  object txtApellidoAlta: TEdit
     Left = 128
     Top = 118
     Width = 161
     Height = 23
     TabOrder = 0
   end
-  object Edit2: TEdit
+  object txtDNIAlta: TEdit
     Left = 128
     Top = 174
     Width = 161
     Height = 23
     TabOrder = 1
   end
-  object Edit4: TEdit
+  object txtNumTelAlta: TEdit
     Left = 128
     Top = 278
     Width = 161
     Height = 23
     TabOrder = 2
   end
-  object Edit5: TEdit
+  object txtEdadAlta: TEdit
     Left = 472
     Top = 118
     Width = 161
     Height = 23
     TabOrder = 3
   end
-  object Edit6: TEdit
+  object txtFechaNacimientoAlta: TEdit
     Left = 472
     Top = 174
     Width = 161
     Height = 23
     TabOrder = 4
   end
-  object Edit7: TEdit
+  object txtDireccionCalleAlta: TEdit
     Left = 128
     Top = 224
     Width = 161
     Height = 23
     TabOrder = 5
   end
-  object ListBox1: TListBox
+  object lstGeneroAlta: TListBox
     Left = 472
     Top = 278
     Width = 161
@@ -196,7 +196,7 @@ object AltaSocioForm: TAltaSocioForm
       'No especificado')
     TabOrder = 6
   end
-  object Button1: TButton
+  object btnDarAlta: TButton
     Left = 312
     Top = 376
     Width = 129
@@ -210,7 +210,7 @@ object AltaSocioForm: TAltaSocioForm
     ParentFont = False
     TabOrder = 7
   end
-  object Edit3: TEdit
+  object txtEmailAlta: TEdit
     Left = 472
     Top = 224
     Width = 161

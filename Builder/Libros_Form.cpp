@@ -21,22 +21,24 @@ __fastcall TLibrosForm::TLibrosForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TLibrosForm::MostrarFormEnPanel(TForm *form)//muestra un form dentro de otro
 {
-	for (int i = PanelContenedor->ControlCount-1; i >= 10; i--)
+	for (int i = PanelContenedor->ControlCount-1; i >= 10; i--)//recorre los controles del PanelContenedor
 	{
-	 PanelContenedor->RemoveControl(PanelContenedor->Controls[i]);
+	 PanelContenedor->RemoveControl(PanelContenedor->Controls[i]); //elimina los controles del panel que se encuentra en ese indice
 	}
-		form->BorderStyle =bsNone;
-		form->Align = alClient;
-		form->Parent = PanelContenedor;
-		form->Visible = true;
+		form->BorderStyle =bsNone; //le quita los bordes al formulario a insertar
+		form->Align = alClient;  //Hace que el formulario a insertar ocupe todo el espacio del panel
+		form->Parent = PanelContenedor; //establece que el PanelContenedor va a ser el contenedor padre del formulario
+		form->Visible = true;  //hacemos visible al formulario
 }
 //---------------------------------------------------------------------------
 
 
 void __fastcall TLibrosForm::BtnAltaLibroClick(TObject *Sender)
 {
-   TAltaLibroForm * Alta = new TAltaLibroForm(this);
-   MostrarFormEnPanel(Alta);
+   TAltaLibroForm * Alta = new TAltaLibroForm(this); //se crea un puntero que apunta al Form a mostrar y se le pasa dinamicamente una nueva instancia
+													 //del formulario quien recibe como parametro un puntero (this) que indica que TLibrosForm
+													 //va a ser el encargado de administrar esa memoria dinamica y liberarlo cuando sea necesario
+   MostrarFormEnPanel(Alta);  //se llama a la funcion para insertar el formulario en el panel
 
 }
 //---------------------------------------------------------------------------

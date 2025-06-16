@@ -11,11 +11,11 @@
 class TBajaLibroForm : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label2;
-	TLabel *Label1;
-	TLabel *Label3;
-	TEdit *Edit1;
-	TButton *Button1;
+	TLabel *lblIngreseInfoLibroBaja;
+	TLabel *lblBajaLibro;
+	TLabel *lblNombreBaja;
+	TEdit *txtNombreBaja;
+	TButton *btnDarBaja;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TBajaLibroForm(TComponent* Owner);

@@ -13,7 +13,7 @@ object AltaLibroForm: TAltaLibroForm
   Font.Style = []
   Position = poDesigned
   TextHeight = 15
-  object Label1: TLabel
+  object lblAltaLibro: TLabel
     Left = 682
     Top = 0
     Width = 66
@@ -26,7 +26,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
+  object lblIngreseInfoLibroAlta: TLabel
     Left = 240
     Top = 32
     Width = 299
@@ -39,7 +39,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label3: TLabel
+  object lblNombreAlta: TLabel
     Left = 128
     Top = 96
     Width = 55
@@ -52,7 +52,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label4: TLabel
+  object lblAreaAlta: TLabel
     Left = 128
     Top = 160
     Width = 33
@@ -65,7 +65,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label5: TLabel
+  object lblSubAreaAlta: TLabel
     Left = 128
     Top = 224
     Width = 60
@@ -78,7 +78,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label6: TLabel
+  object lblEditorialAlta: TLabel
     Left = 472
     Top = 96
     Width = 58
@@ -91,7 +91,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label7: TLabel
+  object lblAutoresAlta: TLabel
     Left = 472
     Top = 160
     Width = 53
@@ -104,7 +104,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label8: TLabel
+  object lblUbicacionAlta: TLabel
     Left = 472
     Top = 224
     Width = 70
@@ -117,7 +117,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label9: TLabel
+  object lblAnioPublicacionAlta: TLabel
     Left = 472
     Top = 288
     Width = 133
@@ -130,7 +130,7 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label10: TLabel
+  object lblEstadoAlta: TLabel
     Left = 128
     Top = 288
     Width = 49
@@ -143,56 +143,56 @@ object AltaLibroForm: TAltaLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Edit1: TEdit
+  object txtNombreAlta: TEdit
     Left = 128
     Top = 118
     Width = 161
     Height = 23
     TabOrder = 0
   end
-  object Edit2: TEdit
+  object txtAreaAlta: TEdit
     Left = 128
     Top = 182
     Width = 161
     Height = 23
     TabOrder = 1
   end
-  object Edit3: TEdit
+  object txtSubAreaAlta: TEdit
     Left = 128
     Top = 246
     Width = 161
     Height = 23
     TabOrder = 2
   end
-  object Edit4: TEdit
+  object txtEditorialAlta: TEdit
     Left = 472
     Top = 118
     Width = 161
     Height = 23
     TabOrder = 3
   end
-  object Edit5: TEdit
+  object txtAutoresAlta: TEdit
     Left = 472
     Top = 182
     Width = 161
     Height = 23
     TabOrder = 4
   end
-  object Edit6: TEdit
+  object txtUbicacionAlta: TEdit
     Left = 472
     Top = 246
     Width = 161
     Height = 23
     TabOrder = 5
   end
-  object Edit7: TEdit
+  object txtAnioPublicacionAlta: TEdit
     Left = 472
     Top = 310
     Width = 161
     Height = 23
     TabOrder = 6
   end
-  object ListBox1: TListBox
+  object lstEstadoAlta: TListBox
     Left = 128
     Top = 310
     Width = 161
@@ -205,7 +205,7 @@ object AltaLibroForm: TAltaLibroForm
       'Destruido')
     TabOrder = 7
   end
-  object Button1: TButton
+  object btnDarAlta: TButton
     Left = 312
     Top = 376
     Width = 129

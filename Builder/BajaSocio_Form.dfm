@@ -12,7 +12,7 @@ object BajaSocioForm: TBajaSocioForm
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label2: TLabel
+  object lblIngreseInfoSocioBaja: TLabel
     Left = 232
     Top = 40
     Width = 309
@@ -25,7 +25,7 @@ object BajaSocioForm: TBajaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label1: TLabel
+  object lblBajaSocio: TLabel
     Left = 681
     Top = 0
     Width = 74
@@ -38,7 +38,7 @@ object BajaSocioForm: TBajaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label3: TLabel
+  object lblDNIBaja: TLabel
     Left = 360
     Top = 104
     Width = 28
@@ -51,19 +51,25 @@ object BajaSocioForm: TBajaSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Edit1: TEdit
+  object txtDNIBaja: TEdit
     Left = 280
     Top = 128
     Width = 185
     Height = 23
     TabOrder = 0
   end
-  object Button1: TButton
+  object btnDarBaja: TButton
     Left = 328
     Top = 160
     Width = 97
     Height = 25
     Caption = 'Dar de baja'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 1
   end
 end

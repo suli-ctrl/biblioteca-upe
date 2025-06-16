@@ -13,7 +13,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
   Font.Style = []
   Position = poMainFormCenter
   TextHeight = 15
-  object Label1: TLabel
+  object lblModificarSocio: TLabel
     Left = 642
     Top = 0
     Width = 106
@@ -26,7 +26,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Edit1: TEdit
+  object txtApellidoBuscar: TEdit
     Left = 8
     Top = 8
     Width = 169
@@ -34,7 +34,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     TabOrder = 0
     Text = 'Apellido'
   end
-  object Edit2: TEdit
+  object txtDNIBuscar: TEdit
     Left = 8
     Top = 37
     Width = 169
@@ -42,7 +42,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     TabOrder = 1
     Text = 'DNI'
   end
-  object Edit4: TEdit
+  object txtFechaNacimientoBuscar: TEdit
     Left = 216
     Top = 66
     Width = 169
@@ -50,7 +50,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     TabOrder = 2
     Text = 'Fecha de nacimiento (D/M/A)'
   end
-  object Edit5: TEdit
+  object txtNumTelBuscar: TEdit
     Left = 216
     Top = 8
     Width = 169
@@ -58,7 +58,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     TabOrder = 3
     Text = 'N'#250'mero de tel'#233'fono'
   end
-  object Edit6: TEdit
+  object txtEmailBuscar: TEdit
     Left = 216
     Top = 95
     Width = 169
@@ -66,7 +66,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     TabOrder = 4
     Text = 'E-mail'
   end
-  object Edit7: TEdit
+  object txtEdadBuscar: TEdit
     Left = 216
     Top = 37
     Width = 169
@@ -74,7 +74,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     TabOrder = 5
     Text = 'Edad'
   end
-  object ListBox1: TListBox
+  object lstGeneroBuscar: TListBox
     Left = 8
     Top = 66
     Width = 169
@@ -86,7 +86,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
       'No especificado')
     TabOrder = 6
   end
-  object Edit8: TEdit
+  object txtDireccionCalleBuscar: TEdit
     Left = 8
     Top = 124
     Width = 169
@@ -94,7 +94,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     TabOrder = 7
     Text = 'Direcci'#243'n de calle'
   end
-  object CheckBox1: TCheckBox
+  object chkMostrarTodos: TCheckBox
     Left = 216
     Top = 124
     Width = 145
@@ -116,7 +116,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     ColCount = 9
     TabOrder = 9
   end
-  object Button1: TButton
+  object btnBuscarSocio: TButton
     Left = 440
     Top = 57
     Width = 121

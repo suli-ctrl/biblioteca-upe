@@ -12,9 +12,9 @@ object ModificarLibroForm: TModificarLibroForm
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label2: TLabel
-    Left = 216
-    Top = 32
+  object lblIngreseInfoLibroAModi: TLabel
+    Left = 215
+    Top = 8
     Width = 299
     Height = 25
     Caption = 'Ingrese informaci'#243'n del libro'
@@ -25,7 +25,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label1: TLabel
+  object lblModificarLibro: TLabel
     Left = 649
     Top = 0
     Width = 99
@@ -38,7 +38,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label10: TLabel
+  object lblEstadoAModi: TLabel
     Left = 112
     Top = 328
     Width = 49
@@ -51,7 +51,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label9: TLabel
+  object lblAnioPublicacionLibroAModi: TLabel
     Left = 456
     Top = 328
     Width = 133
@@ -64,7 +64,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label8: TLabel
+  object lblUbicacionAModi: TLabel
     Left = 456
     Top = 264
     Width = 70
@@ -77,7 +77,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label7: TLabel
+  object lblAutoresAModi: TLabel
     Left = 456
     Top = 200
     Width = 53
@@ -90,7 +90,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label6: TLabel
+  object lblEditorialAModi: TLabel
     Left = 456
     Top = 136
     Width = 58
@@ -103,7 +103,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label5: TLabel
+  object lblSubAreaAModi: TLabel
     Left = 112
     Top = 264
     Width = 60
@@ -116,7 +116,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label4: TLabel
+  object lblAreaAModi: TLabel
     Left = 112
     Top = 200
     Width = 33
@@ -129,7 +129,7 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label3: TLabel
+  object lblNombreAModi: TLabel
     Left = 112
     Top = 136
     Width = 55
@@ -142,14 +142,27 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Edit1: TEdit
+  object lblNombreLibroBuscarModi: TLabel
+    Left = 336
+    Top = 39
+    Width = 60
+    Height = 18
+    Caption = 'Nombre'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object txtNombreLibroBuscarAModi: TEdit
     Left = 272
     Top = 63
     Width = 185
     Height = 23
     TabOrder = 0
   end
-  object Button1: TButton
+  object BtnBuscarNomAModi: TButton
     Left = 320
     Top = 92
     Width = 97
@@ -163,17 +176,17 @@ object ModificarLibroForm: TModificarLibroForm
     ParentFont = False
     TabOrder = 1
   end
-  object Edit5: TEdit
+  object txtAutoresAModi: TEdit
     Left = 456
     Top = 222
     Width = 161
     Height = 23
     TabOrder = 2
   end
-  object Button2: TButton
+  object btnModificarLibro: TButton
     Left = 296
     Top = 416
-    Width = 129
+    Width = 137
     Height = 33
     Caption = 'Modificar'
     Font.Charset = ANSI_CHARSET
@@ -184,7 +197,7 @@ object ModificarLibroForm: TModificarLibroForm
     ParentFont = False
     TabOrder = 3
   end
-  object ListBox1: TListBox
+  object lstEstadoAModi: TListBox
     Left = 112
     Top = 350
     Width = 161
@@ -197,42 +210,42 @@ object ModificarLibroForm: TModificarLibroForm
       'Destruido')
     TabOrder = 4
   end
-  object Edit7: TEdit
+  object txtAnioPublicacionAModi: TEdit
     Left = 456
     Top = 350
     Width = 161
     Height = 23
     TabOrder = 5
   end
-  object Edit6: TEdit
+  object txtUbicacionAModi: TEdit
     Left = 456
     Top = 286
     Width = 161
     Height = 23
     TabOrder = 6
   end
-  object Edit4: TEdit
+  object txtEditorialAModi: TEdit
     Left = 456
     Top = 158
     Width = 161
     Height = 23
     TabOrder = 7
   end
-  object Edit3: TEdit
+  object txtSubAreaAModi: TEdit
     Left = 112
     Top = 286
     Width = 161
     Height = 23
     TabOrder = 8
   end
-  object Edit2: TEdit
+  object txtAreaAModi: TEdit
     Left = 112
     Top = 222
     Width = 161
     Height = 23
     TabOrder = 9
   end
-  object Edit8: TEdit
+  object txtNombreAModi: TEdit
     Left = 112
     Top = 158
     Width = 161

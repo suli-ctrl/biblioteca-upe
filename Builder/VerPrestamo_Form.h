@@ -11,7 +11,7 @@
 class TVerPrestamoActivoForm : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label1;
+	TLabel *lblVerPrestamos;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TVerPrestamoActivoForm(TComponent* Owner);

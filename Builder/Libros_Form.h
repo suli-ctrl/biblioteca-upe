@@ -19,10 +19,10 @@ class TLibrosForm : public TForm
 {
 __published:	// IDE-managed Components
 	TPanel *Panel1;
-	TImage *Image1;
-	TLabel *Label1;
+	TImage *imgLogoBiblioteca;
+	TLabel *lblNomBiblioteca;
 	TPanel *Panel2;
-	TLabel *Label2;
+	TLabel *lblOpcionesGestion;
 	TPanel *Panel3;
 	TBitBtn *BtnModificarLibro;
 	TButton *BtnVolver;

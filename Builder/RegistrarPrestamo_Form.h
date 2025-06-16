@@ -11,7 +11,7 @@
 class TRegistrarPrestamoForm : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label1;
+	TLabel *lblRegistrarPrestamo;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TRegistrarPrestamoForm(TComponent* Owner);

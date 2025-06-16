@@ -12,7 +12,7 @@ object RegistrarPrestamoForm: TRegistrarPrestamoForm
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object lblRegistrarPrestamo: TLabel
     Left = 622
     Top = 0
     Width = 126

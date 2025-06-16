@@ -11,7 +11,7 @@
 class TRegistarDevoluciónForm : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *Label1;
+	TLabel *lblRegistrarDevolucion;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TRegistarDevoluciónForm(TComponent* Owner);

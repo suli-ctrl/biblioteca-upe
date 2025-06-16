@@ -12,7 +12,7 @@ object VerPrestamoActivoForm: TVerPrestamoActivoForm
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
+  object lblVerPrestamos: TLabel
     Left = 591
     Top = 0
     Width = 157

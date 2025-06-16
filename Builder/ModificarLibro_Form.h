@@ -11,27 +11,28 @@
 class TModificarLibroForm : public TForm
 {
 __published:	// IDE-managed Components
-	TEdit *Edit1;
-	TButton *Button1;
-	TLabel *Label2;
-	TLabel *Label1;
-	TEdit *Edit5;
-	TButton *Button2;
-	TListBox *ListBox1;
-	TEdit *Edit7;
-	TEdit *Edit6;
-	TEdit *Edit4;
-	TEdit *Edit3;
-	TEdit *Edit2;
-	TEdit *Edit8;
-	TLabel *Label10;
-	TLabel *Label9;
-	TLabel *Label8;
-	TLabel *Label7;
-	TLabel *Label6;
-	TLabel *Label5;
-	TLabel *Label4;
-	TLabel *Label3;
+	TEdit *txtNombreLibroBuscarAModi;
+	TButton *BtnBuscarNomAModi;
+	TLabel *lblIngreseInfoLibroAModi;
+	TLabel *lblModificarLibro;
+	TEdit *txtAutoresAModi;
+	TButton *btnModificarLibro;
+	TListBox *lstEstadoAModi;
+	TEdit *txtAnioPublicacionAModi;
+	TEdit *txtUbicacionAModi;
+	TEdit *txtEditorialAModi;
+	TEdit *txtSubAreaAModi;
+	TEdit *txtAreaAModi;
+	TEdit *txtNombreAModi;
+	TLabel *lblEstadoAModi;
+	TLabel *lblAnioPublicacionLibroAModi;
+	TLabel *lblUbicacionAModi;
+	TLabel *lblAutoresAModi;
+	TLabel *lblEditorialAModi;
+	TLabel *lblSubAreaAModi;
+	TLabel *lblAreaAModi;
+	TLabel *lblNombreAModi;
+	TLabel *lblNombreLibroBuscarModi;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TModificarLibroForm(TComponent* Owner);

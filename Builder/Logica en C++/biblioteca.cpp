@@ -4,6 +4,7 @@
 #include <sstream> //para usar stringstream
 #include "biblioteca.h"
 #include "funciones.h"
+#include <SysUtils.hpp> // Necesario para FormatDateTime
 
 
 
@@ -266,23 +267,26 @@ void biblioteca::guardarPrestamosCSV()
 
 // ---------------------------------------------- Metodos de socios -------------------------------------------------
 
-void biblioteca::altaSocio()
+void biblioteca::altaSocio(int dni, int edad, String apellido, String genero, String direccion, String telefono, String fechaNacimiento, String email)
 {
-    int dni{pedirDni()};
-    int edad{pedirEdad()};
+	/*int dni{pedirDni()};
+	int edad{pedirEdad()};
     std::string apellido{ pedirApellido() };
     std::string genero{ pedirGenero() };
     std::string email{ pedirEmail() };
     std::string fechaNacimiento{ pedirFechaDeNacimiento() };
     std::string telefono{ pedirNumTelefono() };
-    std::string direccion{ pedirDireccion() };
-  
-    socios nuevoSocio(dni, edad, apellido, genero, direccion, telefono, fechaNacimiento, email);
+	std::string direccion{ pedirDireccion() };   */
+	String fecha = FormatDateTime("dd/mm/yyyy", fechaNacimiento);
+	std::string fechaNacimientoStr = ConvertirStdString(fecha);
 
-    listaSocios.push_back(nuevoSocio);
+	cargarSociosCSV();
+
+	socios nuevoSocio(dni, edad, ConvertirStdString(apellido), ConvertirStdString(genero), ConvertirStdString(direccion), ConvertirStdString(telefono), fechaNacimientoStr, ConvertirStdString(email));
+	listaSocios.push_back(nuevoSocio);
+
     guardarSociosCSV();
 
-    std::cout << "El socio fue dado de alta correctamente! \n";
     
 }
 

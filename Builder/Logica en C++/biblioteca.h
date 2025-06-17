@@ -40,7 +40,7 @@ public:
 	void modificarLibro();
 
 	//Metodos para socios
-	void altaSocio(); // Metodo para dar de alta un socio
+	void altaSocio(int dni, int edad, String apellido, String genero, String direccion, String telefono, String fechaNacimiento, String email); // Metodo para dar de alta un socio
 	void bajaSocio(); // Metodo para dar de baja un socio
 	void modificarSocio(); // Metodo para modificar un socio
 

@@ -170,19 +170,12 @@ object AltaSocioForm: TAltaSocioForm
     Height = 23
     TabOrder = 3
   end
-  object txtFechaNacimientoAlta: TEdit
-    Left = 472
-    Top = 174
-    Width = 161
-    Height = 23
-    TabOrder = 4
-  end
   object txtDireccionCalleAlta: TEdit
     Left = 128
     Top = 224
     Width = 161
     Height = 23
-    TabOrder = 5
+    TabOrder = 4
   end
   object lstGeneroAlta: TListBox
     Left = 472
@@ -194,7 +187,7 @@ object AltaSocioForm: TAltaSocioForm
       'Masculino'
       'Femenino'
       'No especificado')
-    TabOrder = 6
+    TabOrder = 5
   end
   object btnDarAlta: TButton
     Left = 312
@@ -208,13 +201,23 @@ object AltaSocioForm: TAltaSocioForm
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
+    OnClick = btnDarAltaClick
   end
   object txtEmailAlta: TEdit
     Left = 472
     Top = 224
     Width = 161
     Height = 23
+    TabOrder = 7
+  end
+  object DateTimeSocio: TDateTimePicker
+    Left = 472
+    Top = 174
+    Width = 161
+    Height = 23
+    Date = 45825.000000000000000000
+    Time = 0.631913263889146000
     TabOrder = 8
   end
 end

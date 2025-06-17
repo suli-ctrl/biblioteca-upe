@@ -30,9 +30,11 @@ void __fastcall TBajaLibroForm::FormShow(TObject *Sender)
 
 	bibliotecaUPE.cargarLibrosCSV();
 
-	for (const auto& libro : bibliotecaUPE.getListaLibros())
+	const std::vector<libros>& libro = bibliotecaUPE.getListaLibros();
+
+	for (int i = 0; i < libro.size(); ++i)
 	{
-		ComboBoxBaja->Items->Add(String(libro.getNombre().c_str()));
+		ComboBoxBaja->Items->Add(String(libro[i].getNombre().c_str()));
 	}
 }
 //---------------------------------------------------------------------------

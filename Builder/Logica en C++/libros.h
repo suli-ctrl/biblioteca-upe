@@ -44,14 +44,14 @@ public:
    
 
    //setters
-   void setNombre(const std::string& nuevoNombre);
-   void setArea(const std::string& nuevoArea);
-   void setSubArea(const std::string& nuevoSubArea);
-   void setAutores(const std::string& nuevosAutores); //Como puedo hacer si quiero agregar varios autores, quizas con getline?
-   void setEditorial(const std::string& nuevaEditorial);
+   void setNombre(std::string& nuevoNombre);
+   void setArea(std::string& nuevoArea);
+   void setSubArea(std::string& nuevoSubArea);
+   void setAutores(std::string& nuevosAutores);
+   void setEditorial(std::string& nuevaEditorial);
    void setAnioDePublicacion(int nuevoAnio);
-   void setUbicacion(const std::string& nuevaUbicacion);
-   void setEstado(const std::string& nuevoEstado);
+   void setUbicacion(std::string& nuevaUbicacion);
+   void setEstado(std::string& nuevoEstado);
 
    
     

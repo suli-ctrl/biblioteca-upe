@@ -11,6 +11,7 @@ object ModificarLibroForm: TModificarLibroForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object lblIngreseInfoLibroAModi: TLabel
     Left = 215
@@ -155,13 +156,6 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object txtNombreLibroBuscarAModi: TEdit
-    Left = 272
-    Top = 63
-    Width = 185
-    Height = 23
-    TabOrder = 0
-  end
   object BtnBuscarNomAModi: TButton
     Left = 320
     Top = 92
@@ -174,18 +168,19 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
+    OnClick = BtnBuscarNomAModiClick
   end
   object txtAutoresAModi: TEdit
     Left = 456
     Top = 222
     Width = 161
     Height = 23
-    TabOrder = 2
+    TabOrder = 1
   end
   object btnModificarLibro: TButton
     Left = 296
-    Top = 416
+    Top = 384
     Width = 137
     Height = 33
     Caption = 'Modificar'
@@ -195,59 +190,62 @@ object ModificarLibroForm: TModificarLibroForm
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 3
-  end
-  object lstEstadoAModi: TListBox
-    Left = 112
-    Top = 350
-    Width = 161
-    Height = 35
-    ItemHeight = 15
-    Items.Strings = (
-      'Bien '
-      'Regular'
-      'Malo'
-      'Destruido')
-    TabOrder = 4
+    TabOrder = 2
+    OnClick = btnModificarLibroClick
   end
   object txtAnioPublicacionAModi: TEdit
     Left = 456
     Top = 350
     Width = 161
     Height = 23
-    TabOrder = 5
+    TabOrder = 3
   end
   object txtUbicacionAModi: TEdit
     Left = 456
     Top = 286
     Width = 161
     Height = 23
-    TabOrder = 6
+    TabOrder = 4
   end
   object txtEditorialAModi: TEdit
     Left = 456
     Top = 158
     Width = 161
     Height = 23
-    TabOrder = 7
+    TabOrder = 5
   end
   object txtSubAreaAModi: TEdit
     Left = 112
     Top = 286
     Width = 161
     Height = 23
-    TabOrder = 8
+    TabOrder = 6
   end
   object txtAreaAModi: TEdit
     Left = 112
     Top = 222
     Width = 161
     Height = 23
-    TabOrder = 9
+    TabOrder = 7
   end
   object txtNombreAModi: TEdit
     Left = 112
     Top = 158
+    Width = 161
+    Height = 23
+    TabOrder = 8
+  end
+  object ComboBoxBusqueda: TComboBox
+    Left = 272
+    Top = 63
+    Width = 185
+    Height = 23
+    TabOrder = 9
+    Text = 'Ingresar nombre del libro'
+  end
+  object ComboBoxEstado: TComboBox
+    Left = 112
+    Top = 350
     Width = 161
     Height = 23
     TabOrder = 10

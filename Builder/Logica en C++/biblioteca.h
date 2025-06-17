@@ -19,8 +19,9 @@ public:
 	~biblioteca(); //Destructor
 
 	//Getters
-	const std::vector<libros>& getListaLibros() const;
-    const std::vector<socios>& getListaSocios() const;
+	const std::vector<libros>& getListaLibros() const; // Solo lectura
+	std::vector<libros>& getListaLibrosModificable(); //Al no tener los const, se puede modificar
+	const std::vector<socios>& getListaSocios() const;
 
 	//Manejo de archivos
 	void cargarSociosCSV();

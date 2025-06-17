@@ -26,6 +26,11 @@ const std::vector<socios>& biblioteca::getListaSocios() const {
 	return listaSocios;
 }
 
+std::vector<libros>& biblioteca::getListaLibrosModificable()
+{
+    return listaLibros;
+}
+
 // ----------------------------------------- Manejo de Archivos ------------------------------------------------------
 
 void biblioteca::cargarSociosCSV()
@@ -439,7 +444,7 @@ void biblioteca::bajaLibro(String libroBaja)
 {
 	cargarLibrosCSV(); //tengo los libros en listaLibros
 
-    std::string libro_eliminar = ConvertirStdString(libroBaja);
+	std::string libro_eliminar = ConvertirStdString(libroBaja);
 	bool existe = false;
 
 	std::vector<libros> nuevaLista;
@@ -466,94 +471,95 @@ void biblioteca::bajaLibro(String libroBaja)
 	}
 }
 
+/*
 void biblioteca::modificarLibro()
 {
-    std::string Ubicacion_modificar;
-    std::cout << "Ingrese la ubicacion del libro a modificar[Ej: Est1-F1]:";
-    std::cin >> Ubicacion_modificar;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //fflush de c++
+	std::string Ubicacion_modificar;
+	std::cout << "Ingrese la ubicacion del libro a modificar[Ej: Est1-F1]:";
+	std::cin >> Ubicacion_modificar;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //fflush de c++
 
-    bool existe = false; //encontrado
+	bool existe = false; //encontrado
 
-    int opcion = 0;
-    std::string nuevoValor;
-    int nuevoAnio = 0;
+	int opcion = 0;
+	std::string nuevoValor;
+	int nuevoAnio = 0;
 
 
-    for (int i = 0; i < listaLibros.size(); i++)
-    {
-        if (listaLibros[i].getUbicacion().compare(Ubicacion_modificar) == 0) //similar a strcmp
-        {
-            existe = true;
+	for (int i = 0; i < listaLibros.size(); i++)
+	{
+		if (listaLibros[i].getUbicacion().compare(Ubicacion_modificar) == 0) //similar a strcmp
+		{
+			existe = true;
 
             std::cout << "Datos actuales del libro:" << std::endl;
-            std::cout << "Ubicacion: " << listaLibros[i].getUbicacion() << std::endl;
+			std::cout << "Ubicacion: " << listaLibros[i].getUbicacion() << std::endl;
             std::cout << "1. Nombre: " << listaLibros[i].getNombre() << std::endl;
             std::cout << "2. Area: " << listaLibros[i].getArea() << std::endl;
             std::cout << "3. Subarea: " << listaLibros[i].getSubArea() << std::endl;
-            std::cout << "4. Autores: " << listaLibros[i].getAutores() << std::endl;
-            std::cout << "5. Editorial: " << listaLibros[i].getEditorial() << std::endl;
+			std::cout << "4. Autores: " << listaLibros[i].getAutores() << std::endl;
+			std::cout << "5. Editorial: " << listaLibros[i].getEditorial() << std::endl;
             std::cout << "6. Año de publicacion: " << listaLibros[i].getAnioDePublicacion() << std::endl;
             std::cout << "7. Estado: " << listaLibros[i].getEstado() << std::endl;
-            std::cout << "0. Ninguno" << std::endl << std::endl;
+			std::cout << "0. Ninguno" << std::endl << std::endl;
 
             do
             {
-                std::cout << "Seleccione el campo a modificar: ";
+				std::cout << "Seleccione el campo a modificar: ";
                 std::cin >> opcion;
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //fflush
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //fflush
 
-            } while (opcion < 0 || opcion > 7);
+			} while (opcion < 0 || opcion > 7);
 
             switch (opcion)
-            {
+			{
             case 1:
                 std::cout << " Ingrese el nuevo nombre: ";
-                getline(std::cin, nuevoValor);
-                listaLibros[i].setNombre(nuevoValor);
-                break;
-            case 2:
+				getline(std::cin, nuevoValor);
+				listaLibros[i].setNombre(nuevoValor);
+				break;
+			case 2:
                 std::cout << " Ingrese nueva area: ";
-                getline(std::cin, nuevoValor);
+				getline(std::cin, nuevoValor);
                 listaLibros[i].setArea(nuevoValor);
-                break;
+				break;
             case 3:
-                std::cout << " Ingrese nueva subarea: ";
+				std::cout << " Ingrese nueva subarea: ";
                 getline(std::cin, nuevoValor);
-                listaLibros[i].setSubArea(nuevoValor);
+				listaLibros[i].setSubArea(nuevoValor);
                 break;
-            case 4:
+			case 4:
                 std::cout << " Ingrese nuevos autores: ";
-                getline(std::cin, nuevoValor);
+				getline(std::cin, nuevoValor);
                 listaLibros[i].setAutores(nuevoValor); //No se si funciona con varios autores
-                break;
+				break;
             case 5:
-                std::cout << " Ingrese nueva editorial: ";
-                getline(std::cin, nuevoValor);
-                listaLibros[i].setEditorial(nuevoValor);
+				std::cout << " Ingrese nueva editorial: ";
+				getline(std::cin, nuevoValor);
+				listaLibros[i].setEditorial(nuevoValor);
                 break;
-            case 6:
+			case 6:
                 std::cout << " Ingrese nuevo año de publicacion: "; //Deberia ser posible modificar esto? Supongo que si
-                std::cin >> nuevoAnio;
-                listaLibros[i].setAnioDePublicacion(nuevoAnio);
-                break;
-            case 7:
-                std::cout << " Ingrese nuevo estado: ";
-                getline(std::cin, nuevoValor);
-                listaLibros[i].setEstado(nuevoValor);
-                break;
-            case 0: break;
-            }
-            if (opcion != 0) std::cout << "Dato modificado con exito." << std::endl;
-            guardarLibrosCSV(); // Guarda el cambio en el archivo
-            break; // Termina la búsqueda del for porque ya hicimos el cambio
-        }
-    }
-    if (!existe)
-    {
-        std::cout << "El libro con ubicacion: " << Ubicacion_modificar << " no existe en el archivo." << std::endl;
-    }
-}
+				std::cin >> nuevoAnio;
+				listaLibros[i].setAnioDePublicacion(nuevoAnio);
+				break;
+			case 7:
+				std::cout << " Ingrese nuevo estado: ";
+				getline(std::cin, nuevoValor);
+				listaLibros[i].setEstado(nuevoValor);
+				break;
+			case 0: break;
+			}
+			if (opcion != 0) std::cout << "Dato modificado con exito." << std::endl;
+			guardarLibrosCSV(); // Guarda el cambio en el archivo
+			break; // Termina la búsqueda del for porque ya hicimos el cambio
+		}
+	}
+	if (!existe)
+	{
+		std::cout << "El libro con ubicacion: " << Ubicacion_modificar << " no existe en el archivo." << std::endl;
+	}
+} */
 
 
 // --------------------------------------------- Metodos de prestamos -----------------------------------------------

@@ -64,44 +64,44 @@ std::string libros::getEstado() const
 
 /*---------------------------------- Metodos Setters -----------------------------------------*/
 
-void libros::setNombre(const std::string& nuevoNombre)
+void libros::setNombre(std::string& nuevoNombre)
 {
-    nombre = nuevoNombre;
+	nombre = nuevoNombre;
 }
 
-void libros::setArea(const std::string& nuevoArea)
+void libros::setArea(std::string& nuevoArea)
 {
-    area = nuevoArea;
+	area = nuevoArea;
 }
 
-void libros::setSubArea(const std::string& nuevoSubArea)
+void libros::setSubArea(std::string& nuevoSubArea)
 {
-    subarea = nuevoSubArea;
+	subarea = nuevoSubArea;
 }
 
-void libros::setAutores(const std::string& nuevosAutores)
+void libros::setAutores(std::string& nuevosAutores)
 {
-    autores = nuevosAutores;
+	autores = nuevosAutores;
 }
 
-void libros::setEditorial(const std::string& nuevaEditorial)
+void libros::setEditorial(std::string& nuevaEditorial)
 {
-    editorial = nuevaEditorial;
+	editorial = nuevaEditorial;
 }
 
 void libros::setAnioDePublicacion(int nuevoAnio)
 {
-    anioDePublicacion = nuevoAnio;
+	anioDePublicacion = nuevoAnio;
 }
 
-void libros::setUbicacion(const std::string& nuevaUbicacion)
+void libros::setUbicacion(std::string& nuevaUbicacion)
 {
-    ubicacion = nuevaUbicacion;
+	ubicacion = nuevaUbicacion;
 }
 
-void libros::setEstado(const std::string& nuevoEstado)
+void libros::setEstado(std::string& nuevoEstado)
 {
-    estado = nuevoEstado;
+	estado = nuevoEstado;
 }
 
 

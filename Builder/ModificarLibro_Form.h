@@ -7,17 +7,16 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include "biblioteca.h"
 //---------------------------------------------------------------------------
 class TModificarLibroForm : public TForm
 {
 __published:	// IDE-managed Components
-	TEdit *txtNombreLibroBuscarAModi;
 	TButton *BtnBuscarNomAModi;
 	TLabel *lblIngreseInfoLibroAModi;
 	TLabel *lblModificarLibro;
 	TEdit *txtAutoresAModi;
 	TButton *btnModificarLibro;
-	TListBox *lstEstadoAModi;
 	TEdit *txtAnioPublicacionAModi;
 	TEdit *txtUbicacionAModi;
 	TEdit *txtEditorialAModi;
@@ -33,7 +32,13 @@ __published:	// IDE-managed Components
 	TLabel *lblAreaAModi;
 	TLabel *lblNombreAModi;
 	TLabel *lblNombreLibroBuscarModi;
+	TComboBox *ComboBoxBusqueda;
+	TComboBox *ComboBoxEstado;
+	void __fastcall FormShow(TObject *Sender);
+	void __fastcall BtnBuscarNomAModiClick(TObject *Sender);
+	void __fastcall btnModificarLibroClick(TObject *Sender);
 private:	// User declarations
+	biblioteca bibliotecaUPE;
 public:		// User declarations
 	__fastcall TModificarLibroForm(TComponent* Owner);
 };
@@ -41,3 +46,5 @@ public:		// User declarations
 extern PACKAGE TModificarLibroForm *ModificarLibroForm;
 //---------------------------------------------------------------------------
 #endif
+
+

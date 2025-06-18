@@ -677,6 +677,35 @@ void biblioteca::devolverLibro()
     std::cout << "No se encontro un prestamo activo para ese libro.\n";
 }
 
+void biblioteca::mostrarPrestamosActivos()
+{
+    bool hayActivos = false; //uso una flag
+
+    for (const prestamos& p : listaPrestamos) 
+    {
+        if (!p.libroDevuelto()) //si el libro esta prestado
+        {
+            p.mostrar(); //muestro los datos
+
+            if (p.estaVencido()) 
+            {
+                int atraso = -p.diasHastaVencimiento();
+                std::cout << "AVISO: Vencido hace " << atraso << " dias.\n";
+            }
+            else {
+                std::cout << "Faltan " << p.diasHastaVencimiento() << " días para el vencimiento.\n";
+            }
+
+            std::cout << "-----------------------------\n";
+            hayActivos = true;
+        }
+    }
+
+    if (!hayActivos) {
+        std::cout << "No hay prestamos activos.\n";
+    }
+}
+
 
 // ---------------------------- METODOS DE VISUALIZACION Y BUSQUEDA PARA SOCIOS -------------------------------------
 

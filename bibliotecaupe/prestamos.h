@@ -37,8 +37,8 @@ public:
     void setDevuelto(bool);
 
     //funcionalidad de vencimiento
-    bool estaVencido();
-    int diasHastaVencimiento();
+    bool estaVencido() const;
+    int diasHastaVencimiento() const;
     std::string calcularFechaVencimiento() const; //para no guardar fecha vencimiento fija
 
     //mostrar

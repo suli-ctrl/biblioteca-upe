@@ -194,7 +194,7 @@ void menuPrestamos(biblioteca & BibliotecaUPE)
         std::cout << "1. Registrar prestamo" << std::endl;
         std::cout << "2. Registrar devolucion " << std::endl;
         std::cout << "3. Ver prestamos activos " << std::endl;
-        std::cout << "0. Salir" << std::endl;
+        std::cout << "4. Salir" << std::endl;
         std::cout << "--------------------" << std::endl;
 
         std::cout << "Seleccione una opcion:";
@@ -208,11 +208,16 @@ void menuPrestamos(biblioteca & BibliotecaUPE)
 
         switch (opcion)
         {
-        case 0: break;
-        case 1: //BibliotecaUPE.prestarLibro();
+        case 1: BibliotecaUPE.prestarLibro();
+            break;
+        case 2: BibliotecaUPE.devolverLibro();
+            break;
+        case 3: BibliotecaUPE.mostrarPrestamosActivos();
+            break;
+        case 4:
             break;
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }
-    } while (opcion != 0);
+    } while (opcion != 4);
 
 }

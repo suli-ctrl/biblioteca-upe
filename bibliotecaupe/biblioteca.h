@@ -41,7 +41,7 @@ public:
 
 	//Metodos para prestamos
 	void prestarLibro();
-	void devolucionLibro();
+	void devolverLibro();
 
 	//Metodos de busqueda y filtro para libros
 	void buscoLibroPorNombre();

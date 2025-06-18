@@ -1,61 +1,65 @@
 #include <iostream>
+#include <ctime> // me sirve para tener estructuras que representen fechas, se necesita para seguir el conteo de los dias que se presto un libro. Se usa std::tm. Tambien uso time_t que usa la fecha como un numero, me sirve para hacer la cuenta de cuanto dias lleva prestado el libro, para hacer esta cuenta uso difftime
+#include <sstream>
+#include <iomanip> // libreria que me permite controlar formato de entrada y salida, de el uso std::get_time que va a leer mi formato dd/mm/aaaa y lo va a pasar a tm de ctime
 #include "prestamos.h"
 #include "libros.h"
 #include "socios.h"
 
 prestamos::prestamos(libros& _libro, socios& _socio, std::string _fechaPrestamo, int _diasPrestamo)
-    : refLibro(_libro), refSocio(_socio), fechaPrestamo(_fechaPrestamo), diasPrestamo(_diasPrestamo) //Lista de inicializacion
+    : refLibro(_libro), refSocio(_socio), fechaPrestamo(_fechaPrestamo), diasPrestamo(_diasPrestamo), devuelto(false)
 {
     std::cout << "Prestamo creado" << std::endl;
 }
 
 prestamos::~prestamos()
 {
-    //Destructor
+    // Destructor
 }
 
-//----------------------------------------------------------------------------GETTERS------------------------------------------------------------------------------------------
+// ------------------------ GETTERS ------------------------
 
-void prestamos::getPrestamo()
+const libros& prestamos::getLibroPrestado() const
 {
-    std::cout << "El libro " << refLibro.getNombre() << " fue prestado a " << refSocio.getApellido() << " el " << fechaPrestamo << " hasta el " << fechaVencimiento << "\n";
+    return refLibro;
 }
 
-std::string prestamos::getLibroPrestado()
+const socios& prestamos::getSocioPrestatario() const
 {
-    std::cout << "El libro prestado es: " << refLibro.getNombre() << "\n";
-    return refLibro.getNombre();
+    return refSocio;
 }
 
-int prestamos::getSocioPrestatario()
-{
-    std::cout << "El socio prestatario es: " << refSocio.getDNI() << "\n";
-    return refSocio.getDNI();
-}
-
-std::string prestamos::getFechaPrestamo()
+std::string prestamos::getFechaPrestamo() const
 {
     return fechaPrestamo;
 }
 
-int prestamos::getDiasPrestamo()
+int prestamos::getDiasPrestamo() const
 {
     return diasPrestamo;
 }
 
-std::string prestamos::getFechaVencimiento()
+std::string prestamos::getFechaVencimiento() const
 {
     return fechaVencimiento;
 }
-
 
 bool prestamos::libroDevuelto() const
 {
     return devuelto;
 }
 
-//--------------------------------------------------------------------------SETTERS-------------------------------------------------------------------------------------------//
+libros& prestamos::getLibro() 
+{
+    return refLibro;
+}
 
+socios& prestamos::getSocio() 
+{
+    return refSocio;
+}
+
+// ------------------------ SETTERS ------------------------
 
 void prestamos::setFechaVencimiento(const std::string fecha)
 {
@@ -67,14 +71,54 @@ void prestamos::setDevuelto(bool valor)
     devuelto = valor;
 }
 
-//-------------------------------------------------------------------------FUNCIONALIDAD PRESTAMOS---------------------------------------------------------------------------//
+// ------------------------ FUNCIONALIDAD ------------------------
+
 bool prestamos::estaVencido()
 {
+    std::tm tmPrestamo = {}; //estructura para guardar la fecha como fecha real
+    std::istringstream ss(fechaPrestamo); //uso stringstream para leer el texto
+    ss >> std::get_time(&tmPrestamo, "%d/%m/%Y"); // "12/06/2025"
 
-    return true ; //provisional
+    if (ss.fail()) {
+        std::cerr << "Fecha inválida: " << fechaPrestamo << "\n";
+        return false;
+    }
+
+    std::time_t tiempoPrestamo = std::mktime(&tmPrestamo); //convierto time_t usando mktime(fecha de sistema)
+    std::time_t ahora = std::time(nullptr); //tomo la fecha actual
+
+    double segundosPasados = std::difftime(ahora, tiempoPrestamo); //diferencia entre ahora y la fecha del prestamo en segundos
+    int diasPasados = static_cast<int>(segundosPasados / (60 * 60 * 24)); //de segundos lo convierto a dias
+
+    return diasPasados > diasPrestamo; //si paso el limite va a devolver true si no lo hace false
 }
 
 int prestamos::diasHastaVencimiento()
 {
-    return 0;
+    std::tm tmPrestamo = {};
+    std::istringstream ss(fechaPrestamo);
+    ss >> std::get_time(&tmPrestamo, "%d/%m/%Y");
+
+    if (ss.fail()) return -1;
+
+    std::time_t tiempoPrestamo = std::mktime(&tmPrestamo);
+    std::time_t ahora = std::time(nullptr);
+    double segundosPasados = std::difftime(ahora, tiempoPrestamo);
+    int diasPasados = static_cast<int>(segundosPasados / (60 * 60 * 24));
+
+    return diasPrestamo - diasPasados; //calculo cuanto falta o si se paso del plazo
+}
+
+// ------------------------ MOSTRAR ------------------------
+
+void prestamos::mostrar() const
+{
+    std::cout << "Libro: " << refLibro.getNombre();
+    std::cout << " | Ubicacion: " << refLibro.getUbicacion();
+    std::cout << " | Socio: " << refSocio.getApellido();
+    std::cout << " | DNI: " << refSocio.getDNI();
+    std::cout << " | Fecha: " << fechaPrestamo;
+    std::cout << " | Dias: " << diasPrestamo;
+    std::cout << " | Devuelto: " << (devuelto ? "Si" : "No");
+    std::cout << "\n";
 }

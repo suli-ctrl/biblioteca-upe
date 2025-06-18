@@ -5,11 +5,11 @@
 /*--------------------------------- Constructor ----------------------------------------*/
 
 libros::libros(std::string _nombre, std::string _area, std::string _subarea,
-               std::string _autores, std::string _editorial, int _anioDePublicacion,
-               std::string _ubicacion, std::string _estado)
-               : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
-                editorial(_editorial), anioDePublicacion(_anioDePublicacion),
-                ubicacion(_ubicacion), estado(_estado)
+    std::string _autores, std::string _editorial, int _anioDePublicacion,
+    std::string _ubicacion, std::string _estado)
+    : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
+    editorial(_editorial), anioDePublicacion(_anioDePublicacion),
+    ubicacion(_ubicacion), estado(_estado), prestado(false)
 {}
 
 /*--------------------------------- Destructor ----------------------------------------*/
@@ -104,8 +104,10 @@ void libros::setEstado(const std::string& nuevoEstado)
     estado = nuevoEstado;
 }
 
-
-
+void libros::setPrestado(bool valor)
+{
+    prestado = valor;
+}
 
 
 /*---------------------------------- Metodos privados para codigo de barras -----------------------------------------*/
@@ -182,4 +184,9 @@ void libros::mostrar() const
     std::cout << "Ubicacion: " << getUbicacion() << "\n";
     std::cout << "Estado: " << getEstado() << "\n";
     std::cout << "--------------------------\n";
+}
+
+bool libros::estaDisponible() const 
+{
+    return !prestado;
 }

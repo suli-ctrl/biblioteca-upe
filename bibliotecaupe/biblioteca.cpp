@@ -160,7 +160,7 @@ void biblioteca::cargarPrestamosCSV()
 {
     std::ifstream archivo("lista de prestamos.csv");
 
-    std::string tituloLibro, dniSocio, fechaPrestamo, diasPrestamo, fechaVencimiento, devuelto;
+    std::string ubicacionLibro, dniSocio, fechaPrestamo, diasPrestamo, fechaVencimiento, devuelto;
    
     std::string registro; //variable donde queda guardada la linea
 
@@ -170,7 +170,7 @@ void biblioteca::cargarPrestamosCSV()
 
         std::stringstream token(registro);
 
-        getline(token, tituloLibro, ',');
+        getline(token, ubicacionLibro, ',');
         getline(token, dniSocio, ',');
         getline(token, fechaPrestamo, ',');
         getline(token, diasPrestamo, ',');
@@ -184,7 +184,7 @@ void biblioteca::cargarPrestamosCSV()
         libros* buscoLibro = nullptr; //puntero nulo llamado buscoLibro
         for (int i = 0;i < listaLibros.size(); i++) //recorro la lista buscando el libro a prestar
         {
-            if (listaLibros[i].getNombre() == tituloLibro) 
+            if (listaLibros[i].getUbicacion() == ubicacionLibro) 
             {
                 buscoLibro = &listaLibros[i];
                 break; //termino el ciclo for
@@ -231,14 +231,14 @@ void biblioteca::guardarPrestamosCSV()
         return;
     }
 
-    for (int i = 0; i < listaPrestamos.size(); i++)
+    // esto va a guardar la info asi: ubi del libro,DNI,fecha del prestamo,dias que van del prestamo,devuelto
+    for (const auto& prestamo : listaPrestamos)
     {
-        archivo << listaPrestamos[i].getLibroPrestado() << ","
-            << listaPrestamos[i].getSocioPrestatario() << ","
-            << listaPrestamos[i].getFechaPrestamo() << ","
-            << listaPrestamos[i].getDiasPrestamo() << ","
-            << listaPrestamos[i].getFechaVencimiento() << ","
-            << (listaPrestamos[i].libroDevuelto() ? "true" : "false") << "\n"; // operador ternario para convertir un bool true o flase en texto explicito
+        archivo << prestamo.getLibroPrestado().getUbicacion() << ","
+                << prestamo.getSocioPrestatario().getDNI() << ","
+                << prestamo.getFechaPrestamo() << ","
+                << prestamo.getDiasPrestamo() << ","
+                << (prestamo.libroDevuelto() ? "true" : "false") << "\n"; // operador ternario para convertir un bool true o flase en texto explicito
     }
 
     archivo.close();
@@ -576,33 +576,107 @@ void biblioteca::modificarLibro()
 
 
 // --------------------------------------------- Metodos de prestamos -----------------------------------------------
-/*
-
-
-
-void biblioteca::prestarLibro()
+void biblioteca::prestarLibro() 
 {
-    if (libros::prestado) { //creo que esto hay que hacerlo con punteros pq asi no compila ya que es un miembro privado
-        std::cout << "El libro '" << nombre << "' ya esta prestado." << std::endl;
+    cargarLibrosCSV();
+    cargarSociosCSV();
+
+    std::string ubicacionLibro;
+    int dniSocio;
+    std::string fechaPrestamo;
+    int diasPrestamo;
+
+    std::cout << "Ubicacion del libro a prestar: ";
+    std::cin >> ubicacionLibro;
+
+    libros* libroPrestado = nullptr; //uso un puntero para guardar la dir al libro dentro del vector asi lo puedo modificar, hago lo mismo desp con socios
+    for (libros& l : listaLibros) 
+    {
+        if (l.getUbicacion() == ubicacionLibro && l.estaDisponible()) {
+            libroPrestado = &l;
+            break;
+        }
     }
-    else {
-        prestado = true;
-        std::cout << "El libro '" << nombre << "' fue prestado." << std::endl;
+
+    if (!libroPrestado) 
+    {
+        std::cout << "Libro no disponible o no encontrado.\n";
+        return;
     }
+
+    std::cout << "DNI del socio: ";
+    std::cin >> dniSocio;
+
+    socios* socioPrestador = nullptr;
+    for (socios& s : listaSocios) 
+    {
+        if (s.getDNI() == dniSocio) {
+            socioPrestador = &s;
+            break;
+        }
+    }
+
+    if (!socioPrestador) 
+    {
+        std::cout << "Socio no encontrado.\n";
+        return;
+    }
+
+    std::cout << "Fecha del prestamo (dd/mm/aaaa): ";
+    std::cin.ignore();
+    std::getline(std::cin, fechaPrestamo);
+
+    std::cout << "Cantidad de dias de prestamo: ";
+    std::cin >> diasPrestamo;
+
+    prestamos nuevoPrestamo(*libroPrestado, *socioPrestador, fechaPrestamo, diasPrestamo);
+    listaPrestamos.push_back(nuevoPrestamo);
+
+    // Marcar el libro como no disponible
+    libroPrestado->setPrestado(true);
+
+    std::cout << "Prestamo registrado correctamente.\n";
+
+    guardarPrestamosCSV();
+} 
+
+void biblioteca::devolverLibro()
+{
+    std::string ubicacionLibro;
+    std::cout << "Ubicacion del libro a devolver: ";
+    std::cin >> ubicacionLibro;
+
+    //busco el prestamo correspondiente (no devuelto)
+    for (prestamos& prestamo : listaPrestamos)  
+    {
+        if (prestamo.getLibro().getUbicacion() == ubicacionLibro && !prestamo.libroDevuelto()) 
+        {
+
+            //marco el prestamo como devuelto
+            prestamo.setDevuelto(true);
+
+            //busco el libro en la lista y lo marco como disponible
+            for (libros& libro : listaLibros) 
+            {
+                if (libro.getUbicacion() == ubicacionLibro) 
+                {
+                    libro.setPrestado(false);
+                    break;
+                }
+            }
+
+            std::cout << "Libro devuelto correctamente.\n";
+
+            guardarPrestamosCSV();
+            guardarLibrosCSV();
+
+            return; // Salimos porque ya lo hicimos
+        }
+    }
+
+    std::cout << "No se encontro un prestamo activo para ese libro.\n";
 }
 
-
-void biblioteca::devolucionLibro()
-{
-    if (!prestado) {
-        std::cout << "El libro '" << nombre << "' no estaba prestado.";
-    }
-    else {
-        prestado = false;
-        std::cout << "El libro '" << nombre << "' fue devuelto." << '\n';
-    }
-}
-*/ 
 
 // ---------------------------- METODOS DE VISUALIZACION Y BUSQUEDA PARA SOCIOS -------------------------------------
 
@@ -623,7 +697,8 @@ void biblioteca::menuBusquedaSocios()
         std::getline(std::cin, entrada);
         std::stringstream ss(entrada);
 
-        if (!(ss >> opcion)) {
+        if (!(ss >> opcion)) 
+        {
             std::cout << "Entrada invalida, por favor ingrese un numero.\n";
             continue;
         }

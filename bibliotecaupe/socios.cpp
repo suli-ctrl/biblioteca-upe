@@ -111,6 +111,7 @@ void socios::setEmail(const std::string& nuevoEmail)
 }
 
 
+
 // una funcion para mostrar todos los datos
 
 void socios::mostrar() const {

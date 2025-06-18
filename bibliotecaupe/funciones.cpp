@@ -199,14 +199,14 @@ std::string pedirEmail()
 	} while (true);
 }
 
-//funcion para que la fecha de nacimiento sea valida del tipo: DD-MM-AAAA
+//funcion para que la fecha de nacimiento sea valida del tipo: DD/MM/AAAA
 bool formatoFecha(const std::string& fechanacimiento)
 {
 	if (fechanacimiento.length() != 10)
 	{
 		return false;
 	}
-	if (fechanacimiento[2] != '-' || fechanacimiento[5] != '-')
+	if (fechanacimiento[2] != '/' || fechanacimiento[5] != '/')
 	{
 		return false;
 	}
@@ -263,7 +263,7 @@ std::string pedirFechaDeNacimiento()
 	std::string fecha;
 	while (true) 
 	{
-		std::cout << "Ingrese su fecha de nacimiento (dd-mm-aaaa)\n";
+		std::cout << "Ingrese su fecha de nacimiento (dd/mm/aaaa)\n";
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::getline(std::cin, fecha);
 

@@ -52,6 +52,7 @@ public:
    void setAnioDePublicacion(int nuevoAnio);
    void setUbicacion(const std::string& nuevaUbicacion);
    void setEstado(const std::string& nuevoEstado);
+   void setPrestado(bool valor);
 
    
     
@@ -60,7 +61,7 @@ public:
    std::string codBarras(); //genera el codigo
 
    void mostrar() const;
-
+   bool estaDisponible() const;
 };
 
 #endif

@@ -203,7 +203,7 @@ void menuPrestamos(biblioteca & BibliotecaUPE)
 
         if (!(ss >> opcion))
         {
-            std::cout << "Entrada inválida, por favor ingrese un número.\n";
+            std::cout << "Entrada invalida, por favor ingrese un numero.\n";
             continue;
         }
 

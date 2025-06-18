@@ -693,7 +693,7 @@ void biblioteca::mostrarPrestamosActivos()
                 std::cout << "AVISO: Vencido hace " << atraso << " dias.\n";
             }
             else {
-                std::cout << "Faltan " << p.diasHastaVencimiento() << " días para el vencimiento.\n";
+                std::cout << "Faltan " << p.diasHastaVencimiento() << " dias para el vencimiento.\n";
             }
 
             std::cout << "-----------------------------\n";

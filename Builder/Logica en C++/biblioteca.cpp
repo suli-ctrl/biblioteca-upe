@@ -290,55 +290,55 @@ void biblioteca::altaSocio(int dni, int edad, String apellido, String genero, St
     
 }
 
-void biblioteca::bajaSocio()
+void biblioteca::bajaSocio(String socioBaja)
 {
-    cargarSociosCSV();
-    std::string dniSocio;
-    bool existe = false;
-    std::vector<socios> nuevaLista;
+	cargarSociosCSV();
 
-    std::cout << "Ingrese el DNI del socio que desea eliminar: \n";
-    std::cin >> dniSocio;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::string socio_eliminar = ConvertirStdString(socioBaja);
+	bool existe = false;
 
-    bool esNumerico = true;
-    for (char c : dniSocio)
-    {
-        if (!isdigit(c))
-        {
-            esNumerico = false;
-            break;
-        }
-    }
+	std::vector<socios> nuevaLista;
 
-    if (!esNumerico || dniSocio.length() != 8)
-    {
-        std::cout << "Error: El DNI debe contener solo 8 digitos numericos. \n";
-        return; 
-    }
 
-    for (int i = 0; i < listaSocios.size(); i++)
-    {
-        std::string dniActual = std::to_string(listaSocios[i].getDNI());
 
-        if (dniActual == dniSocio)
-        {
+	//Validaciones (Comentadas, ver mas tarde)
+	/*bool esNumerico = true;
+	for (char c : dniSocio)
+	{
+		if (!isdigit(c))
+		{
+			esNumerico = false;
+			break;
+		}
+	}
+
+	if (!esNumerico || dniSocio.length() != 8)
+	{
+		std::cout << "Error: El DNI debe contener solo 8 digitos numericos. \n";
+		return;
+	}
+	*/
+
+	for (int i = 0; i < listaSocios.size(); i++)
+	{
+		if (std::to_string(listaSocios[i].getDNI()) == socio_eliminar) //Compara el DNI ingresado con cada DNI de la lista hasta encontrarlo
+		{
             existe = true;
-            continue; 
-        }
+			continue; //No lo copia al nuevo vector
+		}
 
-        nuevaLista.push_back(listaSocios[i]);
-    }
+		nuevaLista.push_back(listaSocios[i]);  //Agrega a la nueva lista
+	}
 
     if (existe)
     {
-        listaSocios = nuevaLista; 
-        guardarSociosCSV();      
-        std::cout << "Socio eliminado correctamente. \n";
-    }
+		listaSocios = nuevaLista;
+		guardarSociosCSV();
+		ShowMessage( "Socio eliminado correctamente");
+	}
     else
     {
-        std::cout << "No se encontro ningun socio con el DNI: " << dniSocio << '\n';
+		ShowMessage("El socio no se ha encontrado");
     }
 }
 

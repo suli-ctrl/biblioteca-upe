@@ -31,7 +31,7 @@ void menuPrincipal(biblioteca& BibliotecaUPE)
         std::cout << "1. Gestion de libros" << std::endl;
         std::cout << "2. Gestion de socios " << std::endl;
         std::cout << "3. Prestamos " << std::endl;
-        std::cout << "0. Salir" << std::endl;
+        std::cout << "4. Salir" << std::endl;
         std::cout << "--------------------" << std::endl;
 
         std::cout << "Seleccione una opcion:";
@@ -53,18 +53,18 @@ void menuPrincipal(biblioteca& BibliotecaUPE)
 
         switch (opcion)
         {
-        case 0:
-            break;
         case 1: menuLibros(BibliotecaUPE);
             break;
         case 2: menuSocios(BibliotecaUPE);
             break;
         case 3: menuPrestamos(BibliotecaUPE);
             break;
+        case 4:
+            break;
         default: std::cout << "Opcion incorrecta" << std::endl << std::endl;
         }
 
-    } while (opcion != 0);
+    } while (opcion != 4);
 }
 
 void menuLibros(biblioteca& BibliotecaUPE)
@@ -197,8 +197,15 @@ void menuPrestamos(biblioteca & BibliotecaUPE)
         std::cout << "4. Salir" << std::endl;
         std::cout << "--------------------" << std::endl;
 
-        std::cout << "Seleccione una opcion:";
-        std::cin >> opcion;
+        std::string entrada;
+        std::getline(std::cin, entrada);
+        std::stringstream ss(entrada);
+
+        if (!(ss >> opcion))
+        {
+            std::cout << "Entrada inválida, por favor ingrese un número.\n";
+            continue;
+        }
 
 #ifdef _WIN32
         system("cls");

@@ -73,7 +73,7 @@ void prestamos::setDevuelto(bool valor)
 
 // ------------------------ FUNCIONALIDAD ------------------------
 
-bool prestamos::estaVencido()
+bool prestamos::estaVencido() const
 {
     std::tm tmPrestamo = {}; //estructura para guardar la fecha como fecha real
     std::istringstream ss(fechaPrestamo); //uso stringstream para leer el texto
@@ -93,7 +93,7 @@ bool prestamos::estaVencido()
     return diasPasados > diasPrestamo; //si paso el limite va a devolver true si no lo hace false
 }
 
-int prestamos::diasHastaVencimiento()
+int prestamos::diasHastaVencimiento() const
 {
     std::tm tmPrestamo = {};
     std::istringstream ss(fechaPrestamo);

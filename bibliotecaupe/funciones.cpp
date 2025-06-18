@@ -107,7 +107,7 @@ std::string pedirGenero()
 
 		std::cout << "\n Seleccione su genero \n";
 		std::cout << "1. Masculino\n";
-		std::cout << "1. Femenino\n";
+		std::cout << "2. Femenino\n";
 		std::cout << "3. Prefiero no responder\n";
 		std::cin >> opcion;
 

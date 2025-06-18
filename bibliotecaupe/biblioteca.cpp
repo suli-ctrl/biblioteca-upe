@@ -21,11 +21,17 @@ biblioteca::~biblioteca()
 
 void biblioteca::cargarSociosCSV()
 {
-    listaSocios.clear(); //Limpia la lista cada vez que entra a cargarSociosCSV para que no se duplique el contenido en el CSV
-
     std::ifstream archivo("lista de socios.csv");
+    if (!archivo.is_open()) 
+    {
+        std::cout << "No se pudo abrir el archivo de socios. Verifique que exista.\n";
+        return;
+    }
+
     std::string registro; //variable donde queda guardada la linea
     std::string dni_str, edad_str, apellido, genero, direccion, numTelefono, fechaNacimiento, email;
+
+    listaSocios.clear(); //Limpia la lista cada vez que entra a cargarSociosCSV para que no se duplique el contenido en el CSV
 
     while (getline(archivo, registro))
     {

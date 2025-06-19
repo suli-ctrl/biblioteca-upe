@@ -36,8 +36,8 @@ __fastcall TSociosForm::TSociosForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TSociosForm::BtnVolverClick(TObject *Sender)
 {
-  InicioForm->Show();
   this->Hide();
+  InicioForm->Show();
 }
 //---------------------------------------------------------------------------
 

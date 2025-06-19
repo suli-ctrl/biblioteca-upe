@@ -32,7 +32,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 169
     Height = 23
     TabOrder = 0
-    Text = 'Nombre'
   end
   object txtAreaBuscar: TEdit
     Left = 8
@@ -40,7 +39,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 169
     Height = 23
     TabOrder = 1
-    Text = 'Area'
   end
   object txtSubAreaBuscar: TEdit
     Left = 8
@@ -48,7 +46,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 169
     Height = 23
     TabOrder = 2
-    Text = 'SubArea'
   end
   object txtAutoresBuscar: TEdit
     Left = 8
@@ -56,7 +53,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 169
     Height = 23
     TabOrder = 3
-    Text = 'Autores'
   end
   object txtAnioPublicacionBuscar: TEdit
     Left = 216
@@ -64,7 +60,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 169
     Height = 23
     TabOrder = 4
-    Text = 'A'#241'o de publicaci'#243'n'
   end
   object txtEditorialBuscar: TEdit
     Left = 8
@@ -72,7 +67,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 169
     Height = 23
     TabOrder = 5
-    Text = 'Editorial'
   end
   object txtUbicacionBuscar: TEdit
     Left = 216
@@ -80,7 +74,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 169
     Height = 23
     TabOrder = 6
-    Text = 'Ubicaci'#243'n (EstN'#176'-FN'#176')'
   end
   object lstEstadoBuscar: TListBox
     Left = 216
@@ -89,10 +82,10 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Height = 35
     ItemHeight = 15
     Items.Strings = (
-      'Bien '
-      'Regular'
-      'Malo'
-      'Destruido')
+      'bien'
+      'regular'
+      'malo'
+      'destruido')
     TabOrder = 7
   end
   object txtCodBarrasBuscar: TEdit
@@ -101,7 +94,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 169
     Height = 23
     TabOrder = 8
-    Text = 'C'#243'digo de barras'
   end
   object chkMostrarTodos: TCheckBox
     Left = 216
@@ -123,6 +115,7 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Width = 740
     Height = 277
     ColCount = 9
+    DefaultColWidth = 240
     TabOrder = 10
   end
   object btnBuscarLibro: TButton
@@ -138,5 +131,6 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 11
+    OnClick = btnBuscarLibroClick
   end
 end

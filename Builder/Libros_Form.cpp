@@ -70,8 +70,8 @@ void __fastcall TLibrosForm::BtnVerYBuscarLibroClick(TObject *Sender)
 
 void __fastcall TLibrosForm::BtnVolverClick(TObject *Sender)
 {
- InicioForm->Show();
  this->Hide();
+ InicioForm->Show();
 
 }
 //---------------------------------------------------------------------------

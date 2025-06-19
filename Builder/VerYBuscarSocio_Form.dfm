@@ -32,7 +32,6 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Width = 169
     Height = 23
     TabOrder = 0
-    Text = 'Apellido'
   end
   object txtDNIBuscar: TEdit
     Left = 8
@@ -40,7 +39,6 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Width = 169
     Height = 23
     TabOrder = 1
-    Text = 'DNI'
   end
   object txtFechaNacimientoBuscar: TEdit
     Left = 216
@@ -48,7 +46,6 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Width = 169
     Height = 23
     TabOrder = 2
-    Text = 'Fecha de nacimiento (D/M/A)'
   end
   object txtNumTelBuscar: TEdit
     Left = 216
@@ -56,7 +53,6 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Width = 169
     Height = 23
     TabOrder = 3
-    Text = 'N'#250'mero de tel'#233'fono'
   end
   object txtEmailBuscar: TEdit
     Left = 216
@@ -64,7 +60,6 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Width = 169
     Height = 23
     TabOrder = 4
-    Text = 'E-mail'
   end
   object txtEdadBuscar: TEdit
     Left = 216
@@ -72,7 +67,6 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Width = 169
     Height = 23
     TabOrder = 5
-    Text = 'Edad'
   end
   object lstGeneroBuscar: TListBox
     Left = 8
@@ -92,7 +86,6 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Width = 169
     Height = 23
     TabOrder = 7
-    Text = 'Direcci'#243'n de calle'
   end
   object chkMostrarTodos: TCheckBox
     Left = 216
@@ -114,6 +107,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Width = 740
     Height = 277
     ColCount = 9
+    DefaultColWidth = 235
     TabOrder = 9
   end
   object btnBuscarSocio: TButton
@@ -129,5 +123,6 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 10
+    OnClick = btnBuscarSocioClick
   end
 end

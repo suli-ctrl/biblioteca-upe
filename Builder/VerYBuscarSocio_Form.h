@@ -25,8 +25,12 @@ __published:	// IDE-managed Components
 	TCheckBox *chkMostrarTodos;
 	TStringGrid *StringGridSocios;
 	TButton *btnBuscarSocio;
+	void __fastcall TextBoxEnter(TObject* Sender);
+    void __fastcall TextBoxExit(TObject* Sender);
+	void __fastcall btnBuscarSocioClick(TObject *Sender);
 private:	// User declarations
-    biblioteca bibliotecaUPE;
+	biblioteca bibliotecaUPE;
+	void MostrarCoincidencia(int fila, const socios& s);
 public:		// User declarations
 	__fastcall TVerYBuscarSocioForm(TComponent* Owner);
 };

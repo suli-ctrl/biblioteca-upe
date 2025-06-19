@@ -59,9 +59,8 @@ void __fastcall TPrestamosForm::BtnVerPrestamosClick(TObject *Sender)
 
 void __fastcall TPrestamosForm::BtnVolverClick(TObject *Sender)
 {
-	InicioForm->Show();
     this->Hide();
-
+	InicioForm->Show();
 }
 //---------------------------------------------------------------------------
 

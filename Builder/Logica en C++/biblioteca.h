@@ -37,12 +37,12 @@ public:
 	//Metodos para libros
 	void altaLibro(String nombre, String area, String subarea, String autores, String editorial, int anioPublicacion, String ubicacion, String estado);
 	void bajaLibro(String );
-	void modificarLibro();
+	//void modificarLibro();
 
 	//Metodos para socios
 	void altaSocio(int dni, int edad, String apellido, String genero, String direccion, String telefono, String fechaNacimiento, String email); // Metodo para dar de alta un socio
 	void bajaSocio(String); // Metodo para dar de baja un socio
-	void modificarSocio(); // Metodo para modificar un socio
+	//void modificarSocio(); // Metodo para modificar un socio
 
 	//Metodos para prestamos
 	void prestarLibro();

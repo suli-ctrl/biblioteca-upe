@@ -12,9 +12,10 @@ private:
     std::string autores;
     std::string editorial;
     int anioDePublicacion;
-    std::string ubicacion;
-    std::string estado; //bien, regular, malo, destruido
-    bool prestado;
+	std::string ubicacion;
+	std::string estado; //bien, regular, malo, destruido
+	bool prestado;
+    std::string codigoDeBarras;
 
     //metodos privados para el codigo de barras
     std::string obtenerEstadoID() const;
@@ -25,8 +26,11 @@ public:
     //prototipo de constructor y destructor
 
    libros(std::string _nombre, std::string _area, std::string _subarea,
-          std::string _autores, std::string _editorial, int _anioDePublicacion,
-          std::string _ubicacion, std::string _estado); //constructor
+		  std::string _autores, std::string _editorial, int _anioDePublicacion,
+		  std::string _ubicacion, std::string _estado); //constructor principal
+   libros(std::string _nombre, std::string _area, std::string _subarea,
+		  std::string _autores, std::string _editorial, int _anioDePublicacion,
+		  std::string _ubicacion, std::string _estado, std::string _codigoBarras);//Constructor especifico para cargarDatosCSV
   
    ~libros(); //destructor
 
@@ -40,6 +44,7 @@ public:
    int getAnioDePublicacion() const;
    std::string getUbicacion() const;
    std::string getEstado() const;
+   std::string getCodigoBarras() const;
    
    
 
@@ -52,6 +57,7 @@ public:
    void setAnioDePublicacion(int nuevoAnio);
    void setUbicacion(std::string& nuevaUbicacion);
    void setEstado(std::string& nuevoEstado);
+   void setCodigoBarras(const std::string& codigo);
 
    
     
@@ -60,6 +66,9 @@ public:
    std::string codBarras(); //genera el codigo
 
    void mostrar() const;
+
+
+
 
 };
 

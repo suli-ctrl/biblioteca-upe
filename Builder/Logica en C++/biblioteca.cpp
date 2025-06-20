@@ -73,12 +73,14 @@ void biblioteca::cargarLibrosCSV()
 
 	std::ifstream archivo("lista de libros.csv");
 	std::string registro; //variable donde queda guardada la linea
-    std::string nombre, area, subarea, autores, editorial, anio_str, ubicacion, estado;
+    std::string nombre, area, subarea, autores, editorial, anio_str, ubicacion, estado, codigoDeBarras;
 
     if (!archivo.is_open()) {
     ShowMessage("No se pudo abrir el archivo CSV.");
     return;
 	}
+
+
 
     while (getline(archivo, registro))
     {
@@ -93,11 +95,12 @@ void biblioteca::cargarLibrosCSV()
 		getline(token, editorial, ',');
 		getline(token, anio_str, ',');
 		getline(token, ubicacion, ',');
-		getline(token, estado);
+		getline(token, estado, ',');
+		getline(token, codigoDeBarras);
 
 		int anioPublicacion = std::stoi(anio_str); //convierte el string a int
 
-		libros l(nombre, area, subarea, autores, editorial, anioPublicacion, ubicacion, estado);
+		libros l(nombre, area, subarea, autores, editorial, anioPublicacion, ubicacion, estado, codigoDeBarras);
 		listaLibros.push_back(l);
 	}
 }
@@ -121,7 +124,7 @@ void biblioteca::guardarSociosCSV()
                 << listaSocios[i].getTelefono() << ","
                 << listaSocios[i].getEdad() << ","
                 << listaSocios[i].getFechaNacimiento() << ","
-                << listaSocios[i].getEmail() << "\n";
+				<< listaSocios[i].getEmail() << "\n";
     }
     archivo.close();
 }
@@ -144,8 +147,9 @@ void biblioteca::guardarLibrosCSV()
                 << listaLibros[i].getEditorial() << ","
                 << listaLibros[i].getAnioDePublicacion() << ","
                 << listaLibros[i].getUbicacion() << ","
-                << listaLibros[i].getEstado() << "\n";
-    }
+				<< listaLibros[i].getEstado() << ","
+				<< listaLibros[i].getCodigoBarras() << "\n";
+	}
     archivo.close();
 }
 
@@ -342,7 +346,7 @@ void biblioteca::bajaSocio(String socioBaja)
     }
 }
 
-void biblioteca::modificarSocio()
+/*void biblioteca::modificarSocio()
 {
     std::string DNI_modificar;
     std::cout << "Ingrese el DNI del socio a modificar:";
@@ -428,7 +432,7 @@ void biblioteca::modificarSocio()
 		std::cout << "El cliente con DNI: " << DNI_modificar << " no existe en el archivo." << std::endl;
 	}
 
-}
+}  */
 
 // --------------------------------------------- Metodos de libros ---------------------------------------------------
 

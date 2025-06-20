@@ -23,7 +23,7 @@ void __fastcall TVerYBuscarLibroForm::FormShow(TObject *Sender)
 
 	const std::vector<libros>& listaLibros = bibliotecaUPE.getListaLibros();
 
-	StringGridLibros->ColCount = 8;
+	StringGridLibros->ColCount = 9;
 	StringGridLibros->RowCount = listaLibros.size() + 1;
 
 	StringGridLibros->Cells[0][0] = "Nombre";
@@ -34,6 +34,7 @@ void __fastcall TVerYBuscarLibroForm::FormShow(TObject *Sender)
 	StringGridLibros->Cells[5][0] = "Año";
 	StringGridLibros->Cells[6][0] = "Ubicación";
 	StringGridLibros->Cells[7][0] = "Estado";
+	StringGridLibros->Cells[8][0] = "Codigo de barras";
 
 	for (int i = 0; i < listaLibros.size(); i++) {
 
@@ -47,6 +48,7 @@ void __fastcall TVerYBuscarLibroForm::FormShow(TObject *Sender)
 		StringGridLibros->Cells[5][i+1] = IntToStr(l.getAnioDePublicacion());
 		StringGridLibros->Cells[6][i+1] = l.getUbicacion().c_str();
 		StringGridLibros->Cells[7][i+1] = l.getEstado().c_str();
+		StringGridLibros->Cells[8][i+1] = l.getCodigoBarras().c_str();
 	}
 
 

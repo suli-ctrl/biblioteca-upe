@@ -5,12 +5,24 @@
 /*--------------------------------- Constructor ----------------------------------------*/
 
 libros::libros(std::string _nombre, std::string _area, std::string _subarea,
-               std::string _autores, std::string _editorial, int _anioDePublicacion,
-               std::string _ubicacion, std::string _estado)
-               : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
-                editorial(_editorial), anioDePublicacion(_anioDePublicacion),
-                ubicacion(_ubicacion), estado(_estado)
-{}
+			   std::string _autores, std::string _editorial, int _anioDePublicacion,
+			   std::string _ubicacion, std::string _estado)
+			   : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
+				editorial(_editorial), anioDePublicacion(_anioDePublicacion),
+				ubicacion(_ubicacion), estado(_estado), codigoDeBarras("")
+{
+	codigoDeBarras = codBarras(); //Genero el codigo de barras y lo guardo en el atributo codBarras de libro creado
+}
+
+libros::libros(std::string _nombre, std::string _area, std::string _subarea,
+       std::string _autores, std::string _editorial, int _anioDePublicacion,
+	   std::string _ubicacion, std::string _estado, std::string _codigoBarras)
+    : nombre(_nombre), area(_area), subarea(_subarea), autores(_autores),
+      editorial(_editorial), anioDePublicacion(_anioDePublicacion),
+      ubicacion(_ubicacion), estado(_estado), codigoDeBarras(_codigoBarras)
+{
+	//Este constructor no genera un nuevo codigo de barras, se usa cuando se carga el CSV
+}
 
 /*--------------------------------- Destructor ----------------------------------------*/
 
@@ -112,15 +124,15 @@ void libros::setEstado(std::string& nuevoEstado)
 
 std::string libros::obtenerEstadoID() const
 {
-    if (estado == "bien") {
-        return "01";
-    }
-    else if (estado == "regular") {
-        return "02";
-    }
-    else if (estado == "malo") {
-        return "03";
-    }
+	if (estado == "bien") {
+		return "01";
+	}
+	else if (estado == "regular") {
+		return "02";
+	}
+	else if (estado == "malo") {
+		return "03";
+	}
     else if (estado == "destruido") {
         return "04";
     }
@@ -131,11 +143,11 @@ std::string libros::obtenerEstadoID() const
 
 std::string libros::obtenerDisponibilidadID() const
 {
-    if (prestado) {
-        return "00"; //libro no disponible
-    }
-    else {
-        return "01"; //Libro disponible
+    if (!prestado) {
+		return "00"; //libro no disponible
+	}
+	else {
+		return "01"; //Libro disponible
     }
 }
 
@@ -172,6 +184,16 @@ std::string libros::codBarras() //metodo que genera al codigo de barras
     return codigo;
 
 }
+
+//Setter y Getter de codigo de barras
+
+void libros::setCodigoBarras(const std::string& codigo) {
+		codigoDeBarras = codigo;
+	}
+
+std::string libros::getCodigoBarras() const {
+		return codigoDeBarras;
+	}
 
 void libros::mostrar() const
 {

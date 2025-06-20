@@ -196,13 +196,13 @@
     Left = 128
     Top = 310
     Width = 161
-    Height = 35
+    Height = 67
     ItemHeight = 15
     Items.Strings = (
-      'Bien '
-      'Regular'
-      'Malo'
-      'Destruido')
+      'bien '
+      'regular'
+      'malo'
+      'destruido')
     TabOrder = 7
   end
   object BtnAltaLibro: TButton

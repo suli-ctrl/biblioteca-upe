@@ -95,6 +95,8 @@ void __fastcall TModificarLibroForm::btnModificarLibroClick(TObject *Sender)
 			listaLibros[i].setUbicacion(nuevaUbicacion);
 			listaLibros[i].setAnioDePublicacion(nuevoAnio);
 			listaLibros[i].setEstado(nuevoEstado);
+            listaLibros[i].setCodigoBarras(listaLibros[i].codBarras()); //Vuelve a generar el cod de barras por si se cambia algo relevante
+
 
 			break;
 		}

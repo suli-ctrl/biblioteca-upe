@@ -39,5 +39,5 @@ void __fastcall TAltaLibroForm::BtnAltaLibroClick(TObject *Sender)
 
 	ShowMessage("Libro agregado exitosamente");
 }
-//---------------------------------------------------------------------------
+
 

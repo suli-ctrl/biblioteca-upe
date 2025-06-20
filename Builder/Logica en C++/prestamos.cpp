@@ -53,6 +53,16 @@ bool prestamos::libroDevuelto()
     return devuelto;
 }
 
+libros& prestamos::getLibro()
+{
+    return refLibro;
+}
+
+socios& prestamos::getSocio()
+{
+    return refSocio;
+}
+
 //--------------------------------------------------------------------------SETTERS-------------------------------------------------------------------------------------------//
 
 

@@ -58,6 +58,7 @@ public:
    void setUbicacion(std::string& nuevaUbicacion);
    void setEstado(std::string& nuevoEstado);
    void setCodigoBarras(const std::string& codigo);
+   void setPrestado(bool valor);
 
    
     
@@ -66,6 +67,7 @@ public:
    std::string codBarras(); //genera el codigo
 
    void mostrar() const;
+   bool estaDisponible() const;
 
 
 

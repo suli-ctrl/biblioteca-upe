@@ -115,7 +115,10 @@ void libros::setEstado(std::string& nuevoEstado)
 {
 	estado = nuevoEstado;
 }
-
+void libros::setPrestado(bool valor)
+{
+    prestado = valor;
+}
 
 
 
@@ -205,3 +208,9 @@ void libros::mostrar() const
     std::cout << "Estado: " << getEstado() << "\n";
     std::cout << "--------------------------\n";
 }
+
+bool libros::estaDisponible() const
+{
+    return !prestado;
+}
+

@@ -576,36 +576,157 @@ void biblioteca::modificarLibro()
 
 
 // --------------------------------------------- Metodos de prestamos -----------------------------------------------
-/*
 
-
-
-void biblioteca::prestarLibro()
+void biblioteca::prestarLibro(std::string ubicacionLibro, int dniSocio, std::string fechaPrestamo, int diasPrestamo)
 {
-    if (libros::prestado) { //creo que esto hay que hacerlo con punteros pq asi no compila ya que es un miembro privado
-        std::cout << "El libro '" << nombre << "' ya esta prestado." << std::endl;
+	cargarLibrosCSV();
+	cargarSociosCSV();
+
+    libros* libroPrestado = nullptr;
+
+	for (int i = 0; i < listaLibros.size(); i++)
+    {
+		if (listaLibros[i].getUbicacion() == ubicacionLibro
+			&& listaLibros[i].estaDisponible())
+		{
+			libroPrestado = &listaLibros[i];
+            break;
+        }
     }
-    else {
-        prestado = true;
-        std::cout << "El libro '" << nombre << "' fue prestado." << std::endl;
+
+	if (!libroPrestado) {
+		ShowMessage("Libro no encontrado o no disponible!");
+		return;
+	}
+
+	socios* socioPrestatario = nullptr;
+
+    for (int i = 0; i < listaSocios.size(); i++)
+    {
+        if (listaSocios[i].getDNI() == dniSocio)
+        {
+			socioPrestatario = &listaSocios[i];
+            break;
+        }
     }
+
+	if (!socioPrestatario) {
+		ShowMessage("Libro no encontrado o no disponible!");
+		return;
+	}
+
+	prestamos nuevoPrestamo(*libroPrestado, *socioPrestatario, fechaPrestamo, diasPrestamo);
+	listaPrestamos.push_back(nuevoPrestamo);
+
+	libroPrestado->setPrestado(true);
+
+	guardarPrestamosCSV();
+	guardarLibrosCSV(); //Guarda el valor de prestado a true
 }
 
-
-void biblioteca::devolucionLibro()
+/*void biblioteca::prestarLibro()
 {
-    if (!prestado) {
-        std::cout << "El libro '" << nombre << "' no estaba prestado.";
+    cargarLibrosCSV();
+    cargarSociosCSV();
+
+    std::string ubicacionLibro;
+	int dniSocio;
+    std::string fechaPrestamo;
+    int diasPrestamo;
+
+    std::cout << "Ubicacion del libro a prestar: ";
+	std::getline(std::cin >> std::ws, ubicacionLibro);
+
+    libros* libroPrestado = nullptr;
+    for (libros& l : listaLibros)
+    {
+		if (l.getUbicacion() == ubicacionLibro && l.estaDisponible()) {
+            libroPrestado = &l;
+            break;
+        }
     }
-    else {
-        prestado = false;
-        std::cout << "El libro '" << nombre << "' fue devuelto." << '\n';
+
+    if (!libroPrestado)
+    {
+        std::cout << "Libro no disponible o no encontrado.\n";
+        return;
     }
+
+    std::cout << "DNI del socio: ";
+    std::cin >> dniSocio;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    socios* socioPrestador = nullptr;
+    for (socios& s : listaSocios)
+    {
+        if (s.getDNI() == dniSocio) {
+            socioPrestador = &s;
+            break;
+        }
+    }
+
+    if (!socioPrestador)
+    {
+        std::cout << "Socio no encontrado.\n";
+        return;
+    }
+
+    std::cout << "Fecha del prestamo (dd/mm/aaaa): ";
+    std::getline(std::cin, fechaPrestamo);
+
+    std::cout << "Cantidad de dias de prestamo: ";
+    std::cin >> diasPrestamo;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    prestamos nuevoPrestamo(*libroPrestado, *socioPrestador, fechaPrestamo, diasPrestamo);
+    listaPrestamos.push_back(nuevoPrestamo);
+
+    //marco el libro como no disponible
+	libroPrestado->setPrestado(true);
+
+    //guardo cambios en archivos CSV
+    guardarPrestamosCSV();
+    guardarLibrosCSV();
+
+    std::cout << "Prestamo registrado correctamente.\n";
+}  */
+
+void biblioteca::devolverLibro()
+{
+    std::string ubicacionLibro;
+    std::cout << "Ubicacion del libro a devolver: ";
+    std::getline(std::cin >> std::ws, ubicacionLibro);  //lee texto completo con espacios y limpia buffer
+
+    for (prestamos& prestamo : listaPrestamos)
+    {
+        if (prestamo.getLibro().getUbicacion() == ubicacionLibro && !prestamo.libroDevuelto())
+        {
+            prestamo.setDevuelto(true);//lo marco como devuelto
+
+
+            for (libros& libro : listaLibros) //busco el libro en la lista y lo marco disponible
+            {
+                if (libro.getUbicacion() == ubicacionLibro)
+                {
+                    libro.setPrestado(false);
+                    break;
+                }
+            }
+
+            std::cout << "Libro devuelto correctamente.\n";
+
+            guardarPrestamosCSV();
+            guardarLibrosCSV();
+            return;
+        }
+    }
+
+    std::cout << "No se encontro un prestamo activo para ese libro.\n";
 }
-*/ 
+
 
 // ---------------------------- METODOS DE VISUALIZACION Y BUSQUEDA PARA SOCIOS -------------------------------------
-
+ /*
 void biblioteca::menuBusquedaSocios()
 {
     cargarSociosCSV();
@@ -837,4 +958,4 @@ void biblioteca::buscoLibroPorAnio()
     }
 }
 
-
+	   */

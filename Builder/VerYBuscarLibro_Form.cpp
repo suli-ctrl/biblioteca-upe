@@ -167,35 +167,35 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 		 const libros& l = listaLibros[i];
 		 bool coincide = true;
 
-		 if((txtNombreBuscar->Text != "Nombre") && (AnsiString(l.getNombre().c_str())!=txtNombreBuscar->Text))
+	     if((txtNombreBuscar->Text != "Nombre") && (CompareText(AnsiString(l.getNombre().c_str()).Trim(), txtNombreBuscar->Text.Trim()) != 0))
+         {
+             coincide = false;
+         }
+		 if((txtAreaBuscar->Text != "Area") && (CompareText(AnsiString(l.getArea().c_str()).Trim(), txtAreaBuscar->Text.Trim()) != 0))
+         {
+             coincide = false;
+         }
+		 if((txtSubAreaBuscar->Text != "SubArea") && (CompareText(AnsiString(l.getSubArea().c_str()).Trim(), txtSubAreaBuscar->Text.Trim()) != 0))
+         {
+             coincide = false;
+         }
+		 if((txtAutoresBuscar->Text != "Autores") && (CompareText(AnsiString(l.getAutores().c_str()).Trim(), txtAutoresBuscar->Text.Trim()) != 0))
+         {
+             coincide = false;
+		 }
+		 if((txtEditorialBuscar->Text != "Editorial") && (CompareText(AnsiString(l.getEditorial().c_str()).Trim(), txtEditorialBuscar->Text.Trim()) != 0))
+		 {
+             coincide = false;
+		 }
+		 if((txtAnioPublicacionBuscar->Text != "Año de publicación") && (CompareText(IntToStr(l.getAnioDePublicacion()).Trim(), txtAnioPublicacionBuscar->Text.Trim()) != 0))
 		 {
 			 coincide = false;
 		 }
-		 if((txtAreaBuscar->Text != "Area") && (AnsiString(l.getArea().c_str())!=txtAreaBuscar->Text))
+		 if((txtUbicacionBuscar->Text != "Ubicación (EstN°-FN°)") && (CompareText(AnsiString(l.getUbicacion().c_str()).Trim(), txtUbicacionBuscar->Text.Trim()) != 0))
 		 {
 			 coincide = false;
 		 }
-		 if((txtSubAreaBuscar->Text != "SubArea") && (AnsiString(l.getSubArea().c_str())!=txtSubAreaBuscar->Text))
-		 {
-			 coincide = false;
-		 }
-		 if((txtAutoresBuscar->Text != "Autores") && (AnsiString(l.getAutores().c_str())!=txtAutoresBuscar->Text))
-		 {
-			 coincide = false;
-		 }
-		 if((txtEditorialBuscar->Text != "Editorial") && (AnsiString(l.getEditorial().c_str())!=txtEditorialBuscar->Text))
-		 {
-			 coincide = false;
-		 }
-		 if((txtAnioPublicacionBuscar->Text != "Año de publicación") && (IntToStr(l.getAnioDePublicacion())!=txtAnioPublicacionBuscar->Text))
-		 {
-			 coincide = false;
-		 }
-		 if((txtUbicacionBuscar->Text != "Ubicación (EstN°-FN°)") && (AnsiString(l.getUbicacion().c_str())!=txtUbicacionBuscar->Text))
-		 {
-			 coincide = false;
-		 }
-		 if ((lstEstadoBuscar->ItemIndex != -1) && (AnsiString(l.getEstado().c_str()) != lstEstadoBuscar->Items->Strings[lstEstadoBuscar->ItemIndex]))
+		 if ((lstEstadoBuscar->ItemIndex != -1) && (CompareText(AnsiString(l.getEstado().c_str()).Trim(),  lstEstadoBuscar->Items->Strings[lstEstadoBuscar->ItemIndex]) != 0))
 		 {
 			 coincide = false;
 		 }

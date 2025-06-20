@@ -582,6 +582,7 @@ Builder/Logica en C++/__history/biblioteca.cpp.~32~
 Builder/Logica en C++/__history/prestamos.cpp.~4~
 Builder/Logica en C++/__history/prestamos.h.~4~
 Builder/Logica en C++/__history/prestamos.h.~5~
+<<<<<<< Updated upstream
 Builder/Logica en C++/__recovery/biblioteca.h
 Builder/Logica en C++/__recovery/__recovery.ini
 Builder/Logica en C++/__history/prestamos.cpp.~5~
@@ -597,3 +598,7 @@ Builder/__recovery/__recovery.ini
 Builder/__recovery/AltaLibro_Form.cpp
 Builder/__recovery/AltaLibro_Form.dfm
 Builder/__recovery/AltaLibro_Form.h
+=======
+Builder/__history/VerPrestamo_Form.dfm.~4~
+Builder/__history/VerPrestamo_Form.dfm.~5~
+>>>>>>> Stashed changes

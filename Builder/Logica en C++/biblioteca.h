@@ -45,7 +45,8 @@ public:
 	//void modificarSocio(); // Metodo para modificar un socio
 
 	//Metodos para prestamos
-	void prestarLibro();
+	//void prestarLibro();
+	void prestarLibro(std::string ubicacionLibro, int dniSocio, std::string fechaPrestamo, int diasPrestamo);
 	void devolverLibro();
 
 	//Metodos de busqueda y filtro para libros

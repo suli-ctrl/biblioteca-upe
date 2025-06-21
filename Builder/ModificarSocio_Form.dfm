@@ -11,6 +11,7 @@ object ModificarSocioForm: TModificarSocioForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object lblIngreseInfoSocioAModi: TLabel
     Left = 200
@@ -142,13 +143,6 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object txtDNIABuscar: TEdit
-    Left = 280
-    Top = 55
-    Width = 185
-    Height = 23
-    TabOrder = 0
-  end
   object btnBuscarSocioModi: TButton
     Left = 328
     Top = 84
@@ -161,61 +155,50 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
+    OnClick = btnBuscarSocioModiClick
   end
   object txtApellidoAModi: TEdit
     Left = 120
     Top = 146
     Width = 161
     Height = 23
-    TabOrder = 2
+    TabOrder = 1
   end
   object txtDNIAModi: TEdit
     Left = 120
     Top = 202
     Width = 161
     Height = 23
-    TabOrder = 3
+    TabOrder = 2
   end
   object txtNumTelAModi: TEdit
     Left = 120
     Top = 306
     Width = 161
     Height = 23
-    TabOrder = 4
+    TabOrder = 3
   end
   object txtEdadAModi: TEdit
     Left = 464
     Top = 146
     Width = 161
     Height = 23
-    TabOrder = 5
+    TabOrder = 4
   end
   object txtFechaNacimientoAModi: TEdit
     Left = 464
     Top = 202
     Width = 161
     Height = 23
-    TabOrder = 6
+    TabOrder = 5
   end
   object txtDireccionCalleAModi: TEdit
     Left = 120
     Top = 252
     Width = 161
     Height = 23
-    TabOrder = 7
-  end
-  object lstGeneroAModi: TListBox
-    Left = 464
-    Top = 306
-    Width = 161
-    Height = 48
-    ItemHeight = 15
-    Items.Strings = (
-      'Masculino'
-      'Femenino'
-      'No especificado')
-    TabOrder = 8
+    TabOrder = 6
   end
   object btnModificar: TButton
     Left = 312
@@ -229,11 +212,27 @@ object ModificarSocioForm: TModificarSocioForm
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 7
+    OnClick = btnModificarClick
   end
   object txtEmailAModi: TEdit
     Left = 464
     Top = 252
+    Width = 161
+    Height = 23
+    TabOrder = 8
+  end
+  object ComboBoxBusqueda: TComboBox
+    Left = 288
+    Top = 55
+    Width = 176
+    Height = 23
+    TabOrder = 9
+    Text = 'Ingresar DNI del socio'
+  end
+  object ComboBoxGenero: TComboBox
+    Left = 464
+    Top = 306
     Width = 161
     Height = 23
     TabOrder = 10

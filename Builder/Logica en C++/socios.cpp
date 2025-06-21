@@ -57,7 +57,10 @@ std::string socios::getEmail() const
 	return email;
 }
 
-
+void socios::setDni(int nuevoDni)
+{
+	dni = nuevoDni;
+}
 
 void socios::setEdad(int nuevaEdad)
 {

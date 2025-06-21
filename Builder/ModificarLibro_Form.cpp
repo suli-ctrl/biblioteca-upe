@@ -32,7 +32,8 @@ void __fastcall TModificarLibroForm::FormShow(TObject *Sender)
 void __fastcall TModificarLibroForm::BtnBuscarNomAModiClick(TObject *Sender)
 {
 	std::string nombre_libro_modificar = ConvertirStdString(ComboBoxBusqueda->Text); //Cambio a std string el texto obtenido desde el combobox
-
+	std::vector<std::string> estados = {"bien","regular","malo","destruido"};
+	std::string estadoActual;
 	bool existe = false;
 	int nuevoAnio = 0;
 
@@ -52,6 +53,13 @@ void __fastcall TModificarLibroForm::BtnBuscarNomAModiClick(TObject *Sender)
 			txtUbicacionAModi->Text = listaLibros[i].getUbicacion().c_str();
 			txtAnioPublicacionAModi->Text = IntToStr(listaLibros[i].getAnioDePublicacion());
 			ComboBoxEstado->Text = listaLibros[i].getEstado().c_str();
+            estadoActual = listaLibros[i].getEstado();
+
+			for (const auto& estado : estados)
+			{
+			  ComboBoxEstado->Items->Add(estado.c_str());
+			}
+			 ComboBoxEstado->Text = estadoActual.c_str();
 
 			break;
 		}

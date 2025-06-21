@@ -33,6 +33,7 @@ public:
 	std::string getEmail() const;
 
 	//setters
+    void setDni(int nuevoDni);
 	void setEdad(int nuevaEdad);
 	void setApellido(const std::string& nuevoApellido);
 	void setGenero(const std::string& nuevoGenero);

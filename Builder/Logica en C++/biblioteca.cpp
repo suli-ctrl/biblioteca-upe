@@ -38,6 +38,11 @@ std::vector<libros>& biblioteca::getListaLibrosModificable()
     return listaLibros;
 }
 
+std::vector<socios>& biblioteca::getListaSociosModificable()
+{
+	return listaSocios;
+}
+
 // ----------------------------------------- Manejo de Archivos ------------------------------------------------------
 
 void biblioteca::cargarSociosCSV()

@@ -1,14 +1,14 @@
-Fundamentals of Physics,Física,General,David Halliday-Robert Resnick-Jearl Walker,Wiley,2013,Est1-F1,bien,E1F1-01-00
-Mathematical Methods for Physics,Física,Métodos matemáticos,Matthew Beauchesne-George Arfken-Hans Weber,Academic Press,2013,Est1-F2,regular,E1F2-02-00
-Principles of Chemistry,Química,General,Peter Atkins-Loretta Jones,Oxford University Press,2010,Est1-F3,regular,E1F3-02-00
-Organic Chemistry,Química,Orgánica,David R. Klein,Wiley,2017,Est1-F4,regular,E1F4-02-00
-Introduction to Chemical Engineering,Ingeniería,Química,J. M. Smith-H. C. Van Ness-M. M. Abbott,McGraw-Hill,2004,Est1-F5,bien,E1F5-01-00
-Engineering Mechanics: Dynamics,Ingeniería,Mecánica,J.L. Meriam-L.G. Kraige,Wiley,2015,Est1-F6,bien,E1F6-01-00
-Fluid Mechanics,Ingeniería,Mecánica de fluidos,Frank M. White,McGraw-Hill,2011,Est1-F7,bien,E1F7-01-00
-Electromagnetic Waves,Física,Ondas electromagnéticas,S. Ramo-J. Whinnery-T. Van Duzer,Wiley,1994,Est1-F8,bien,E1F8-01-00
-Signals and Systems,Ingeniería,Electrónica,Alan V. Oppenheim-Alan S. Willsky,Pearson,1997,Est2-F1,destruido,E2F1-04-00
-Electric Circuits,Ingeniería,Electrónica,James W. Nilsson-Susan Riedel,Pearson,2014,Est2-F2,bien,E2F2-01-00
-Introduction to the Theory of Computation,Informática,Teoría de la computación,Michael Sipser,Cengage Learning,2012,Est2-F3,bien,E2F3-01-00
-Introduction to Algorithms,Informática,Algoritmos,Thomas H. Cormen-Charles E. Leiserson-Ronald L. Rivest-Clifford Stein,MIT Press,2009,Est2-F4,bien,E2F4-01-00
-Discrete Mathematics,Matemáticas,Matemáticas discretas,Richard Johnsonbaugh,Pearson,2010,Est2-F5,regular,E2F5-02-00
-Linear Algebra and Its Applications,Matemáticas,Álgebra lineal,David C. Lay,Pearson,2012,Est2-F6,bien,E2F6-01-00
+Fundamentals of Physics,Física,General,David Halliday-Robert Resnick-Jearl Walker,Wiley,2013,Est1-F1,bien,E1F1-01-00,true
+Mathematical Methods for Physics,Física,Métodos matemáticos,Matthew Beauchesne-George Arfken-Hans Weber,Academic Press,2013,Est1-F2,regular,E1F2-02-00,false
+Principles of Chemistry,Química,General,Peter Atkins-Loretta Jones,Oxford University Press,2010,Est1-F3,regular,E1F3-02-00,false
+Organic Chemistry,Química,Orgánica,David R. Klein,Wiley,2017,Est1-F4,regular,E1F4-02-00,true
+Introduction to Chemical Engineering,Ingeniería,Química,J. M. Smith-H. C. Van Ness-M. M. Abbott,McGraw-Hill,2004,Est1-F5,bien,E1F5-01-00,false
+Engineering Mechanics: Dynamics,Ingeniería,Mecánica,J.L. Meriam-L.G. Kraige,Wiley,2015,Est1-F6,bien,E1F6-01-00,false
+Fluid Mechanics,Ingeniería,Mecánica de fluidos,Frank M. White,McGraw-Hill,2011,Est1-F7,bien,E1F7-01-00,false
+Electromagnetic Waves,Física,Ondas electromagnéticas,S. Ramo-J. Whinnery-T. Van Duzer,Wiley,1994,Est1-F8,bien,E1F8-01-00,true
+Signals and Systems,Ingeniería,Electrónica,Alan V. Oppenheim-Alan S. Willsky,Pearson,1997,Est2-F1,destruido,E2F1-04-00,true
+Electric Circuits,Ingeniería,Electrónica,James W. Nilsson-Susan Riedel,Pearson,2014,Est2-F2,bien,E2F2-01-00,true
+Introduction to the Theory of Computation,Informática,Teoría de la computación,Michael Sipser,Cengage Learning,2012,Est2-F3,bien,E2F3-01-00,true
+Introduction to Algorithms,Informática,Algoritmos,Thomas H. Cormen-Charles E. Leiserson-Ronald L. Rivest-Clifford Stein,MIT Press,2009,Est2-F4,bien,E2F4-01-00,true
+Discrete Mathematics,Matemáticas,Matemáticas discretas,Richard Johnsonbaugh,Pearson,2010,Est2-F5,regular,E2F5-02-00,true
+Linear Algebra and Its Applications,Matemáticas,Álgebra lineal,David C. Lay,Pearson,2012,Est2-F6,bien,E2F6-01-00,true

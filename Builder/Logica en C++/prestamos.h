@@ -20,11 +20,11 @@ public:
 	~prestamos(); //Destructor
 
 	//Getters
-	libros& getLibroPrestado();
-	socios& getSocioPrestatario();
-	std::string getFechaPrestamo();
-	int getDiasPrestamo();
-	std::string getFechaVencimiento();
+	const libros& getLibroPrestado() const;
+	const socios& getSocioPrestatario() const;
+	const std::string getFechaPrestamo() const;
+	int getDiasPrestamo() const;
+	const std::string getFechaVencimiento() const;
 	bool libroDevuelto(); //Muestra true o false dependiendo si el libro esta devuelto o no. No recuerdo por que se pone const
 
      //getters para modificar directamente en devolverLibro, no son const porq quiero modificar datos
@@ -38,7 +38,7 @@ public:
 	//Funcionalidad
 	bool estaVencido() const;
 	int diasHastaVencimiento() const;
-	std::string calcularFechaVencimiento() const; //para no guardar fecha vencimiento fija
+	std::string calcularFechaVencimiento(std::string fechaInicio, int dias); //para no guardar fecha vencimiento fija
 
 
 };

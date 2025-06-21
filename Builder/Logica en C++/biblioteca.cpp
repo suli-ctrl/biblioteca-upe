@@ -4,6 +4,7 @@
 #include <sstream> //para usar stringstream
 #include "biblioteca.h"
 #include "funciones.h"
+#include "prestamos.h"
 #include <SysUtils.hpp> // Necesario para FormatDateTime
 
 
@@ -25,6 +26,11 @@ const std::vector<libros>& biblioteca::getListaLibros() const {
 
 const std::vector<socios>& biblioteca::getListaSocios() const {
 	return listaSocios;
+}
+
+const std::vector<prestamos>& biblioteca::getListaPrestamos() const
+{
+	return listaPrestamos;
 }
 
 std::vector<libros>& biblioteca::getListaLibrosModificable()
@@ -73,7 +79,7 @@ void biblioteca::cargarLibrosCSV()
 
 	std::ifstream archivo("lista de libros.csv");
 	std::string registro; //variable donde queda guardada la linea
-    std::string nombre, area, subarea, autores, editorial, anio_str, ubicacion, estado, codigoDeBarras;
+	std::string nombre, area, subarea, autores, editorial, anio_str, ubicacion, estado, codigoDeBarras, prestadoStr;
 
     if (!archivo.is_open()) {
     ShowMessage("No se pudo abrir el archivo CSV.");
@@ -96,11 +102,14 @@ void biblioteca::cargarLibrosCSV()
 		getline(token, anio_str, ',');
 		getline(token, ubicacion, ',');
 		getline(token, estado, ',');
-		getline(token, codigoDeBarras);
+		getline(token, codigoDeBarras, ',');
+		getline(token, prestadoStr);
 
 		int anioPublicacion = std::stoi(anio_str); //convierte el string a int
+		bool prestado = (prestadoStr == "true");
 
 		libros l(nombre, area, subarea, autores, editorial, anioPublicacion, ubicacion, estado, codigoDeBarras);
+        l.setPrestado(prestado);
 		listaLibros.push_back(l);
 	}
 }
@@ -146,9 +155,10 @@ void biblioteca::guardarLibrosCSV()
                 << listaLibros[i].getAutores() << ","
                 << listaLibros[i].getEditorial() << ","
                 << listaLibros[i].getAnioDePublicacion() << ","
-                << listaLibros[i].getUbicacion() << ","
+				<< listaLibros[i].getUbicacion() << ","
 				<< listaLibros[i].getEstado() << ","
-				<< listaLibros[i].getCodigoBarras() << "\n";
+				<< listaLibros[i].getCodigoBarras() << ","
+				<< (listaLibros[i].getPrestado() ? "true" : "false") << "\n";
 	}
     archivo.close();
 }
@@ -182,17 +192,18 @@ void biblioteca::guardarLibrosCSV()
 
 void biblioteca::cargarPrestamosCSV()
 {
-    std::ifstream archivo("lista de prestamos.csv");
+
+	std::ifstream archivo("lista de prestamos.csv");
 
 	std::string tituloLibro, ubicacionLibro, nombreSocio, dniSocio, fechaPrestamo, diasPrestamo, fechaVencimiento, devuelto;
 
-    std::string registro; //variable donde queda guardada la linea
+	std::string registro; //variable donde queda guardada la linea
 
-    while (getline(archivo, registro))
-    {
-        if (registro.empty()) continue;
+	while (getline(archivo, registro))
+	{
+		if (registro.empty()) continue;
 
-        std::stringstream token(registro);
+		std::stringstream token(registro);
 
 		std::getline(token, tituloLibro, ',');
 		std::getline(token, ubicacionLibro, ',');
@@ -208,39 +219,39 @@ void biblioteca::cargarPrestamosCSV()
 
   
         //Busco el libro prestado en listaLibros
-        libros* buscoLibro = nullptr; //puntero nulo llamado buscoLibro
-        for (int i = 0;i < listaLibros.size(); i++) //recorro la lista buscando el libro a prestar
+		libros* buscoLibro = nullptr; //puntero nulo llamado buscoLibro
+		for (int i = 0;i < listaLibros.size(); i++) //recorro la lista buscando el libro a prestar
         {
-            if (listaLibros[i].getNombre() == tituloLibro) 
+			if (listaLibros[i].getNombre() == tituloLibro)
             {
-                buscoLibro = &listaLibros[i];
-                break; //termino el ciclo for
+				buscoLibro = &listaLibros[i];
+				break; //termino el ciclo for
             }
         }
 
         //Busco el socio prestatario en listaSocios
         socios* buscoSocio = nullptr;
-        for (int i = 0; i < listaSocios.size(); i++)
+		for (int i = 0; i < listaSocios.size(); i++)
         {
-            if (listaSocios[i].getDNI() == dni_socio)
-            {
+			if (listaSocios[i].getDNI() == dni_socio)
+			{
                 buscoSocio = &listaSocios[i];
                 break; //salgo del for
-            }
-        }
+			}
+		}
 
-        if (buscoLibro && buscoSocio)
-        {
-            //int dias = std::stoi(diasPrestamo); //convierte string a int
-            prestamos nuevoPrestamo(*buscoLibro, *buscoSocio, fechaPrestamo, dias);
+		if (buscoLibro && buscoSocio)
+		{
+			//int dias = std::stoi(diasPrestamo); //convierte string a int
+			prestamos nuevoPrestamo(*buscoLibro, *buscoSocio, fechaPrestamo, dias);
             nuevoPrestamo.setFechaVencimiento(fechaVencimiento);
             nuevoPrestamo.setDevuelto(devuelto == "true"); //Lo marca como devuelto
-            listaPrestamos.push_back(nuevoPrestamo);
-        }
-        else
-        {
-            //Libro o socio no encontrado
-        }
+			listaPrestamos.push_back(nuevoPrestamo);
+		}
+		else
+		{
+			//Libro o socio no encontrado
+		}
 
 
 	}
@@ -251,6 +262,8 @@ void biblioteca::cargarPrestamosCSV()
 
 void biblioteca::guardarPrestamosCSV()
 {
+    cargarPrestamosCSV();
+
 	std::ofstream archivo("lista de prestamos.csv");
 
 	if (!archivo) {
@@ -269,9 +282,7 @@ void biblioteca::guardarPrestamosCSV()
 			<< listaPrestamos[i].getFechaVencimiento() << ","
 			<< (listaPrestamos[i].libroDevuelto() ? "true" : "false") << "\n"; // operador ternario para convertir un bool true o flase en texto explicito
 	}
-
-    archivo.close();
-
+	archivo.close();
 }
 
 // ---------------------------------------------- Metodos de socios -------------------------------------------------
@@ -280,10 +291,10 @@ void biblioteca::altaSocio(int dni, int edad, String apellido, String genero, St
 {
 	/*int dni{pedirDni()};
 	int edad{pedirEdad()};
-    std::string apellido{ pedirApellido() };
-    std::string genero{ pedirGenero() };
-    std::string email{ pedirEmail() };
-    std::string fechaNacimiento{ pedirFechaDeNacimiento() };
+	std::string apellido{ pedirApellido() };
+	std::string genero{ pedirGenero() };
+	std::string email{ pedirEmail() };
+	std::string fechaNacimiento{ pedirFechaDeNacimiento() };
     std::string telefono{ pedirNumTelefono() };
 	std::string direccion{ pedirDireccion() };   */
 	String fecha = FormatDateTime("dd/mm/yyyy", fechaNacimiento);
@@ -577,51 +588,60 @@ void biblioteca::modificarLibro()
 
 // --------------------------------------------- Metodos de prestamos -----------------------------------------------
 
-void biblioteca::prestarLibro(std::string ubicacionLibro, int dniSocio, std::string fechaPrestamo, int diasPrestamo)
+void biblioteca::prestarLibro(std::string nombreLibro, int dniSocio, std::string fechaPrestamo, int diasPrestamo)
 {
 	cargarLibrosCSV();
 	cargarSociosCSV();
 
-    libros* libroPrestado = nullptr;
+	libros* libroPrestado = nullptr;
+
 
 	for (int i = 0; i < listaLibros.size(); i++)
     {
-		if (listaLibros[i].getUbicacion() == ubicacionLibro
+		if (listaLibros[i].getNombre() == nombreLibro
 			&& listaLibros[i].estaDisponible())
 		{
 			libroPrestado = &listaLibros[i];
             break;
         }
-    }
+	}
 
 	if (!libroPrestado) {
-		ShowMessage("Libro no encontrado o no disponible!");
+		//ShowMessage("Libro no encontrado o no disponible!");
+		ShowMessage(("Libro '" + nombreLibro + "' no disponible o no encontrado").c_str());
 		return;
 	}
 
 	socios* socioPrestatario = nullptr;
 
-    for (int i = 0; i < listaSocios.size(); i++)
-    {
-        if (listaSocios[i].getDNI() == dniSocio)
-        {
+	for (int i = 0; i < listaSocios.size(); i++)
+	{
+		if (listaSocios[i].getDNI() == dniSocio)
+		{
 			socioPrestatario = &listaSocios[i];
-            break;
-        }
-    }
+			break;
+		}
+	}
 
 	if (!socioPrestatario) {
 		ShowMessage("Libro no encontrado o no disponible!");
 		return;
 	}
 
+
 	prestamos nuevoPrestamo(*libroPrestado, *socioPrestatario, fechaPrestamo, diasPrestamo);
+
+	std::string fechaVencimiento = nuevoPrestamo.calcularFechaVencimiento(fechaPrestamo, diasPrestamo);
+	nuevoPrestamo.setFechaVencimiento(fechaVencimiento);
+
 	listaPrestamos.push_back(nuevoPrestamo);
 
 	libroPrestado->setPrestado(true);
 
 	guardarPrestamosCSV();
 	guardarLibrosCSV(); //Guarda el valor de prestado a true
+
+    ShowMessage("Prestamo agregado exitosamente");
 }
 
 /*void biblioteca::prestarLibro()

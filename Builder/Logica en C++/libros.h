@@ -45,6 +45,7 @@ public:
    std::string getUbicacion() const;
    std::string getEstado() const;
    std::string getCodigoBarras() const;
+   bool getPrestado() const;
    
    
 

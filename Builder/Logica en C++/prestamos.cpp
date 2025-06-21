@@ -20,29 +20,29 @@ prestamos::~prestamos()
 //----------------------------------------------------------------------------GETTERS------------------------------------------------------------------------------------------
 
 
-libros& prestamos::getLibroPrestado()
+const libros& prestamos::getLibroPrestado() const
 {
 	//std::cout << "El libro prestado es: " << refLibro.getNombre() << "\n";
 	return refLibro;
 }
 
-socios& prestamos::getSocioPrestatario()
+const socios& prestamos::getSocioPrestatario() const
 {
 	//std::cout << "El socio prestatario es: " << refSocio.getDNI() << "\n";
 	return refSocio;
 }
 
-std::string prestamos::getFechaPrestamo()
+const std::string prestamos::getFechaPrestamo() const
 {
 	return fechaPrestamo;
 }
 
-int prestamos::getDiasPrestamo()
+int prestamos::getDiasPrestamo() const
 {
 	return diasPrestamo;
 }
 
-std::string prestamos::getFechaVencimiento()
+const std::string prestamos::getFechaVencimiento() const
 {
 	return fechaVencimiento;
 }
@@ -111,4 +111,18 @@ int prestamos::diasHastaVencimiento() const
     int diasPasados = static_cast<int>(segundosPasados / (60 * 60 * 24));
 
 	return diasPrestamo - diasPasados; //calculo cuanto falta o si se paso del plazo
+}
+
+std::string prestamos::calcularFechaVencimiento(std::string fechaInicio, int dias)
+{
+    // Convertir std::string a String (VCL)
+    String fechaVCL = fechaInicio.c_str();
+
+    // Sumar días
+    TDateTime inicio = StrToDate(fechaVCL);
+    TDateTime vencimiento = inicio + dias;
+
+    // Convertir el resultado a std::string
+    String fechaFormateada = FormatDateTime("dd/mm/yyyy", vencimiento);
+    return AnsiString(fechaFormateada).c_str();  // Convierte a std::string correctamente
 }

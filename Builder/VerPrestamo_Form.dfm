@@ -11,6 +11,7 @@ object VerPrestamoActivoForm: TVerPrestamoActivoForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object lblVerPrestamos: TLabel
     Left = 591
@@ -25,12 +26,13 @@ object VerPrestamoActivoForm: TVerPrestamoActivoForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object StringGrid1: TStringGrid
+  object StringGridPrestamos: TStringGrid
     Left = 8
     Top = 160
     Width = 740
     Height = 309
     ColCount = 4
+    DefaultColWidth = 128
     TabOrder = 0
     RowHeights = (
       24

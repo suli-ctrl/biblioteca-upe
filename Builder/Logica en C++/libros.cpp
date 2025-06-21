@@ -73,6 +73,10 @@ std::string libros::getEstado() const
 { 
     return estado; 
 }
+bool libros::getPrestado() const
+{
+	return prestado;
+}
 
 /*---------------------------------- Metodos Setters -----------------------------------------*/
 

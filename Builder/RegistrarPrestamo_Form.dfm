@@ -11,6 +11,7 @@ object RegistrarPrestamoForm: TRegistrarPrestamoForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object lblRegistrarPrestamo: TLabel
     Left = 622
@@ -77,7 +78,7 @@ object RegistrarPrestamoForm: TRegistrarPrestamoForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object ListBox1: TListBox
+  object ListBoxLibro: TListBox
     Left = 128
     Top = 176
     Width = 193
@@ -85,21 +86,26 @@ object RegistrarPrestamoForm: TRegistrarPrestamoForm
     ItemHeight = 15
     TabOrder = 0
   end
-  object ComboBox1: TComboBox
+  object ComboBoxDNI: TComboBox
     Left = 478
     Top = 192
     Width = 171
     Height = 23
     TabOrder = 1
   end
-  object ComboBox2: TComboBox
+  object ComboBoxDias: TComboBox
     Left = 478
     Top = 298
     Width = 171
     Height = 23
     TabOrder = 2
+    Items.Strings = (
+      '7'
+      '14'
+      '21'
+      '28')
   end
-  object Button1: TButton
+  object btnRegistrarPrestamo: TButton
     Left = 336
     Top = 408
     Width = 137
@@ -112,5 +118,6 @@ object RegistrarPrestamoForm: TRegistrarPrestamoForm
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
+    OnClick = btnRegistrarPrestamoClick
   end
 end

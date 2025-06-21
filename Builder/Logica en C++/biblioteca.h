@@ -22,6 +22,7 @@ public:
 	const std::vector<libros>& getListaLibros() const; // Solo lectura
 	std::vector<libros>& getListaLibrosModificable(); //Al no tener los const, se puede modificar
 	const std::vector<socios>& getListaSocios() const;
+	const std::vector<prestamos>& getListaPrestamos() const;
 
 	//Manejo de archivos
 	void cargarSociosCSV();

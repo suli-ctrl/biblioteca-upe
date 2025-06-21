@@ -462,6 +462,7 @@ void biblioteca::altaLibro(String nombre, String area, String subarea, String au
 	cargarLibrosCSV();
 
 	libros nuevoLibro(ConvertirStdString(nombre), ConvertirStdString(area), ConvertirStdString(subarea), ConvertirStdString(autores), ConvertirStdString(editorial), anioPublicacion, ConvertirStdString(ubicacion), ConvertirStdString(estado));
+	nuevoLibro.setPrestado(false);
 	listaLibros.push_back(nuevoLibro);
 
 	guardarLibrosCSV();
@@ -716,14 +717,13 @@ void biblioteca::prestarLibro(std::string nombreLibro, int dniSocio, std::string
     std::cout << "Prestamo registrado correctamente.\n";
 }  */
 
-void biblioteca::devolverLibro()
+void biblioteca::devolverLibro(const std::string& ubicacionLibro)
 {
-    std::string ubicacionLibro;
-    std::cout << "Ubicacion del libro a devolver: ";
-    std::getline(std::cin >> std::ws, ubicacionLibro);  //lee texto completo con espacios y limpia buffer
+	//std::string ubicacionLibro;
+	//std::cout << "Ubicacion del libro a devolver: ";
 
-    for (prestamos& prestamo : listaPrestamos)
-    {
+	for (prestamos& prestamo : listaPrestamos)
+	{
         if (prestamo.getLibro().getUbicacion() == ubicacionLibro && !prestamo.libroDevuelto())
         {
             prestamo.setDevuelto(true);//lo marco como devuelto
@@ -738,15 +738,15 @@ void biblioteca::devolverLibro()
                 }
             }
 
-            std::cout << "Libro devuelto correctamente.\n";
+			ShowMessage("Libro devuelto correctamente.");
 
             guardarPrestamosCSV();
             guardarLibrosCSV();
-            return;
+			return;
         }
     }
 
-    std::cout << "No se encontro un prestamo activo para ese libro.\n";
+	ShowMessage("No se encontro un prestamo activo para ese libro");
 }
 
 

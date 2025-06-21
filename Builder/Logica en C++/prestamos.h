@@ -25,7 +25,7 @@ public:
 	const std::string getFechaPrestamo() const;
 	int getDiasPrestamo() const;
 	const std::string getFechaVencimiento() const;
-	bool libroDevuelto(); //Muestra true o false dependiendo si el libro esta devuelto o no. No recuerdo por que se pone const
+	bool libroDevuelto() const; //Muestra true o false dependiendo si el libro esta devuelto o no. No recuerdo por que se pone const
 
      //getters para modificar directamente en devolverLibro, no son const porq quiero modificar datos
 	libros& getLibro();

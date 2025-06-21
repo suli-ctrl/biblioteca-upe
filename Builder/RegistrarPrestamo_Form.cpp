@@ -21,7 +21,7 @@ void __fastcall TRegistrarPrestamoForm::FormShow(TObject *Sender)
 {
 	bibliotecaUPE.cargarLibrosCSV();
 	bibliotecaUPE.cargarSociosCSV();
-	//Para mostrar los libros en el ListBox
+
 	ListBoxLibro->Items->Clear();
 
 	for (const auto& libro : bibliotecaUPE.getListaLibros())
@@ -29,7 +29,7 @@ void __fastcall TRegistrarPrestamoForm::FormShow(TObject *Sender)
 		ListBoxLibro->Items->Add(libro.getNombre().c_str());
 	}
 
-	//Para mostrar los DNI de socios en el ComboBox
+
 	ComboBoxDNI->Items->Clear();
 
 	for (const auto& socio : bibliotecaUPE.getListaSocios())

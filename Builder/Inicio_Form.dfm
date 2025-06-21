@@ -179,7 +179,7 @@ object InicioForm: TInicioForm
   end
   object Panel4: TPanel
     Left = 160
-    Top = 0
+    Top = -8
     Width = 756
     Height = 469
     BorderStyle = bsSingle

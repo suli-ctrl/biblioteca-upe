@@ -49,7 +49,7 @@ public:
 	//Metodos para prestamos
 	//void prestarLibro();
 	void prestarLibro(std::string ubicacionLibro, int dniSocio, std::string fechaPrestamo, int diasPrestamo);
-	void devolverLibro();
+	void devolverLibro(const std::string& ubicacionLibro);
 
 	//Metodos de busqueda y filtro para libros
 	void buscoLibroPorNombre();

@@ -48,7 +48,7 @@ const std::string prestamos::getFechaVencimiento() const
 }
 
 
-bool prestamos::libroDevuelto()
+bool prestamos::libroDevuelto() const
 {
     return devuelto;
 }

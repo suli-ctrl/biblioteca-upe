@@ -197,6 +197,7 @@ void biblioteca::guardarLibrosCSV()
 
 void biblioteca::cargarPrestamosCSV()
 {
+    listaPrestamos.clear();
 
 	std::ifstream archivo("lista de prestamos.csv");
 
@@ -267,7 +268,6 @@ void biblioteca::cargarPrestamosCSV()
 
 void biblioteca::guardarPrestamosCSV()
 {
-    cargarPrestamosCSV();
 
 	std::ofstream archivo("lista de prestamos.csv");
 
@@ -598,6 +598,8 @@ void biblioteca::prestarLibro(std::string nombreLibro, int dniSocio, std::string
 {
 	cargarLibrosCSV();
 	cargarSociosCSV();
+
+    cargarPrestamosCSV();
 
 	libros* libroPrestado = nullptr;
 

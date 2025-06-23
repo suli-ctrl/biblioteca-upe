@@ -18,15 +18,14 @@ __fastcall TAltaLibroForm::TAltaLibroForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 
 //funcion auxiliar para validar texto alfabetico (con tildes, guiones, espacios)
-bool esTextoAlfabetico(String texto) {
+bool esTextoAlfabetico(const String& texto) {
 	for (int i = 1; i <= texto.Length(); i++)
 	 {
 		wchar_t c = texto[i];
-		if (!IsCharAlpha(c) && c != ' ' && c != '-' && c != 'á' && c != 'é' && c != 'í' && c != 'ó' && c != 'ú' &&
-			c != 'Á' && c != 'É' && c != 'Í' && c != 'Ó' && c != 'Ú' && c != 'ñ' && c != 'Ñ')
-			{
-			  return false;
-			}
+		if (!(IsCharAlpha(c) || c == ' ' || c == '-'))
+		{
+			return false;
+		}
 	}
 	return true;
 }

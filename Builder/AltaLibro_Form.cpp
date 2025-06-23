@@ -10,19 +10,34 @@
 #pragma resource "*.dfm"
 TAltaLibroForm *AltaLibroForm;
 //---------------------------------------------------------------------------
+
 __fastcall TAltaLibroForm::TAltaLibroForm(TComponent* Owner)
 	: TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
 
+//funcion auxiliar para validar texto alfabetico (con tildes, guiones, espacios)
+bool esTextoAlfabetico(String texto) {
+	for (int i = 1; i <= texto.Length(); i++)
+	 {
+		wchar_t c = texto[i];
+		if (!IsCharAlpha(c) && c != ' ' && c != '-' && c != 'á' && c != 'é' && c != 'í' && c != 'ó' && c != 'ú' &&
+			c != 'Á' && c != 'É' && c != 'Í' && c != 'Ó' && c != 'Ú' && c != 'ñ' && c != 'Ñ')
+			{
+			  return false;
+			}
+	}
+	return true;
+}
+
 void TAltaLibroForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
-    bibliotecaUPE = pBibliotecaUPE;
+	bibliotecaUPE = pBibliotecaUPE;
 }
 
 void __fastcall TAltaLibroForm::BtnAltaLibroClick(TObject *Sender)
 {
-	String nombre = EditNombreLibro->Text;   //Guardo los datos en un string
+	String nombre = EditNombreLibro->Text;
 	String area = EditAreaLibro->Text;
 	String subarea = EditSubAreaLibro->Text;
 	String autores = EditAutorLibro->Text;
@@ -30,25 +45,42 @@ void __fastcall TAltaLibroForm::BtnAltaLibroClick(TObject *Sender)
 	String ubicacion = EditUbiLibro->Text;
 	int anioPublicacion = 0;
 
-
-	// Si hay un campo vacio, sale un cartel indicando que se completen los campos
 	if (nombre.IsEmpty() || area.IsEmpty() || subarea.IsEmpty() || autores.IsEmpty() || editorial.IsEmpty() || ubicacion.IsEmpty()) {
 		ShowMessage("Completar todos los campos");
 		return;
 	}
 
-	if (ListBoxEstado->ItemIndex == -1) { //Indica que no hay ningun estado seleccionado (son 4 campos)
+	//validaciones de campos alfabeticos
+	if (!esTextoAlfabetico(area)) {
+		ShowMessage("El campo 'Area' solo debe contener letras.");
+		return;
+	}
+	if (!esTextoAlfabetico(subarea))
+	 {
+		ShowMessage("El campo 'Subarea' solo debe contener letras.");
+		return;
+	}
+	if (!esTextoAlfabetico(autores))
+	{
+		ShowMessage("El campo 'Autores' solo debe contener letras.");
+		return;
+	}
+
+	if (ListBoxEstado->ItemIndex == -1)
+	{
 		ShowMessage("Por favor seleccione un estado del libro.");
 		return;
 	}
 	String estado = ListBoxEstado->Items->Strings[ListBoxEstado->ItemIndex];
 
-	if (!TryStrToInt(EditAñoLibro->Text, anioPublicacion)) { //Convierte lo ingresado a INT. Si los caracteres no son numericos, salta el mensaje y return
-		ShowMessage("Año inválido. Ingrese solo números.");
+	if (!TryStrToInt(EditAñoLibro->Text, anioPublicacion))
+	{
+		ShowMessage("Año invalido. Ingrese solo numeros.");
 		return;
 	}
-	if (anioPublicacion < 1500 || anioPublicacion > 2025) {   //Si el valor ingresado no está en este rango, salta el mensaje y return
-		ShowMessage("Ingrese un año de publicación válido (1500 - 2025).");
+	if (anioPublicacion < 1500 || anioPublicacion > 2025)
+	{
+		ShowMessage("Ingrese un año de publicación valido (1500 - 2025).");
 		return;
 	}
 

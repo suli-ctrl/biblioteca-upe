@@ -32,6 +32,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 	biblioteca * bibliotecaUPE;
 	void MostrarCoincidencia(int fila, const socios& s);
+    bool noHayFiltroActivo();
 public:		// User declarations
 	__fastcall TVerYBuscarSocioForm(TComponent* Owner);
     void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero

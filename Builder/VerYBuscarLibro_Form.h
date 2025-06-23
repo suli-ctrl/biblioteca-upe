@@ -33,6 +33,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 	biblioteca * bibliotecaUPE; //instancio la clase
 	void MostrarCoincidencia(int fila, const libros& l); //muestra los datos de las coincidencias encontradas durante la busqueda
+	bool ningunFiltroActivo();
 public:		// User declarations
 	__fastcall TVerYBuscarLibroForm(TComponent* Owner);
     void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero

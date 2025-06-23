@@ -117,6 +117,19 @@ void TVerYBuscarSocioForm::MostrarCoincidencia(int fila, const socios& s) //una 
 
 //---------------------------------------------------------------------------
 
+bool TVerYBuscarSocioForm::noHayFiltroActivo(){
+
+return  txtApellidoBuscar->Text == "Apellido" &&
+		txtDireccionCalleBuscar->Text == "Dirección de calle" &&
+		txtDNIBuscar->Text == "DNI" &&
+		txtEdadBuscar->Text == "Edad" &&
+		txtEmailBuscar->Text == "E-mail" &&
+		txtFechaNacimientoBuscar->Text == "Fecha de nacimiento (D/M/A)" &&
+		txtNumTelBuscar->Text == "Número de teléfono" &&
+		lstGeneroBuscar->ItemIndex == -1;
+}
+
+//---------------------------------------------------------------------------
 void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 {
    //Limpiamos el contenido de las celdas antes de buscar la información requerida
@@ -132,6 +145,12 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 
 	if (chkMostrarTodos->Checked) //si el checkbox está checkeado
 	{
+
+			if(!noHayFiltroActivo()){
+			ShowMessage("Para buscar mediante criterios desmarque 'mostrar todos'.");
+			return;
+			}
+
 			bibliotecaUPE->cargarSociosCSV();
 
 			const std::vector<socios>& listaSocios = bibliotecaUPE->getListaSocios();
@@ -153,6 +172,97 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 			}
 
 	}else{ //si el checkbox no está checkeado
+
+
+	//---------------- Inicio Validaciones---------------
+		String apellido = txtApellidoBuscar->Text;
+		int DNI = 0;
+		int edad = 0;
+		String direccion = txtDireccionCalleBuscar->Text;
+		String telefono = txtNumTelBuscar->Text;
+		String dniStr = txtDNIBuscar->Text;
+		String edadStr = txtEdadBuscar->Text;
+		String email = txtEmailBuscar->Text;
+
+
+		 if (edadStr != "Edad") {
+			if (!TryStrToInt(txtEdadBuscar->Text, edad)) {
+			ShowMessage("La edad debe tener solo caracteres numericos");
+			return;
+			}
+			if (edad < 18 || edad > 100) {
+			ShowMessage("La edad debe estar entre 18 y 100 años");
+			return;
+			}
+		 }
+
+		if (direccion != "Dirección de calle") {
+		   for (int i = 1; i <= direccion.Length(); i++) {
+
+				if (!(isalnum(direccion[i]) || direccion[i] == ' ')) {
+				ShowMessage("La direccion solo puede contener letras, numeros y espacios.");
+				return;
+				}
+			}
+		 }
+
+		if (telefono != "Número de teléfono") {
+			   if (telefono.Length() != 10)
+			   {
+				ShowMessage("El telefono debe tener 10 digitos");
+				return;
+			   }
+			   for (int i = 1; i <= telefono.Length(); i++)
+			   {
+					if (!isdigit(telefono[i]))
+					{
+					ShowMessage("El telefono solo debe contener numeros");
+					return;
+					 }
+				}
+		 }
+
+
+		 if (dniStr != "DNI")
+		 {
+			  for (int i = 1; i <= dniStr.Length(); i++)
+			  {
+				 if (!isdigit(dniStr[i]))
+				  {
+					ShowMessage("El DNI debe contener solo números.");
+					 return;
+				  }
+			  }
+
+               if(dniStr.Length() != 8)
+			   {
+				   ShowMessage("El DNI debe tener 8 cifras.");
+			   }
+		 }
+
+		if( email != "E-mail"){
+
+			int arrobas = 0, puntos = 0;
+			for (int i = 1; i <= email.Length(); i++) {
+				if (email[i] == '@') arrobas++;
+				else if (email[i] == '.') puntos++;
+				else if (!isalnum(email[i])) {
+					ShowMessage("El email contiene caracteres inválidos.");
+					return;
+				}
+			}
+			if (arrobas != 1 || puntos != 1 || email.Pos("@") > email.Pos(".")) {
+				ShowMessage("El email debe tener formato válido: usuario@dominio.com");
+				return;
+			}
+
+		 }
+
+
+
+	//---------------- Fin Validaciones---------------
+
+
 
 		   bibliotecaUPE->cargarSociosCSV();
 		   const std::vector<socios>& listaSocios = bibliotecaUPE->getListaSocios();
@@ -214,6 +324,5 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-
 
 

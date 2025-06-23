@@ -16,10 +16,6 @@ __published:	// IDE-managed Components
 	TLabel *lblRegistrarDevolucion;
 	TLabel *LabelSeleccionado;
 	TButton *Button1;
-	TComboBox *ComboBox1;
-	TListBox *ListBox1;
-	TLabel *Label2;
-	TLabel *Label1;
 	TStringGrid *StringGridPrestamos;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall StringGridPrestamosClick(TObject *Sender);

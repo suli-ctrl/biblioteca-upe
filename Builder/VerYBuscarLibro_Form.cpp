@@ -106,6 +106,34 @@ void __fastcall TVerYBuscarLibroForm::TextBoxExit(TObject* Sender)
 
 //---------------------------------------------------------------------------
 
+bool TVerYBuscarLibroForm::ningunFiltroActivo(){
+
+return  txtNombreBuscar->Text == "Nombre" &&
+		txtAreaBuscar->Text == "Area" &&
+		txtSubAreaBuscar->Text == "SubArea" &&
+		txtAutoresBuscar->Text == "Autores" &&
+		txtEditorialBuscar->Text == "Editorial" &&
+		txtAnioPublicacionBuscar->Text == "Año de publicación" &&
+		txtUbicacionBuscar->Text == "Ubicación (EstN°-FN°)" &&
+		lstEstadoBuscar->ItemIndex == -1 &&
+		txtCodBarrasBuscar->Text == "Código de barras";
+}
+
+//---------------------------------------------------------------------------
+bool validarTextoAlfabetico(const String& texto) {
+	for (int i = 1; i <= texto.Length(); i++)
+	 {
+		wchar_t c = texto[i];
+		if (!(IsCharAlpha(c) || c == ' ' || c == '-'))
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+//---------------------------------------------------------------------------
+
 void TVerYBuscarLibroForm::MostrarCoincidencia(int fila, const libros& l) //una vez encontrada la coincicencia en la busqueda, se muestra los datos de esa fila
 {
 
@@ -117,6 +145,7 @@ void TVerYBuscarLibroForm::MostrarCoincidencia(int fila, const libros& l) //una 
  StringGridLibros->Cells[5][fila] = IntToStr(l.getAnioDePublicacion());
  StringGridLibros->Cells[6][fila] = l.getUbicacion().c_str();
  StringGridLibros->Cells[7][fila] = l.getEstado().c_str();
+ StringGridLibros->Cells[8][fila] = l.getCodigoBarras().c_str();
 }
 
 //---------------------------------------------------------------------------
@@ -128,7 +157,7 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
   //Limpiamos el contenido de las celdas antes de buscar la información requerida
   for(int fila=1; fila<StringGridLibros->RowCount; ++fila)  //recorre las filas hasta que terminen
 	{
-		for (int col=0; col<8; ++col) //recorre las columnas
+		for (int col=0; col<9; ++col) //recorre las columnas
 		{
 		  StringGridLibros->Cells[col][fila] = ""; //limpia el contenido de las celdas
 		}
@@ -138,6 +167,11 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 
 	if (chkMostrarTodos->Checked)
 	{
+			if(!ningunFiltroActivo()){
+			ShowMessage("Para buscar mediante criterios desmarque 'mostrar todos'.");
+			return;
+			}
+
 			bibliotecaUPE->cargarLibrosCSV();
 
 			const std::vector<libros>& listaLibros = bibliotecaUPE->getListaLibros();
@@ -156,9 +190,51 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 			StringGridLibros->Cells[5][i+1] = IntToStr(l.getAnioDePublicacion());
 			StringGridLibros->Cells[6][i+1] = l.getUbicacion().c_str();
 			StringGridLibros->Cells[7][i+1] = l.getEstado().c_str();
+			StringGridLibros->Cells[8][i+1] = l.getCodigoBarras().c_str();
 			}
 
 	}else{
+
+	//---------------- Inicio Validaciones---------------
+		int anioPublicacion=0;
+		String textoPorDefecto = "Año de publicación";
+		String textoIngresado = txtAnioPublicacionBuscar->Text;
+		String area = txtAreaBuscar->Text;
+		String subarea = txtSubAreaBuscar->Text;
+		String autores = txtAutoresBuscar->Text;
+
+		if ((textoIngresado != textoPorDefecto) && (!TryStrToInt (txtAnioPublicacionBuscar->Text, anioPublicacion)))
+		{
+		  ShowMessage("Año invalido. Ingrese solo números.");
+		  return;
+		}
+		if ((textoIngresado != textoPorDefecto) && (anioPublicacion <1500 || anioPublicacion>2025))
+		{
+		   ShowMessage("Ingrese un año de publicación válido (1500-2025).");
+		   return;
+		}
+
+		if(ningunFiltroActivo()){
+			ShowMessage("Ingrese al menos un criterio de búsqueda o presione 'Mostrar todos'.");
+			return;
+		}
+		if (!validarTextoAlfabetico(area))
+		{
+			ShowMessage("El campo 'Area' solo debe contener letras.");
+			return;
+		}
+		if (!validarTextoAlfabetico(subarea))
+		{
+			ShowMessage("El campo 'Subarea' solo debe contener letras.");
+			return;
+		}
+		if (!validarTextoAlfabetico(autores))
+		{
+			ShowMessage("El campo 'Autores' solo debe contener letras.");
+			return;
+		}
+	//---------------- Fin Validaciones---------------
+
 
 	   bibliotecaUPE->cargarLibrosCSV();
 	   const std::vector<libros>& listaLibros = bibliotecaUPE->getListaLibros();
@@ -202,6 +278,10 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 		 if ((lstEstadoBuscar->ItemIndex != -1) && (CompareText(AnsiString(l.getEstado().c_str()).Trim(),  lstEstadoBuscar->Items->Strings[lstEstadoBuscar->ItemIndex]) != 0))
 		 {
 			 coincide = false;
+		 }
+		 if ((txtCodBarrasBuscar->Text != "Código de barras") && (CompareText(AnsiString(l.getCodigoBarras().c_str()).Trim(), txtCodBarrasBuscar->Text.Trim()) != 0))
+		 {
+             coincide = false;
 		 }
 
 		   if(coincide)

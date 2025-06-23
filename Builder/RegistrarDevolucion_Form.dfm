@@ -27,8 +27,8 @@
     ParentFont = False
   end
   object LabelSeleccionado: TLabel
-    Left = 226
-    Top = 126
+    Left = 8
+    Top = 46
     Width = 252
     Height = 25
     Caption = 'Prestamo seleccionado:'
@@ -39,35 +39,9 @@
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 512
-    Top = 53
-    Width = 102
-    Height = 18
-    Caption = 'DNI del socio'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label1: TLabel
-    Left = 56
-    Top = 40
-    Width = 125
-    Height = 18
-    Caption = 'Nombre del libro'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object Button1: TButton
-    Left = 592
-    Top = 408
+    Left = 312
+    Top = 415
     Width = 137
     Height = 41
     Caption = 'Registrar'
@@ -80,27 +54,13 @@
     TabOrder = 0
     OnClick = Button1Click
   end
-  object ComboBox1: TComboBox
-    Left = 512
-    Top = 77
-    Width = 171
-    Height = 23
-    TabOrder = 1
-  end
-  object ListBox1: TListBox
-    Left = 64
-    Top = 64
-    Width = 193
-    Height = 16
-    ItemHeight = 15
-    TabOrder = 2
-  end
   object StringGridPrestamos: TStringGrid
-    Left = 56
-    Top = 168
-    Width = 673
-    Height = 234
-    TabOrder = 3
+    Left = 0
+    Top = 72
+    Width = 748
+    Height = 337
+    DefaultColWidth = 200
+    TabOrder = 1
     OnClick = StringGridPrestamosClick
   end
 end

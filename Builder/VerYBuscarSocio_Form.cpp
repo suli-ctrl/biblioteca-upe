@@ -13,9 +13,19 @@ TVerYBuscarSocioForm *VerYBuscarSocioForm;
 __fastcall TVerYBuscarSocioForm::TVerYBuscarSocioForm(TComponent* Owner)
 	: TForm(Owner)
 {
-	bibliotecaUPE.cargarSociosCSV();
 
-	const std::vector<socios>& listaSocios = bibliotecaUPE.getListaSocios();
+}
+//---------------------------------------------------------------------------
+
+void TVerYBuscarSocioForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+	bibliotecaUPE = pBibliotecaUPE;
+}
+
+void __fastcall TVerYBuscarSocioForm::FormShow(TObject *Sender)
+{
+	bibliotecaUPE->cargarSociosCSV();
+
+	const std::vector<socios>& listaSocios = bibliotecaUPE->getListaSocios();
 
 	StringGridSocios->ColCount = 8;
 	StringGridSocios->RowCount = listaSocios.size() + 1;
@@ -63,7 +73,6 @@ for (int i = 0; i < cantidadBoxs; i++) { //recorre todos los textboxs
 	txtboxs[i]->OnEnter = TextBoxEnter; //se le asigna un evento cuando se hace foco al textbox (se hace click en el textbox)
 	txtboxs[i]->OnExit = TextBoxExit;  //se le asigna un evento cuando se deja de hacer foco al textbox clickeado (se clickea a otro)
 }
-
 }
 //---------------------------------------------------------------------------
 
@@ -123,9 +132,9 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 
 	if (chkMostrarTodos->Checked) //si el checkbox está checkeado
 	{
-			bibliotecaUPE.cargarSociosCSV();
+			bibliotecaUPE->cargarSociosCSV();
 
-			const std::vector<socios>& listaSocios = bibliotecaUPE.getListaSocios();
+			const std::vector<socios>& listaSocios = bibliotecaUPE->getListaSocios();
 
 			StringGridSocios->RowCount = listaSocios.size() + 1;
 
@@ -145,8 +154,8 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 
 	}else{ //si el checkbox no está checkeado
 
-		   bibliotecaUPE.cargarSociosCSV();
-		   const std::vector<socios>& listaSocios = bibliotecaUPE.getListaSocios();
+		   bibliotecaUPE->cargarSociosCSV();
+		   const std::vector<socios>& listaSocios = bibliotecaUPE->getListaSocios();
 		   StringGridSocios->RowCount = listaSocios.size() + 1;
 
 		   int fila=1;
@@ -157,7 +166,7 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 			 bool coincide = true;
 
 			 if((txtApellidoBuscar->Text.Trim() != "Apellido") && (CompareText(AnsiString(s.getApellido().c_str()).Trim(), txtApellidoBuscar->Text.Trim()) != 0)) //compare text: parecido a strcmp pero que compara dos Ansistrings | c_str(): convierte un string en const char* |
-			 																																						// AnsiString(): convierte un const char* en un AnsiString(cadena que usa la interfaz) | trim():elimina espacios iniciales y finales
+																																									// AnsiString(): convierte un const char* en un AnsiString(cadena que usa la interfaz) | trim():elimina espacios iniciales y finales
 			 {
                  coincide = false;
              }
@@ -175,7 +184,7 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 			 }
 			 if((txtNumTelBuscar->Text != "Número de teléfono") && (CompareText(AnsiString(s.getTelefono().c_str()).Trim(), txtNumTelBuscar->Text.Trim()) != 0))
              {
-                   coincide = false;
+				   coincide = false;
              }
 			 if((txtEdadBuscar->Text != "Edad") && (CompareText(IntToStr(s.getEdad()).Trim(), txtEdadBuscar->Text.Trim()) != 0))
              {
@@ -184,7 +193,7 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 			 if((txtFechaNacimientoBuscar->Text != "Fecha de nacimiento (D/M/A)") && (CompareText(AnsiString(s.getFechaNacimiento().c_str()).Trim(), txtFechaNacimientoBuscar->Text.Trim()) != 0))
              {
                    coincide = false;
-             }
+			 }
 			 if((txtEmailBuscar->Text != "E-mail") && (CompareText(AnsiString(s.getEmail().c_str()).Trim(), txtEmailBuscar->Text.Trim()) != 0))
 			 {
                    coincide = false;
@@ -205,4 +214,6 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
+
+
 

@@ -37,9 +37,10 @@ __published:	// IDE-managed Components
 	void __fastcall btnBuscarSocioModiClick(TObject *Sender);
 	void __fastcall btnModificarClick(TObject *Sender);
 private:	// User declarations
-	biblioteca bibliotecaUPE;
+	biblioteca * bibliotecaUPE;
 public:		// User declarations
 	__fastcall TModificarSocioForm(TComponent* Owner);
+    void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TModificarSocioForm *ModificarSocioForm;

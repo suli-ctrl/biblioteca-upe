@@ -38,9 +38,10 @@ __published:	// IDE-managed Components
 	void __fastcall BtnBuscarNomAModiClick(TObject *Sender);
 	void __fastcall btnModificarLibroClick(TObject *Sender);
 private:	// User declarations
-	biblioteca bibliotecaUPE;
+	biblioteca * bibliotecaUPE;
 public:		// User declarations
 	__fastcall TModificarLibroForm(TComponent* Owner);
+    void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TModificarLibroForm *ModificarLibroForm;

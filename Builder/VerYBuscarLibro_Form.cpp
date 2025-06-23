@@ -17,11 +17,15 @@ __fastcall TVerYBuscarLibroForm::TVerYBuscarLibroForm(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
+void TVerYBuscarLibroForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
 void __fastcall TVerYBuscarLibroForm::FormShow(TObject *Sender)
 {
-	bibliotecaUPE.cargarLibrosCSV();
+	bibliotecaUPE->cargarLibrosCSV();
 
-	const std::vector<libros>& listaLibros = bibliotecaUPE.getListaLibros();
+	const std::vector<libros>& listaLibros = bibliotecaUPE->getListaLibros();
 
 	StringGridLibros->ColCount = 9;
 	StringGridLibros->RowCount = listaLibros.size() + 1;
@@ -134,9 +138,9 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 
 	if (chkMostrarTodos->Checked)
 	{
-			bibliotecaUPE.cargarLibrosCSV();
+			bibliotecaUPE->cargarLibrosCSV();
 
-			const std::vector<libros>& listaLibros = bibliotecaUPE.getListaLibros();
+			const std::vector<libros>& listaLibros = bibliotecaUPE->getListaLibros();
 
 			StringGridLibros->RowCount = listaLibros.size() + 1;
 
@@ -156,8 +160,8 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 
 	}else{
 
-	   bibliotecaUPE.cargarLibrosCSV();
-	   const std::vector<libros>& listaLibros = bibliotecaUPE.getListaLibros();
+	   bibliotecaUPE->cargarLibrosCSV();
+	   const std::vector<libros>& listaLibros = bibliotecaUPE->getListaLibros();
 	   StringGridLibros->RowCount = listaLibros.size() + 1;
 
 	   int fila=1;

@@ -12,6 +12,7 @@
 #include <Vcl.ToolWin.hpp>
 #include <Vcl.Buttons.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
+#include "biblioteca.h"
 //---------------------------------------------------------------------------
 class TInicioForm : public TForm
 {
@@ -33,8 +34,10 @@ __published:	// IDE-managed Components
 	void __fastcall BtnSociosClick(TObject *Sender);
 	void __fastcall BtnSalirClick(TObject *Sender);
 private:	// User declarations
+	biblioteca bibliotecaUPE;
 public:		// User declarations
 	__fastcall TInicioForm(TComponent* Owner);
+    biblioteca * getBiblioteca(); //metodo para pasar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TInicioForm *InicioForm;

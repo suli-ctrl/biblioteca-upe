@@ -35,9 +35,10 @@ __published:	// IDE-managed Components
 	TDateTimePicker *DateTimeSocio;
 	void __fastcall btnDarAltaClick(TObject *Sender);
 private:	// User declarations
-	biblioteca bibliotecaUPE;
+	biblioteca * bibliotecaUPE;
 public:		// User declarations
 	__fastcall TAltaSocioForm(TComponent* Owner);
+    void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TAltaSocioForm *AltaSocioForm;

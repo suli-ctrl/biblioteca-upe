@@ -15,11 +15,16 @@ __fastcall TBajaLibroForm::TBajaLibroForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TBajaLibroForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
 void __fastcall TBajaLibroForm::btnDarBajaClick(TObject *Sender)
 {
 	String libroBaja = ComboBoxBaja->Text;
 
-	bibliotecaUPE.bajaLibro(libroBaja);
+	bibliotecaUPE->bajaLibro(libroBaja);
 
 }
 //---------------------------------------------------------------------------
@@ -28,9 +33,9 @@ void __fastcall TBajaLibroForm::FormShow(TObject *Sender)
 {
 	ComboBoxBaja->Items->Clear();
 
-	bibliotecaUPE.cargarLibrosCSV();
+	bibliotecaUPE->cargarLibrosCSV();
 
-	const std::vector<libros>& libro = bibliotecaUPE.getListaLibros();
+	const std::vector<libros>& libro = bibliotecaUPE->getListaLibros();
 
 	for (int i = 0; i < libro.size(); ++i)
 	{

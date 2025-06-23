@@ -25,9 +25,10 @@ __published:	// IDE-managed Components
 	void __fastcall StringGridPrestamosClick(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
-	biblioteca bibliotecaUPE;
+	biblioteca * bibliotecaUPE;
 public:		// User declarations
 	__fastcall TRegistarDevoluciónForm(TComponent* Owner);
+    void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TRegistarDevoluciónForm *RegistarDevoluciónForm;

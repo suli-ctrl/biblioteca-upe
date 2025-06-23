@@ -15,13 +15,19 @@ __fastcall TBajaSocioForm::TBajaSocioForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TBajaSocioForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
+
 void __fastcall TBajaSocioForm::FormShow(TObject *Sender)
 {
 	ComboBoxBaja->Items->Clear();
 
-	bibliotecaUPE.cargarSociosCSV();
+	bibliotecaUPE->cargarSociosCSV();
 
-	const std::vector<socios>& socios = bibliotecaUPE.getListaSocios();
+	const std::vector<socios>& socios = bibliotecaUPE->getListaSocios();
 
 	for (int i = 0; i < socios.size(); ++i)
 	{
@@ -34,7 +40,7 @@ void __fastcall TBajaSocioForm::btnDarBajaClick(TObject *Sender)
 {
 	String socioBaja = ComboBoxBaja->Text;
 
-	bibliotecaUPE.bajaSocio(socioBaja);
+	bibliotecaUPE->bajaSocio(socioBaja);
 }
 //---------------------------------------------------------------------------
 

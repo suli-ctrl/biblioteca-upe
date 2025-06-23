@@ -25,9 +25,10 @@ __published:	// IDE-managed Components
 	void __fastcall btnRegistrarPrestamoClick(TObject *Sender);
 
 private:	// User declarations
-	biblioteca bibliotecaUPE;
+	biblioteca * bibliotecaUPE;
 public:		// User declarations
 	__fastcall TRegistrarPrestamoForm(TComponent* Owner);
+    void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TRegistrarPrestamoForm *RegistrarPrestamoForm;

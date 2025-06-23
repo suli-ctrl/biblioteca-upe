@@ -12,6 +12,7 @@
 #include <Vcl.ToolWin.hpp>
 #include <Vcl.Buttons.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
+#include "biblioteca.h"
 //---------------------------------------------------------------------------
 class TSociosForm : public TForm
 {
@@ -34,9 +35,11 @@ __published:	// IDE-managed Components
 	void __fastcall BtnModificarSocioClick(TObject *Sender);
 	void __fastcall BtnVerYBuscarSocioClick(TObject *Sender);
 private:	// User declarations
-    void MostrarFormEnPanel(TForm *form);
+	void MostrarFormEnPanel(TForm *form);
+    biblioteca * bibliotecaUPE;
 public:		// User declarations
 	__fastcall TSociosForm(TComponent* Owner);
+	void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TSociosForm *SociosForm;

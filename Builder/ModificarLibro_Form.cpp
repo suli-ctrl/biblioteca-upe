@@ -16,13 +16,18 @@ __fastcall TModificarLibroForm::TModificarLibroForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TModificarLibroForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
 void __fastcall TModificarLibroForm::FormShow(TObject *Sender)
 {
-	bibliotecaUPE.cargarLibrosCSV();
+	bibliotecaUPE->cargarLibrosCSV();
 	//Para mostrar los libros en el ComboBox
 	ComboBoxBusqueda->Items->Clear();
 
-	for (const auto& libro : bibliotecaUPE.getListaLibros())
+	for (const auto& libro : bibliotecaUPE->getListaLibros())
 	{
 		ComboBoxBusqueda->Items->Add(libro.getNombre().c_str());
 	}
@@ -37,7 +42,7 @@ void __fastcall TModificarLibroForm::BtnBuscarNomAModiClick(TObject *Sender)
 	bool existe = false;
 	int nuevoAnio = 0;
 
-	const std::vector<libros>& listaLibros = bibliotecaUPE.getListaLibros();
+	const std::vector<libros>& listaLibros = bibliotecaUPE->getListaLibros();
 
 	for (int i = 0; i < listaLibros.size(); i++)
 	{
@@ -76,7 +81,7 @@ void __fastcall TModificarLibroForm::BtnBuscarNomAModiClick(TObject *Sender)
 void __fastcall TModificarLibroForm::btnModificarLibroClick(TObject *Sender)
 {
 	std::string nombre_original = ConvertirStdString(ComboBoxBusqueda->Text);
-	std::vector<libros>& listaLibros = bibliotecaUPE.getListaLibrosModificable();
+	std::vector<libros>& listaLibros = bibliotecaUPE->getListaLibrosModificable();
 
 	bool modificado = false;
 
@@ -112,7 +117,7 @@ void __fastcall TModificarLibroForm::btnModificarLibroClick(TObject *Sender)
 
 	if (modificado)
 	{
-		bibliotecaUPE.guardarLibrosCSV();
+		bibliotecaUPE->guardarLibrosCSV();
 		ShowMessage("Libro modificado correctamente.");
 	}
 

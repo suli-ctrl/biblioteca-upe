@@ -18,6 +18,12 @@ __fastcall TAltaSocioForm::TAltaSocioForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TAltaSocioForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
+
 void __fastcall TAltaSocioForm::btnDarAltaClick(TObject *Sender)
 {
 	String apellido = txtApellidoAlta->Text;
@@ -127,7 +133,7 @@ void __fastcall TAltaSocioForm::btnDarAltaClick(TObject *Sender)
 
 
 
-	bibliotecaUPE.altaSocio(DNI, edad, apellido, genero, direccion, telefono, fechaNacimiento, email);
+	bibliotecaUPE->altaSocio(DNI, edad, apellido, genero, direccion, telefono, fechaNacimiento, email);
 
 	ShowMessage("Socio agregado exitosamente");
 }

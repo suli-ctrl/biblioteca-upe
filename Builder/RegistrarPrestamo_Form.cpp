@@ -17,14 +17,19 @@ __fastcall TRegistrarPrestamoForm::TRegistrarPrestamoForm(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
+void TRegistrarPrestamoForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
+
 void __fastcall TRegistrarPrestamoForm::FormShow(TObject *Sender)
 {
-	bibliotecaUPE.cargarLibrosCSV();
-	bibliotecaUPE.cargarSociosCSV();
+	bibliotecaUPE->cargarLibrosCSV();
+	bibliotecaUPE->cargarSociosCSV();
 
 	ListBoxLibro->Items->Clear();
 
-	for (const auto& libro : bibliotecaUPE.getListaLibros())
+	for (const auto& libro : bibliotecaUPE->getListaLibros())
 	{
 		ListBoxLibro->Items->Add(libro.getNombre().c_str());
 	}
@@ -32,7 +37,7 @@ void __fastcall TRegistrarPrestamoForm::FormShow(TObject *Sender)
 
 	ComboBoxDNI->Items->Clear();
 
-	for (const auto& socio : bibliotecaUPE.getListaSocios())
+	for (const auto& socio : bibliotecaUPE->getListaSocios())
 	{
 		ComboBoxDNI->Items->Add(socio.getDNI());
 	}
@@ -52,7 +57,7 @@ void __fastcall TRegistrarPrestamoForm::btnRegistrarPrestamoClick(TObject *Sende
 	int diasPrestamo = dias.ToInt();
 	std::string fecha = ConvertirStdString(fechaActual);
 
-	bibliotecaUPE.prestarLibro(nombre_libro, dni, fecha, diasPrestamo);
+	bibliotecaUPE->prestarLibro(nombre_libro, dni, fecha, diasPrestamo);
 
 
 }

@@ -33,9 +33,10 @@ __published:	// IDE-managed Components
 	TButton *BtnAltaLibro;
 	void __fastcall BtnAltaLibroClick(TObject *Sender);
 private:	// User declarations
-    biblioteca bibliotecaUPE;
+	biblioteca * bibliotecaUPE; //puntero al objeto biblioteca que esta en inicio_form
 public:		// User declarations
 	__fastcall TAltaLibroForm(TComponent* Owner);
+	void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TAltaLibroForm *AltaLibroForm;

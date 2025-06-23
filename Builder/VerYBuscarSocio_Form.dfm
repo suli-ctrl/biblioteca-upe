@@ -12,6 +12,7 @@ object VerYBuscarSocioForm: TVerYBuscarSocioForm
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poMainFormCenter
+  OnShow = FormShow
   TextHeight = 15
   object lblModificarSocio: TLabel
     Left = 642

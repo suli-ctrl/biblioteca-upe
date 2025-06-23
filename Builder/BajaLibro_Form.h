@@ -20,9 +20,10 @@ __published:	// IDE-managed Components
 	void __fastcall btnDarBajaClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
-	biblioteca bibliotecaUPE;
+    biblioteca * bibliotecaUPE; //puntero al objeto biblioteca que esta en inicio_form
 public:		// User declarations
 	__fastcall TBajaLibroForm(TComponent* Owner);
+    void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TBajaLibroForm *BajaLibroForm;

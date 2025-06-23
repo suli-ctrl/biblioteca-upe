@@ -15,13 +15,19 @@ __fastcall TVerPrestamoActivoForm::TVerPrestamoActivoForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TVerPrestamoActivoForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
+
 void __fastcall TVerPrestamoActivoForm::FormShow(TObject *Sender)
 {
-	bibliotecaUPE.cargarLibrosCSV(); //prestamos depende de libros y socios por las referencias y otras cosas
-	bibliotecaUPE.cargarSociosCSV();
-	bibliotecaUPE.cargarPrestamosCSV();
+	bibliotecaUPE->cargarLibrosCSV(); //prestamos depende de libros y socios por las referencias y otras cosas
+	bibliotecaUPE->cargarSociosCSV();
+	bibliotecaUPE->cargarPrestamosCSV();
 
-	const std::vector<prestamos>& listaPrestamos = bibliotecaUPE.getListaPrestamos();
+	const std::vector<prestamos>& listaPrestamos = bibliotecaUPE->getListaPrestamos();
 
 
 	StringGridPrestamos->ColCount = 7;

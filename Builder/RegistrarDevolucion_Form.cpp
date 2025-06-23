@@ -20,6 +20,12 @@ __fastcall TRegistarDevoluciónForm::TRegistarDevoluciónForm(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
+void TRegistarDevoluciónForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
+
+
 int filaSeleccionada = -1;
 
 void __fastcall TRegistarDevoluciónForm::FormShow(TObject *Sender)
@@ -27,11 +33,11 @@ void __fastcall TRegistarDevoluciónForm::FormShow(TObject *Sender)
 
 	int fila = 1;
 
-	bibliotecaUPE.cargarLibrosCSV(); //prestamos depende de libros y socios por las referencias y otras cosas
-	bibliotecaUPE.cargarSociosCSV();
-	bibliotecaUPE.cargarPrestamosCSV();
+	bibliotecaUPE->cargarLibrosCSV(); //prestamos depende de libros y socios por las referencias y otras cosas
+	bibliotecaUPE->cargarSociosCSV();
+	bibliotecaUPE->cargarPrestamosCSV();
 
-	const std::vector<prestamos>& listaPrestamos = bibliotecaUPE.getListaPrestamos();
+	const std::vector<prestamos>& listaPrestamos = bibliotecaUPE->getListaPrestamos();
 
 
 	StringGridPrestamos->ColCount = 7;
@@ -89,7 +95,7 @@ void __fastcall TRegistarDevoluciónForm::Button1Click(TObject *Sender)
 	String ubicacion = StringGridPrestamos->Cells[1][filaSeleccionada + 1]; // Selecciono la ubicacion
 	std::string ubicacionStr = ConvertirStdString(ubicacion);
 
-	bibliotecaUPE.devolverLibro(ubicacionStr);
+	bibliotecaUPE->devolverLibro(ubicacionStr);
 
 	FormShow(Sender);  //Actualiza el grid
 }

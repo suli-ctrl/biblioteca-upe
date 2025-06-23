@@ -12,6 +12,7 @@
 #include <Vcl.ToolWin.hpp>
 #include <Vcl.Buttons.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
+#include "biblioteca.h"
 
 
 //---------------------------------------------------------------------------
@@ -37,11 +38,12 @@ __published:	// IDE-managed Components
 	void __fastcall BtnVolverClick(TObject *Sender);
 
 private:        // User declarations
-
+	biblioteca * bibliotecaUPE;
   void MostrarFormEnPanel(TForm *form);
 
 public:		// User declarations
 	__fastcall TLibrosForm(TComponent* Owner);
+	void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TLibrosForm *LibrosForm;

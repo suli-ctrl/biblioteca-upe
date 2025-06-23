@@ -9,6 +9,7 @@
 #include "BajaLibro_Form.h"
 #include "VerYBuscarLibro_Form.h"
 #include "ModificarLibro_Form.h"
+#include "biblioteca.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -19,6 +20,11 @@ __fastcall TLibrosForm::TLibrosForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TLibrosForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
 void __fastcall TLibrosForm::MostrarFormEnPanel(TForm *form)//muestra un form dentro de otro
 {
 	for (int i = PanelContenedor->ControlCount-1; i >= 10; i--)//recorre los controles del PanelContenedor
@@ -38,6 +44,9 @@ void __fastcall TLibrosForm::BtnAltaLibroClick(TObject *Sender)
    TAltaLibroForm * Alta = new TAltaLibroForm(this); //se crea un puntero que apunta al Form a mostrar y se le pasa dinamicamente una nueva instancia
 													 //del formulario quien recibe como parametro un puntero (this) que indica que TLibrosForm
 													 //va a ser el encargado de administrar esa memoria dinamica y liberarlo cuando sea necesario
+
+    Alta->setBiblioteca(bibliotecaUPE); // <- paso el puntero
+
    MostrarFormEnPanel(Alta);  //se llama a la funcion para insertar el formulario en el panel
 
 }
@@ -46,6 +55,7 @@ void __fastcall TLibrosForm::BtnAltaLibroClick(TObject *Sender)
 void __fastcall TLibrosForm::BtnBajaLibroClick(TObject *Sender)
 {
 	 TBajaLibroForm  * Baja = new TBajaLibroForm(this);
+	 Baja->setBiblioteca(bibliotecaUPE); // <- paso el puntero antes de mostrar el form
 	 MostrarFormEnPanel(Baja);
 
 }
@@ -54,6 +64,7 @@ void __fastcall TLibrosForm::BtnBajaLibroClick(TObject *Sender)
 void __fastcall TLibrosForm::BtnModificarLibroClick(TObject *Sender)
 {
 	TModificarLibroForm  * Modificar = new TModificarLibroForm (this);
+    Modificar->setBiblioteca(bibliotecaUPE); // <- paso el puntero
 	MostrarFormEnPanel(Modificar);
 
 
@@ -63,6 +74,7 @@ void __fastcall TLibrosForm::BtnModificarLibroClick(TObject *Sender)
 void __fastcall TLibrosForm::BtnVerYBuscarLibroClick(TObject *Sender)
 {
 	TVerYBuscarLibroForm * VerBuscar = new TVerYBuscarLibroForm(this);
+	VerBuscar->setBiblioteca(bibliotecaUPE); // <- paso el puntero
 	MostrarFormEnPanel(VerBuscar);
 
 }

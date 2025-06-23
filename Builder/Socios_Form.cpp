@@ -9,6 +9,7 @@
 #include "BajaSocio_Form.h"
 #include "ModificarSocio_Form.h"
 #include "VerYBuscarSocio_Form.h"
+#include "biblioteca.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -19,6 +20,11 @@ __fastcall TSociosForm::TSociosForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TSociosForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
 
   void __fastcall TSociosForm::MostrarFormEnPanel(TForm *form)
 {
@@ -44,6 +50,7 @@ void __fastcall TSociosForm::BtnVolverClick(TObject *Sender)
 void __fastcall TSociosForm::BtnAltaSocioClick(TObject *Sender)
 {
 	TAltaSocioForm * AltaSocio = new TAltaSocioForm(this);
+    AltaSocio->setBiblioteca(bibliotecaUPE);
 	MostrarFormEnPanel(AltaSocio);
 
 }
@@ -52,6 +59,7 @@ void __fastcall TSociosForm::BtnAltaSocioClick(TObject *Sender)
 void __fastcall TSociosForm::BtnBajaSocioClick(TObject *Sender)
 {
 	  TBajaSocioForm * BajaSocio = new TBajaSocioForm(this);
+	  BajaSocio->setBiblioteca(bibliotecaUPE);
 	  MostrarFormEnPanel(BajaSocio);
 }
 //---------------------------------------------------------------------------
@@ -59,6 +67,7 @@ void __fastcall TSociosForm::BtnBajaSocioClick(TObject *Sender)
 void __fastcall TSociosForm::BtnModificarSocioClick(TObject *Sender)
 {
 	   TModificarSocioForm * ModificarSocio = new TModificarSocioForm(this);
+	   ModificarSocio->setBiblioteca(bibliotecaUPE);
 	   MostrarFormEnPanel(ModificarSocio);
 }
 //---------------------------------------------------------------------------
@@ -66,6 +75,7 @@ void __fastcall TSociosForm::BtnModificarSocioClick(TObject *Sender)
 void __fastcall TSociosForm::BtnVerYBuscarSocioClick(TObject *Sender)
 {
 		TVerYBuscarSocioForm * VerBuscarSocio = new TVerYBuscarSocioForm(this);
+        VerBuscarSocio->setBiblioteca(bibliotecaUPE);
 		MostrarFormEnPanel(VerBuscarSocio);
 }
 //---------------------------------------------------------------------------

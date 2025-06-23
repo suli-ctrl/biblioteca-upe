@@ -16,6 +16,10 @@ __fastcall TAltaLibroForm::TAltaLibroForm(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
+void TAltaLibroForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
 void __fastcall TAltaLibroForm::BtnAltaLibroClick(TObject *Sender)
 {
 	String nombre = EditNombreLibro->Text;   //Guardo los datos en un string
@@ -48,7 +52,7 @@ void __fastcall TAltaLibroForm::BtnAltaLibroClick(TObject *Sender)
 		return;
 	}
 
-	bibliotecaUPE.altaLibro(nombre, area, subarea, autores, editorial, anioPublicacion, ubicacion, estado);
+	bibliotecaUPE->altaLibro(nombre, area, subarea, autores, editorial, anioPublicacion, ubicacion, estado);
 
 	ShowMessage("Libro agregado exitosamente");
 }

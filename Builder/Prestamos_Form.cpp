@@ -8,6 +8,7 @@
 #include "RegistrarDevolucion_Form.h"
 #include "RegistrarPrestamo_Form.h"
 #include "VerPrestamo_Form.h"
+#include "biblioteca.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -18,6 +19,11 @@ __fastcall TPrestamosForm::TPrestamosForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TPrestamosForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+    bibliotecaUPE = pBibliotecaUPE;
+}
+
 
 void __fastcall TPrestamosForm::MostrarFormEnPanel(TForm *form)
 {
@@ -36,6 +42,7 @@ void __fastcall TPrestamosForm::MostrarFormEnPanel(TForm *form)
 void __fastcall TPrestamosForm::BtnRegistrarPrestamoClick(TObject *Sender)
 {
 	TRegistrarPrestamoForm * RegistrarPrestamo = new TRegistrarPrestamoForm(this);
+	RegistrarPrestamo->setBiblioteca(bibliotecaUPE);
 	MostrarFormEnPanel(RegistrarPrestamo);
 
 }
@@ -44,6 +51,7 @@ void __fastcall TPrestamosForm::BtnRegistrarPrestamoClick(TObject *Sender)
 void __fastcall TPrestamosForm::BtnRegistrarDevolucionClick(TObject *Sender)
 {
 	TRegistarDevoluciónForm * RegistrarDevolucion = new TRegistarDevoluciónForm(this);
+	RegistrarDevolucion->setBiblioteca(bibliotecaUPE);
 	MostrarFormEnPanel(RegistrarDevolucion);
 
 }
@@ -52,6 +60,7 @@ void __fastcall TPrestamosForm::BtnRegistrarDevolucionClick(TObject *Sender)
 void __fastcall TPrestamosForm::BtnVerPrestamosClick(TObject *Sender)
 {
 	 TVerPrestamoActivoForm * VerPrestamo = new TVerPrestamoActivoForm(this);
+     VerPrestamo->setBiblioteca(bibliotecaUPE);
 	 MostrarFormEnPanel(VerPrestamo);
 
 }

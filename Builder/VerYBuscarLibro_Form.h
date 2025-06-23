@@ -31,10 +31,11 @@ __published:	// IDE-managed Components
 	void __fastcall TextBoxEnter(TObject* Sender);
 	void __fastcall TextBoxExit(TObject* Sender);
 private:	// User declarations
-	biblioteca bibliotecaUPE; //instancio la clase
+	biblioteca * bibliotecaUPE; //instancio la clase
 	void MostrarCoincidencia(int fila, const libros& l); //muestra los datos de las coincidencias encontradas durante la busqueda
 public:		// User declarations
 	__fastcall TVerYBuscarLibroForm(TComponent* Owner);
+    void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TVerYBuscarLibroForm *VerYBuscarLibroForm;

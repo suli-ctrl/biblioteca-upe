@@ -16,13 +16,19 @@ __fastcall TModificarSocioForm::TModificarSocioForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void TModificarSocioForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
+	bibliotecaUPE = pBibliotecaUPE;
+}
+
+
  void __fastcall TModificarSocioForm::FormShow(TObject *Sender)
 {
-	bibliotecaUPE.cargarSociosCSV();
+	bibliotecaUPE->cargarSociosCSV();
 	//Para mostrar el DNI de los socios en el ComboBox
    ComboBoxBusqueda->Items->Clear();
 
-	for (const auto& socio : bibliotecaUPE.getListaSocios())
+	for (const auto& socio : bibliotecaUPE->getListaSocios())
 	{
 		ComboBoxBusqueda->Items->Add(socio.getDNI());
 	}
@@ -38,7 +44,7 @@ void __fastcall TModificarSocioForm::btnBuscarSocioModiClick(TObject *Sender)
 	bool existe = false;
 	int nuevoDni = 0;
 
-	const std::vector<socios>& listaSocios = bibliotecaUPE.getListaSocios();
+	const std::vector<socios>& listaSocios = bibliotecaUPE->getListaSocios();
 
 	for (int i = 0; i < listaSocios.size(); i++)
 	{
@@ -76,7 +82,7 @@ void __fastcall TModificarSocioForm::btnBuscarSocioModiClick(TObject *Sender)
 void __fastcall TModificarSocioForm::btnModificarClick(TObject *Sender)
 {
 	std::string DNI_original = ConvertirStdString(ComboBoxBusqueda->Text);
-	std::vector<socios>& listaSocios = bibliotecaUPE.getListaSociosModificable();
+	std::vector<socios>& listaSocios = bibliotecaUPE->getListaSociosModificable();
 
 
 	bool modificado = false;
@@ -114,7 +120,7 @@ void __fastcall TModificarSocioForm::btnModificarClick(TObject *Sender)
 
 	if (modificado)
 	{
-		bibliotecaUPE.guardarSociosCSV();
+		bibliotecaUPE->guardarSociosCSV();
 		ShowMessage("Socio modificado correctamente.");
 	}
 

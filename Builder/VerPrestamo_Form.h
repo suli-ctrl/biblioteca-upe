@@ -22,9 +22,10 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
-    biblioteca bibliotecaUPE;
+	biblioteca * bibliotecaUPE;
 public:		// User declarations
 	__fastcall TVerPrestamoActivoForm(TComponent* Owner);
+    void setBiblioteca(biblioteca* pBibliotecaUPE); // metodo para asignar el puntero
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TVerPrestamoActivoForm *VerPrestamoActivoForm;

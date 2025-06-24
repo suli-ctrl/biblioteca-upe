@@ -30,6 +30,59 @@ bool esTextoAlfabetico(const String& texto) {
 	return true;
 }
 
+bool validarUbicacionManual(const String& input)
+{
+	if (input.Pos("Est") != 1)
+	{
+		return false;
+	}
+
+	int posGuion = input.Pos("-");
+
+	if (posGuion == 0 || posGuion < 4)
+	{
+		return false;
+	}
+
+	String numEstante = input.SubString(4, posGuion - 3); // 4 = despues de "Est", largo = diferencia
+	String resto = input.SubString(posGuion + 1, input.Length());
+
+	if (resto.Pos("F") != 1)
+	{
+		return false;
+	}
+
+	String numFila = resto.SubString(2, resto.Length());
+
+	if (numEstante.IsEmpty() || numFila.IsEmpty())
+	{
+		return false;
+	}
+
+	for (int i = 1; i <= numEstante.Length(); i++)
+	{
+		if (!isdigit(numEstante[i]))
+		{
+			return false;
+		}
+	}
+
+	for (int i = 1; i <= numFila.Length(); i++)
+	{
+		if (!isdigit(numFila[i]))
+		{
+			return false;
+		}
+	}
+
+	if (numEstante.ToInt() <= 0 || numFila.ToInt() <= 0)
+	{
+		return false;
+	}
+
+	return true;
+}
+
 void TAltaLibroForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
 	bibliotecaUPE = pBibliotecaUPE;
 }
@@ -44,13 +97,15 @@ void __fastcall TAltaLibroForm::BtnAltaLibroClick(TObject *Sender)
 	String ubicacion = EditUbiLibro->Text;
 	int anioPublicacion = 0;
 
-	if (nombre.IsEmpty() || area.IsEmpty() || subarea.IsEmpty() || autores.IsEmpty() || editorial.IsEmpty() || ubicacion.IsEmpty()) {
+	if (nombre.IsEmpty() || area.IsEmpty() || subarea.IsEmpty() || autores.IsEmpty() || editorial.IsEmpty() || ubicacion.IsEmpty())
+	{
 		ShowMessage("Completar todos los campos");
 		return;
 	}
 
 	//validaciones de campos alfabeticos
-	if (!esTextoAlfabetico(area)) {
+	if (!esTextoAlfabetico(area))
+	 {
 		ShowMessage("El campo 'Area' solo debe contener letras.");
 		return;
 	}
@@ -80,6 +135,12 @@ void __fastcall TAltaLibroForm::BtnAltaLibroClick(TObject *Sender)
 	if (anioPublicacion < 1500 || anioPublicacion > 2025)
 	{
 		ShowMessage("Ingrese un año de publicación valido (1500 - 2025).");
+		return;
+	}
+
+	if (!validarUbicacionManual(ubicacion))
+	{
+		ShowMessage("Ubicación inválida. Debe seguir el formato EstN-FN (ej: Est2-F5).");
 		return;
 	}
 

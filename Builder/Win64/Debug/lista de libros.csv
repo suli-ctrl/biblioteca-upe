@@ -12,6 +12,7 @@ Introduction to the Theory of Computation,Informática,Teoría de la computació
 Introduction to Algorithms,Informática,Algoritmos,Thomas H. Cormen-Charles E. Leiserson-Ronald L. Rivest-Clifford Stein,MIT Press,2009,Est2-F4,bien,E2F4-01-00,false
 Discrete Mathematics,Matemáticas,Matemáticas discretas,Richard Johnsonbaugh,Pearson,2010,Est2-F5,regular,E2F5-02-00,false
 Linear Algebra and Its Applications,Matemáticas,Álgebra lineal,David C. Lay,Pearson,2012,Est2-F6,bien,E2F6-01-00,false
-Peter Pan,Infantil,Fantasia,Desconocido,Planeta,1965,Est4-E4,bien ,E4E4--01,false
-Harry Potter,Fantasia,Infantil,J.K.Rowling,Planeta,1996,Est1-H3,bien ,E1H3--01,false
-test,retest,sdtds,tsd,sdt,2010,Est1-D4,bien ,E1D4--01,true
+Peter Pan,Infantil,Fantasia,Desconocido,Planeta,1965,Est4-E4,malo,E4E4-03-00,false
+Harry Potter,Fantasia,Infantil,J.K.Rowling,Planeta,1996,Est1-H3,destruido,E1H3-04-00,false
+test,retest,sdtds,tsd,sdt,2010,Est1-D4,regular,E1D4-02-01,true
+Agus,agus,agus,agus,agus,2010,Est3-F6,regular,E3F6-02-00,false

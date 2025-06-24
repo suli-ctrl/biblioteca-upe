@@ -25,7 +25,7 @@ public:
 	const std::string getFechaPrestamo() const;
 	int getDiasPrestamo() const;
 	const std::string getFechaVencimiento() const;
-	bool libroDevuelto() const; //Muestra true o false dependiendo si el libro esta devuelto o no. No recuerdo por que se pone const
+	bool libroDevuelto() const; //Muestra true o false dependiendo si el libro esta devuelto o no
 
      //getters para modificar directamente en devolverLibro, no son const porq quiero modificar datos
 	libros& getLibro();
@@ -35,7 +35,7 @@ public:
 	void setFechaVencimiento(const std::string);
 	void setDevuelto(bool); //Bool que indica si el libro fue devuelto o no
 
-	//Funcionalidad
+	//Metodos
 	bool estaVencido() const;
 	int diasHastaVencimiento() const;
 	std::string calcularFechaVencimiento(std::string fechaInicio, int dias); //para no guardar fecha vencimiento fija

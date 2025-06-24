@@ -294,14 +294,6 @@ void biblioteca::guardarPrestamosCSV()
 
 void biblioteca::altaSocio(int dni, int edad, String apellido, String genero, String direccion, String telefono, String fechaNacimiento, String email)
 {
-	/*int dni{pedirDni()};
-	int edad{pedirEdad()};
-	std::string apellido{ pedirApellido() };
-	std::string genero{ pedirGenero() };
-	std::string email{ pedirEmail() };
-	std::string fechaNacimiento{ pedirFechaDeNacimiento() };
-    std::string telefono{ pedirNumTelefono() };
-	std::string direccion{ pedirDireccion() };   */
 	String fecha = FormatDateTime("dd/mm/yyyy", fechaNacimiento);
 	std::string fechaNacimientoStr = ConvertirStdString(fecha);
 
@@ -310,9 +302,9 @@ void biblioteca::altaSocio(int dni, int edad, String apellido, String genero, St
 	socios nuevoSocio(dni, edad, ConvertirStdString(apellido), ConvertirStdString(genero), ConvertirStdString(direccion), ConvertirStdString(telefono), fechaNacimientoStr, ConvertirStdString(email));
 	listaSocios.push_back(nuevoSocio);
 
-    guardarSociosCSV();
+	guardarSociosCSV();
 
-    
+
 }
 
 void biblioteca::bajaSocio(String socioBaja)
@@ -324,47 +316,27 @@ void biblioteca::bajaSocio(String socioBaja)
 
 	std::vector<socios> nuevaLista;
 
-
-
-	//Validaciones (Comentadas, ver mas tarde)
-	/*bool esNumerico = true;
-	for (char c : dniSocio)
-	{
-		if (!isdigit(c))
-		{
-			esNumerico = false;
-			break;
-		}
-	}
-
-	if (!esNumerico || dniSocio.length() != 8)
-	{
-		std::cout << "Error: El DNI debe contener solo 8 digitos numericos. \n";
-		return;
-	}
-	*/
-
 	for (int i = 0; i < listaSocios.size(); i++)
 	{
 		if (std::to_string(listaSocios[i].getDNI()) == socio_eliminar) //Compara el DNI ingresado con cada DNI de la lista hasta encontrarlo
 		{
-            existe = true;
+			existe = true;
 			continue; //No lo copia al nuevo vector
 		}
 
 		nuevaLista.push_back(listaSocios[i]);  //Agrega a la nueva lista
 	}
 
-    if (existe)
-    {
+	if (existe)
+	{
 		listaSocios = nuevaLista;
 		guardarSociosCSV();
 		ShowMessage( "Socio eliminado correctamente");
 	}
-    else
-    {
+	else
+	{
 		ShowMessage("El socio no se ha encontrado");
-    }
+	}
 }
 
 /*void biblioteca::modificarSocio()

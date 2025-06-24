@@ -21,6 +21,8 @@ void TVerYBuscarLibroForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
     bibliotecaUPE = pBibliotecaUPE;
 }
 
+int libroSeleccionado = -1;
+
 void __fastcall TVerYBuscarLibroForm::FormShow(TObject *Sender)
 {
 	bibliotecaUPE->cargarLibrosCSV();
@@ -153,7 +155,6 @@ void TVerYBuscarLibroForm::MostrarCoincidencia(int fila, const libros& l) //una 
 
 void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 {
-
   //Limpiamos el contenido de las celdas antes de buscar la información requerida
   for(int fila=1; fila<StringGridLibros->RowCount; ++fila)  //recorre las filas hasta que terminen
 	{
@@ -295,6 +296,39 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 	lstEstadoBuscar->ClearSelection();
 
 	}
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TVerYBuscarLibroForm::StringGridLibrosClick(TObject *Sender)
+{
+	int fila = StringGridLibros->Row;
+	if (fila == 0)
+	{
+		return;
+	}
+
+	libroSeleccionado = fila - 1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TVerYBuscarLibroForm::btnCodBarrasClick(TObject *Sender)
+{
+    const std::vector<libros>& listaLibros = bibliotecaUPE->getListaLibros();
+
+	if (libroSeleccionado < 0 || libroSeleccionado >= listaLibros.size())
+	{
+		ShowMessage("Seleccione un libro valido.");
+		return;
+	}
+
+	const libros& libro = listaLibros[libroSeleccionado];
+
+    String codigo = libro.getCodigoBarras().c_str();
+	String codBarrasFormateado = "*" + codigo + "*";
+
+	lblCodigoBarras->Caption = codBarrasFormateado;
 
 }
 //---------------------------------------------------------------------------

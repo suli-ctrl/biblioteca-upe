@@ -26,14 +26,28 @@ object VerPrestamoActivoForm: TVerPrestamoActivoForm
     Font.Style = [fsBold]
     ParentFont = False
   end
+  object LabelVencimiento: TLabel
+    Left = 304
+    Top = 104
+    Width = 269
+    Height = 37
+    Caption = 'Estado de prestamo: '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object StringGridPrestamos: TStringGrid
     Left = 8
-    Top = 160
+    Top = 152
     Width = 740
     Height = 309
     ColCount = 4
     DefaultColWidth = 128
     TabOrder = 0
+    OnClick = StringGridPrestamosClick
     RowHeights = (
       24
       24

@@ -26,10 +26,14 @@ __published:	// IDE-managed Components
 	TCheckBox *chkMostrarTodos;
 	TStringGrid *StringGridLibros;
 	TButton *btnBuscarLibro;
+	TButton *btnCodBarras;
+	TLabel *lblCodigoBarras;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall btnBuscarLibroClick(TObject *Sender);
 	void __fastcall TextBoxEnter(TObject* Sender);
 	void __fastcall TextBoxExit(TObject* Sender);
+	void __fastcall StringGridLibrosClick(TObject *Sender);
+	void __fastcall btnCodBarrasClick(TObject *Sender);
 private:	// User declarations
 	biblioteca * bibliotecaUPE; //instancio la clase
 	void MostrarCoincidencia(int fila, const libros& l); //muestra los datos de las coincidencias encontradas durante la busqueda

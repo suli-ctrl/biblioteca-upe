@@ -77,7 +77,10 @@ void __fastcall TRegistarDevoluciónForm::StringGridPrestamosClick(TObject *Sende
 
 {
 	int fila = StringGridPrestamos->Row;
-	if (fila == 0) return;
+	if (fila == 0)
+	{
+		return;
+	}
 
 	filaSeleccionada = fila - 1;
 	LabelSeleccionado->Caption = "Prestamo seleccionado: Fila " + IntToStr(filaSeleccionada + 1);

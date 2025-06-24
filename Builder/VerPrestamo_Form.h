@@ -20,7 +20,9 @@ __published:	// IDE-managed Components
 	TComboBox *ComboBox3;
 	TCheckBox *CheckBox1;
 	TButton *Button1;
+	TLabel *LabelVencimiento;
 	void __fastcall FormShow(TObject *Sender);
+	void __fastcall StringGridPrestamosClick(TObject *Sender);
 private:	// User declarations
 	biblioteca * bibliotecaUPE;
 public:		// User declarations

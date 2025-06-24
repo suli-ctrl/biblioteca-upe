@@ -26,58 +26,70 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     Font.Style = [fsBold]
     ParentFont = False
   end
+  object lblCodigoBarras: TLabel
+    Left = 432
+    Top = 78
+    Width = 20
+    Height = 43
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'CCode39'
+    Font.Style = []
+    ParentFont = False
+  end
   object txtNombreBuscar: TEdit
-    Left = 8
-    Top = 8
+    Left = 24
+    Top = 24
     Width = 169
     Height = 23
     TabOrder = 0
   end
   object txtAreaBuscar: TEdit
-    Left = 8
-    Top = 37
+    Left = 24
+    Top = 53
     Width = 169
     Height = 23
     TabOrder = 1
   end
   object txtSubAreaBuscar: TEdit
-    Left = 8
-    Top = 66
+    Left = 24
+    Top = 82
     Width = 169
     Height = 23
     TabOrder = 2
   end
   object txtAutoresBuscar: TEdit
-    Left = 8
-    Top = 95
+    Left = 24
+    Top = 111
     Width = 169
     Height = 23
     TabOrder = 3
   end
   object txtAnioPublicacionBuscar: TEdit
-    Left = 216
-    Top = 8
+    Left = 232
+    Top = 24
     Width = 169
     Height = 23
     TabOrder = 4
   end
   object txtEditorialBuscar: TEdit
-    Left = 8
-    Top = 124
+    Left = 24
+    Top = 140
     Width = 169
     Height = 23
     TabOrder = 5
   end
   object txtUbicacionBuscar: TEdit
-    Left = 216
-    Top = 37
+    Left = 232
+    Top = 53
     Width = 169
     Height = 23
     TabOrder = 6
   end
   object lstEstadoBuscar: TListBox
-    Left = 216
-    Top = 66
+    Left = 232
+    Top = 82
     Width = 169
     Height = 35
     ItemHeight = 15
@@ -89,15 +101,15 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     TabOrder = 7
   end
   object txtCodBarrasBuscar: TEdit
-    Left = 216
-    Top = 107
+    Left = 232
+    Top = 123
     Width = 169
     Height = 23
     TabOrder = 8
   end
   object chkMostrarTodos: TCheckBox
-    Left = 216
-    Top = 136
+    Left = 232
+    Top = 152
     Width = 145
     Height = 17
     Caption = 'Mostrar todos'
@@ -117,10 +129,11 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     ColCount = 9
     DefaultColWidth = 240
     TabOrder = 10
+    OnClick = StringGridLibrosClick
   end
   object btnBuscarLibro: TButton
-    Left = 440
-    Top = 57
+    Left = 432
+    Top = 25
     Width = 121
     Height = 32
     Caption = 'Buscar'
@@ -132,5 +145,14 @@ object VerYBuscarLibroForm: TVerYBuscarLibroForm
     ParentFont = False
     TabOrder = 11
     OnClick = btnBuscarLibroClick
+  end
+  object btnCodBarras: TButton
+    Left = 559
+    Top = 25
+    Width = 170
+    Height = 32
+    Caption = 'Codigo de barras'
+    TabOrder = 12
+    OnClick = btnCodBarrasClick
   end
 end

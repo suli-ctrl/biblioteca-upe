@@ -16,6 +16,8 @@ __fastcall TVerPrestamoActivoForm::TVerPrestamoActivoForm(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
+
+
 void TVerPrestamoActivoForm::setBiblioteca(biblioteca* pBibliotecaUPE) {
     bibliotecaUPE = pBibliotecaUPE;
 }
@@ -65,4 +67,40 @@ void __fastcall TVerPrestamoActivoForm::FormShow(TObject *Sender)
 	StringGridPrestamos->RowCount = fila; //Al finalizar el conteo de prestamos, se muestra la cantidad de filas acordes a prestamos activos
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TVerPrestamoActivoForm::StringGridPrestamosClick(TObject *Sender)
+
+{
+	int fila = StringGridPrestamos->Row;
+
+	if (fila == 0)
+	{
+		return; // Salta el encabezado
+	}
+
+	int filaSeleccionada = fila - 1;
+
+
+	const std::vector<prestamos>& listaPrestamos = bibliotecaUPE->getListaPrestamos();
+
+	// Validar que este dentro del rango
+	if (filaSeleccionada < 0 || filaSeleccionada >= listaPrestamos.size())
+	{
+		return;
+	}
+
+	const prestamos& p = listaPrestamos[filaSeleccionada];
+
+	if (p.estaVencido())
+	{
+		LabelVencimiento->Caption = "Estado de prestamo: VENCIDO";
+		LabelVencimiento->Font->Color = clRed;
+	} else
+	{
+		LabelVencimiento->Caption = "Estado de prestamo: VIGENTE";
+        LabelVencimiento->Font->Color = clGreen;
+    }
+}
+//---------------------------------------------------------------------------
+
 

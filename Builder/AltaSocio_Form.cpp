@@ -62,14 +62,21 @@ void __fastcall TAltaSocioForm::btnDarAltaClick(TObject *Sender)
 
 	// DNI
 
-	if (!TryStrToInt(txtDNIAlta->Text, DNI)) {  //Convierte lo ingresado a INT. Si los caracteres no son numericos, salta el mensaje y return
-		ShowMessage("El DNI debe tener solo caracteres numericos");
-		return;
-	}
-	if (DNI < 10000000 || DNI > 99999999) {
-		ShowMessage("El DNI debe tener 8 cifras.");
-		return;
-	}
+
+	if (dniStr.Length() != 8)
+		  {
+			 ShowMessage("El DNI debe tener 8 cifras");
+			 return;
+		  }
+
+	for (int i = 1; i <= dniStr.Length(); i++)
+	  {
+		 if (!isdigit(dniStr[i]))
+		  {
+			ShowMessage("El DNI debe contener solo caracteres numericos");
+			 return;
+		  }
+	  }
 
 	// Edad
 

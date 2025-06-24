@@ -199,7 +199,7 @@
     Height = 67
     ItemHeight = 15
     Items.Strings = (
-      'bien'
+      'bien '
       'regular'
       'malo'
       'destruido')

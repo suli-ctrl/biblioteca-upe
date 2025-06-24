@@ -360,3 +360,5 @@ std::string ConvertirStdString(const String& s)
 {
 	return std::string(AnsiString(s).c_str());  // UnicodeString -> AnsiString -> std::string
 }
+
+

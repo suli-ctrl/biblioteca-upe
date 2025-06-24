@@ -220,6 +220,7 @@ void biblioteca::cargarPrestamosCSV()
 		std::getline(token, fechaVencimiento, ',');
 		std::getline(token, devuelto, ',');
 
+
 		int dni_socio = std::stoi(dniSocio); //convierte el string a int
 		int dias = std::stoi(diasPrestamo);
 

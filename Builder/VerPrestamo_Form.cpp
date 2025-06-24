@@ -32,7 +32,7 @@ void __fastcall TVerPrestamoActivoForm::FormShow(TObject *Sender)
 	const std::vector<prestamos>& listaPrestamos = bibliotecaUPE->getListaPrestamos();
 
 
-	StringGridPrestamos->ColCount = 7;
+	StringGridPrestamos->ColCount = 8;
 
 	StringGridPrestamos->Cells[0][0] = "Libro";
 	StringGridPrestamos->Cells[1][0] = "Ubicacion";
@@ -41,6 +41,8 @@ void __fastcall TVerPrestamoActivoForm::FormShow(TObject *Sender)
 	StringGridPrestamos->Cells[4][0] = "Fecha prestamo";
 	StringGridPrestamos->Cells[5][0] = "Dias";
 	StringGridPrestamos->Cells[6][0] = "Vencimiento";
+	StringGridPrestamos->Cells[7][0] = "Indice fila";
+	StringGridPrestamos->ColWidths[7] = 0; // Oculta la columna
 
 	int fila = 1; //La cabecera
 
@@ -60,6 +62,7 @@ void __fastcall TVerPrestamoActivoForm::FormShow(TObject *Sender)
 		StringGridPrestamos->Cells[4][fila] = p.getFechaPrestamo().c_str();
 		StringGridPrestamos->Cells[5][fila] = IntToStr(p.getDiasPrestamo());
 		StringGridPrestamos->Cells[6][fila] = p.getFechaVencimiento().c_str();
+		StringGridPrestamos->Cells[7][fila] = IntToStr(i);
 
 		fila++; //por cada prestamo activo se agrega una fila
 	}
@@ -78,18 +81,17 @@ void __fastcall TVerPrestamoActivoForm::StringGridPrestamosClick(TObject *Sender
 		return; // Salta el encabezado
 	}
 
-	int filaSeleccionada = fila - 1;
 
-
+	int indice = StrToInt(StringGridPrestamos->Cells[7][fila]);
 	const std::vector<prestamos>& listaPrestamos = bibliotecaUPE->getListaPrestamos();
 
 	// Validar que este dentro del rango
-	if (filaSeleccionada < 0 || filaSeleccionada >= listaPrestamos.size())
+	if (indice < 0 || indice >= listaPrestamos.size())
 	{
 		return;
 	}
 
-	const prestamos& p = listaPrestamos[filaSeleccionada];
+	const prestamos& p = listaPrestamos[indice];
 
 	if (p.estaVencido())
 	{

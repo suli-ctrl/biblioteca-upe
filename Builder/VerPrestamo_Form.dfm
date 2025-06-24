@@ -27,8 +27,8 @@ object VerPrestamoActivoForm: TVerPrestamoActivoForm
     ParentFont = False
   end
   object LabelVencimiento: TLabel
-    Left = 304
-    Top = 104
+    Left = 8
+    Top = 37
     Width = 269
     Height = 37
     Caption = 'Estado de prestamo: '
@@ -41,9 +41,9 @@ object VerPrestamoActivoForm: TVerPrestamoActivoForm
   end
   object StringGridPrestamos: TStringGrid
     Left = 8
-    Top = 152
+    Top = 80
     Width = 740
-    Height = 309
+    Height = 381
     ColCount = 4
     DefaultColWidth = 128
     TabOrder = 0
@@ -54,54 +54,5 @@ object VerPrestamoActivoForm: TVerPrestamoActivoForm
       24
       24
       24)
-  end
-  object ComboBox1: TComboBox
-    Left = 8
-    Top = 16
-    Width = 209
-    Height = 23
-    TabOrder = 1
-  end
-  object ComboBox2: TComboBox
-    Left = 8
-    Top = 45
-    Width = 209
-    Height = 23
-    TabOrder = 2
-  end
-  object ComboBox3: TComboBox
-    Left = 8
-    Top = 74
-    Width = 209
-    Height = 23
-    TabOrder = 3
-  end
-  object CheckBox1: TCheckBox
-    Left = 8
-    Top = 103
-    Width = 137
-    Height = 17
-    Caption = 'Mostrar todos'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 4
-  end
-  object Button1: TButton
-    Left = 304
-    Top = 40
-    Width = 113
-    Height = 33
-    Caption = 'Buscar'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Microsoft Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 5
   end
 end

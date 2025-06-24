@@ -6,6 +6,7 @@
 #include "VerYBuscarLibro_Form.h"
 #include "biblioteca.h"
 #include "libros.h"
+#include <regex>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -107,6 +108,48 @@ void __fastcall TVerYBuscarLibroForm::TextBoxExit(TObject* Sender)
 }
 
 //---------------------------------------------------------------------------
+bool TVerYBuscarLibroForm::validarCodBarras(const String& codigo)
+{
+  String cod = codigo.Trim();
+  int posPrimerGuion = cod.Pos("-"); // posición del primer '-'
+  int posSegundoGuion = cod.LastDelimiter("-");   //posicion del segundo '-'
+
+  std::wregex patron(L"^E\\d{1,2}F\\d{1,2}-\\d{2}-\\d{2}$"); // se crea una expresión regular que sigue el patron de la estructura del código de barras
+
+  if (!std::regex_match(cod.c_str(), patron)) { //verifica si codigo no coincide con el patron establecido
+    ShowMessage("El formato del código es inválido. Ejemplo: E1F2-01-00");
+    return false;
+  }
+
+  if ((cod.Length()<10) && (cod.Length()>12)) //verifica la longitud del codigo
+  {
+    ShowMessage("El código debe tener entre 10 y 12 caracteres.");
+    return false;
+  }
+
+  String parte1 = cod.SubString(posPrimerGuion + 1, 2); //extrae la subcadena que le continua a la posición del primer guion e indica que va a tener un tamaño de 2 caracteres (SubString(inicio,longitud)
+  String parte2 = cod.SubString(posSegundoGuion + 1, 2); //extrae la subcadena que le continua a la posición del segundo guion
+
+  int num1 = StrToInt(parte1); //convierte las partes en int
+  int num2 = StrToInt(parte2);
+
+  if ((num1 < 1) && (num1 > 4))  //Valida el rango de la primera parte
+  {
+	ShowMessage("La primera parte numérica debe estar entre 01 y 04.");
+	return false;
+  }
+
+  if ((num2 != 0) && (num2 != 1)) //Valida que la segunda parte solo sea 00 o 01
+  {
+    ShowMessage("La segunda parte numérica solo puede ser 00 o 01.");
+    return false;
+  }
+
+
+return true;
+}
+
+//---------------------------------------------------------------------------
 
 bool TVerYBuscarLibroForm::ningunFiltroActivo(){
 
@@ -168,8 +211,10 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 
 	if (chkMostrarTodos->Checked)
 	{
+
 			if(!ningunFiltroActivo()){
 			ShowMessage("Para buscar mediante criterios desmarque 'mostrar todos'.");
+			lstEstadoBuscar->ClearSelection();
 			return;
 			}
 
@@ -204,6 +249,11 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 		String subarea = txtSubAreaBuscar->Text;
 		String autores = txtAutoresBuscar->Text;
 
+		if(ningunFiltroActivo()){
+		  ShowMessage("Ingrese al menos un criterio de búsqueda o presione 'Mostrar todos'.");
+		  return;
+		}
+
 		if ((textoIngresado != textoPorDefecto) && (!TryStrToInt (txtAnioPublicacionBuscar->Text, anioPublicacion)))
 		{
 		  ShowMessage("Año invalido. Ingrese solo números.");
@@ -215,10 +265,6 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 		   return;
 		}
 
-		if(ningunFiltroActivo()){
-			ShowMessage("Ingrese al menos un criterio de búsqueda o presione 'Mostrar todos'.");
-			return;
-		}
 		if (!validarTextoAlfabetico(area))
 		{
 			ShowMessage("El campo 'Area' solo debe contener letras.");
@@ -233,6 +279,10 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 		{
 			ShowMessage("El campo 'Autores' solo debe contener letras.");
 			return;
+		}
+        if ((txtCodBarrasBuscar->Text != "Código de barras") && (!validarCodBarras(txtCodBarrasBuscar->Text)))
+        {
+		  return;
 		}
 	//---------------- Fin Validaciones---------------
 
@@ -249,24 +299,24 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 		 bool coincide = true;
 
 	     if((txtNombreBuscar->Text != "Nombre") && (CompareText(AnsiString(l.getNombre().c_str()).Trim(), txtNombreBuscar->Text.Trim()) != 0))
-         {
+		 {
              coincide = false;
          }
 		 if((txtAreaBuscar->Text != "Area") && (CompareText(AnsiString(l.getArea().c_str()).Trim(), txtAreaBuscar->Text.Trim()) != 0))
          {
              coincide = false;
-         }
+		 }
 		 if((txtSubAreaBuscar->Text != "SubArea") && (CompareText(AnsiString(l.getSubArea().c_str()).Trim(), txtSubAreaBuscar->Text.Trim()) != 0))
-         {
-             coincide = false;
-         }
+		 {
+			 coincide = false;
+		 }
 		 if((txtAutoresBuscar->Text != "Autores") && (CompareText(AnsiString(l.getAutores().c_str()).Trim(), txtAutoresBuscar->Text.Trim()) != 0))
-         {
-             coincide = false;
+		 {
+			 coincide = false;
 		 }
 		 if((txtEditorialBuscar->Text != "Editorial") && (CompareText(AnsiString(l.getEditorial().c_str()).Trim(), txtEditorialBuscar->Text.Trim()) != 0))
 		 {
-             coincide = false;
+			 coincide = false;
 		 }
 		 if((txtAnioPublicacionBuscar->Text != "Año de publicación") && (CompareText(IntToStr(l.getAnioDePublicacion()).Trim(), txtAnioPublicacionBuscar->Text.Trim()) != 0))
 		 {
@@ -282,7 +332,7 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 		 }
 		 if ((txtCodBarrasBuscar->Text != "Código de barras") && (CompareText(AnsiString(l.getCodigoBarras().c_str()).Trim(), txtCodBarrasBuscar->Text.Trim()) != 0))
 		 {
-             coincide = false;
+			 coincide = false;
 		 }
 
 		   if(coincide)
@@ -292,6 +342,11 @@ void __fastcall TVerYBuscarLibroForm::btnBuscarLibroClick(TObject *Sender)
 		   }
 
 	   }
+
+		   if (fila == 1)
+		   {
+			   ShowMessage("No se encontraron coincidencias");
+		   }
 
 	lstEstadoBuscar->ClearSelection();
 

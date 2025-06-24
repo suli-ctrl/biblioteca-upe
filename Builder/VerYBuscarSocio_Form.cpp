@@ -148,6 +148,7 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 
 			if(!noHayFiltroActivo()){
 			ShowMessage("Para buscar mediante criterios desmarque 'mostrar todos'.");
+			lstGeneroBuscar->ClearSelection();
 			return;
 			}
 
@@ -175,6 +176,8 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 
 
 	//---------------- Inicio Validaciones---------------
+
+
 		String apellido = txtApellidoBuscar->Text;
 		int DNI = 0;
 		int edad = 0;
@@ -183,6 +186,12 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 		String dniStr = txtDNIBuscar->Text;
 		String edadStr = txtEdadBuscar->Text;
 		String email = txtEmailBuscar->Text;
+
+         if(noHayFiltroActivo()){
+			ShowMessage("Ingrese al menos un criterio de búsqueda o presione 'Mostrar todos'.");
+			lstGeneroBuscar->ClearSelection();
+			return;
+		  }
 
 
 		 if (edadStr != "Edad") {
@@ -237,6 +246,7 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
                if(dniStr.Length() != 8)
 			   {
 				   ShowMessage("El DNI debe tener 8 cifras.");
+                   return;
 			   }
 		 }
 
@@ -318,6 +328,12 @@ void __fastcall TVerYBuscarSocioForm::btnBuscarSocioClick(TObject *Sender)
 			   }
 
 		   }
+
+		   if (fila == 1)
+		   {
+			   ShowMessage("No se encontraron coincidencias");
+		   }
+
 	   lstGeneroBuscar->ClearSelection(); //se limpia la opción seleccionada en el listbox
 	}
 

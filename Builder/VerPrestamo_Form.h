@@ -15,11 +15,6 @@ class TVerPrestamoActivoForm : public TForm
 __published:	// IDE-managed Components
 	TLabel *lblVerPrestamos;
 	TStringGrid *StringGridPrestamos;
-	TComboBox *ComboBox1;
-	TComboBox *ComboBox2;
-	TComboBox *ComboBox3;
-	TCheckBox *CheckBox1;
-	TButton *Button1;
 	TLabel *LabelVencimiento;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall StringGridPrestamosClick(TObject *Sender);

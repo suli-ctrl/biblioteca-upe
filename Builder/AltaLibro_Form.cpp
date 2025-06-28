@@ -44,7 +44,7 @@ bool validarUbicacionManual(const String& input)
 		return false;
 	}
 
-	String numEstante = input.SubString(4, posGuion - 3); // 4 = despues de "Est", largo = diferencia
+	String numEstante = input.SubString(4, posGuion - 4); // 4 = despues de "Est", largo = diferencia
 	String resto = input.SubString(posGuion + 1, input.Length());
 
 	if (resto.Pos("F") != 1)
